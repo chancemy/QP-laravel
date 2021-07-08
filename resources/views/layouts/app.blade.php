@@ -9,16 +9,13 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title')</title>
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css') }}">
     @yield('css')
 </head>
 
@@ -104,6 +101,11 @@
             @yield('content')
         </main>
     </div>
+    <!-- Scripts 這個要拉到下面這裡喔-->
+    <script src="{{ asset('js/app.js') }}"></script>
+    {{-- datatable --}}
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+
     @yield('js')
 </body>
 

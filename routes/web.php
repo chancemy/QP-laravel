@@ -23,6 +23,19 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/', function () {
         return view('admin.index');
     });
+
+    //news
+    Route::prefix('news')->group(function(){
+        //item
+        Route::prefix('item')->group(function(){
+            Route::get('/', 'NewsController@news');
+            Route::get('/create', 'NewsController@create');
+            Route::post('/store', 'NewsController@store');
+            Route::get('/edit', 'NewsController@edit');
+            Route::post('/update', 'NewsController@update');
+            Route::delete('/delete', 'NewsController@delete');
+        });
+    });
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
