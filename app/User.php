@@ -15,8 +15,11 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
+    const ROLE_ADMIN = 'admin';
+    const ROLE_USER = 'user';
+
+    protected $fillable = [   // 並加入 ↓ 剛剛新增的項目
+        'name', 'email', 'password', 'role'
     ];
 
     /**
