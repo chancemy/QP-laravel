@@ -11,6 +11,7 @@ class NewsController extends Controller
     }
 
     public function create(){
+        return view('admin.news.item.create');
     }
 
     public function store(){

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTypeIdToNewsTable extends Migration
+class CreateNewsTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,10 @@ class CreateTypeIdToNewsTable extends Migration
      */
     public function up()
     {
-        Schema::table('news', function (Blueprint $table) {
-            $table->integer('type_id');
+        Schema::create('news_types', function (Blueprint $table) {
+            $table->id();
+            $table->string('type_name');
+            $table->timestamps();
         });
     }
 
@@ -25,8 +27,6 @@ class CreateTypeIdToNewsTable extends Migration
      */
     public function down()
     {
-        Schema::table('news', function (Blueprint $table) {
-            $table->dropColumn('type_id');
-        });
+        Schema::dropIfExists('news_types');
     }
 }
