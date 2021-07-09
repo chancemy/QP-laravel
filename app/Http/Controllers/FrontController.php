@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< Updated upstream
 use App\NewsType;
-=======
 use App\Product;
 use App\ProductType;
->>>>>>> Stashed changes
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
