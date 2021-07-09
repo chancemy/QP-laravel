@@ -33,9 +33,10 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($news as $new)
                                 <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
+                                    <td>{{ $new->is_display }}</td>
+                                    <td>{{ $new->date }}</td>
                                     <td>Edinburgh</td>
                                     <td>61</td>
                                     <td>2011/04/25</td>
@@ -45,6 +46,7 @@
                                         <button type="button" class="btn btn-sm btn-outline-danger">刪除</button>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

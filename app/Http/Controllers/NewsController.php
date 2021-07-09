@@ -19,7 +19,19 @@ class NewsController extends Controller
     }
 
     public function store(Request $request){
-        News::create($request->all());
+        dd($request->all());
+        $file = $request->file('img');
+        $path = FileCroller::newsImgUpload($file);
+        News::create([
+            'type_id' => $request->type_id,
+            'title' => $request->title,
+            'img' => $path,
+            'date' => $request->date,
+            'description' => $request->description,
+            'remarks' => $request->remarks,
+            'is_display' => $request->is_display,
+            'is_display' => '1'
+        ]);
         return redirect('/admin/news/item')->with('message','新增成功') ;
     }
 

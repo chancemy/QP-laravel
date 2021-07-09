@@ -22,6 +22,9 @@
     <!-- include summernote css/js -->
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
+    {{-- kalendae --}}
+    <link rel="stylesheet" href="build/kalendae.css" type="text/css" charset="utf-8">
+
     @yield('css')
 </head>
 
@@ -120,6 +123,8 @@
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <!-- include summernote css/js -->
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+    {{-- kalendae --}}
+    <script src="build/kalendae.standalone.js" type="text/javascript" charset="utf-8"></script>
     @yield('js')
 </body>
 

@@ -22,18 +22,19 @@
                         <label for="type" class="col-md-2 col-form-label text-md-right">分類</label>
 
                         <div class="col-md-10">
-                            <select class="form-control" id="type" name="type">
-                                {{-- @foreach ($news as $key => $item)
-                                    <option>{{ $item }}</option>
-                                @endforeach --}}
+                            <select class="form-control" id="type_name" name="type_id">
+                                @foreach ($newsTypes as $newsType)
+                                    <option value="{{  $newsType->id }}">{{ $newsType->type_name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
+                    
                     <div class="form-group row">
                         <label for="title" class="col-md-2 col-form-label text-md-right" >標題</label>
 
                         <div class="col-md-10">
-                            <input id="title" type="text" class="form-control" name="title"  required autocomplete="name" autofocus>
+                            <input id="title" type="text" class="form-control" name="title"  required  autofocus>
                         </div>
                     </div>
                     <div class="form-group row">
