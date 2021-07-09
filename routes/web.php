@@ -19,7 +19,7 @@ Route::get('/', 'FrontController@index');
 
 Route::get('/aboutus', 'FrontController@aboutUs');
 
-Route::get('/news', 'FrontController@news');
+Route::get('/newsIndex', 'FrontController@newsIndex');
 Route::get('/newsdetail', 'FrontController@newsDetail');
 
 Route::get('/product', 'FrontController@product');

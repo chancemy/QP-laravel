@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\NewsType;
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -23,9 +24,10 @@ class FrontController extends Controller
 
 
     // 最新消息
-    public function news()
+    public function newsIndex()
     {
-        dd('123');
+        $newsTypes = NewsType::get();
+        $news = News::with('type')->get();
         return view('front.news.index');
     }
 

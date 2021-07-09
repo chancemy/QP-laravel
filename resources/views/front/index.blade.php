@@ -138,7 +138,7 @@
             <div class="nav-group d-md-flex align-items-center">
                 <ul class="d-flex align-items-center">
                     <li><a href="{{ asset('/aboutus') }}">關於我們</a></li>
-                    <li><a href="{{ asset('/news') }}">最新消息</a></li>
+                    <li><a href="{{ asset('/newsIndex') }}">最新消息</a></li>
                     <li><a href="{{ asset('/product') }}">線上商城</a></li>
                     <li><a href="{{ asset('/contactus') }}">聯絡我們</a></li>
                 </ul>
