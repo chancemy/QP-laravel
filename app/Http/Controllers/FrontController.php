@@ -25,7 +25,8 @@ class FrontController extends Controller
     // 最新消息
     public function news()
     {
-        return view('front.news.news');
+        dd('123');
+        return view('front.news.index');
     }
 
     public function newsDetail()
