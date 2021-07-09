@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
 use App\NewsType;
 use App\Product;
 use App\ProductType;
@@ -30,7 +31,7 @@ class FrontController extends Controller
     {
         $newsTypes = NewsType::get();
         $news = News::with('type')->get();
-        return view('front.news.index');
+        return view('front.news.index',compact('newsTypes','news'));
     }
 
     public function newsDetail()
