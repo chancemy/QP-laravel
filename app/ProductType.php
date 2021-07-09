@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 
-class productType extends Model
+class ProductType extends Model
 {
     //
     const TYPE = [
