@@ -55,6 +55,11 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
             Route::post('/update/{id}', 'ProductTypeController@update');
             Route::delete('/delete/{id}', 'ProductTypeController@delete');
         });
+        Route::prefix('item')->group(function(){
+            Route::get('/','ProductController@index');
+            Route::get('/create','ProductController@create');
+            Route::post('/store', 'ProductController@store');
+        });
     });
 });
 
