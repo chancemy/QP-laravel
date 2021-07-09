@@ -1,0 +1,310 @@
+
+body{
+    background-color: #E6E3E0 ;
+    main{
+        position: relative;
+        .back-group{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 12vw;
+            z-index: -1;
+            background-color: #F4F3EF;
+            @media (max-width:768px) {
+                height: 21.56vw;
+            }
+            .white-div{
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                width: 77.4vw;
+                height: 7.7625vw;
+                background-color: #FFFBEF;
+                @media (max-width:768px) {
+                    width: 52.67%;
+                    height: 13vw;
+
+                }
+            }
+        }
+        .block-a{
+            // background-color: #E6E3E0;
+            margin-top: 108px;
+            @media (max-width:768px) {
+               margin-top: 80px;
+            }
+            .news{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 5.73vw;
+                margin-bottom: 5.72vw;
+                font-size: 10.416vw;
+                line-height: 10.416vw;
+                @media (max-width:768px) {
+                    font-size: 17.39vw;
+                    line-height: 17.39vw;
+                    margin-top: 4.35vw;
+                    margin-bottom: 3.82vw;
+                }
+            }
+            .news-type{
+                width: 100%;
+                height: 44.84375vw;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content: center;
+                @media (max-width:768px) {
+                    height: unset;                    
+                }
+                .type-frame{
+                    @media (max-width:768px) {
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                    }
+                    .type{
+                        width: 105px;
+                        font-size: 17px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        // margin: 0 auto 10px;
+                        margin: 32px auto ;
+                        color: #42210B;                    
+                        @media (max-width:768px) {
+                            display: inline;
+                            font-size: 14px;
+                            &.border-checked{
+                                border-bottom: 2px solid #42210b;
+                            }
+                        }
+                                        
+                    }
+                }
+                
+                .type::before{
+                    content:'';
+                    display: inline-block; 
+                    margin-right: 1.3125rem;               
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    border: #42210B solid 0.33rem;
+                    @media (max-width:768px) {
+                        display: none;
+                    } 
+                }
+                .checked::before{
+                    content:'';
+                    display: inline-block; 
+                    margin-right: 1.3125rem;               
+                    width: 15px;
+                    height: 15px;
+                    border-radius: 50%;
+                    background-color: #42210B;
+                    @media (max-width:768px) {
+                        display: none;
+                    }
+                }
+                
+            }
+            .swiper-frame{
+                .swiper-container {
+                    width: 100%;
+                    @media (max-width:768px) {
+                        width: 67%;
+                        margin: 8.68vw auto 0;
+                    }
+                    .swiper-slide{
+                        // background-color: yellow;
+                        margin-top: 20px;
+                        .news-frame{
+                            width: 100%;                            
+                            .line-frame{
+                                width: 100%;
+                                padding-bottom: 87.6%;
+                                position: relative;
+                                margin: 0;
+                                .description{
+                                    opacity: 1;
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%,-50%);
+                                    width: 63%;
+                                    height: 61%;
+                                    overflow: hidden;
+                                    transition: 0.6s;
+                                    transition-delay:0.3s;
+                                    &.description-active{
+                                        opacity: 0;
+                                        position: absolute;
+                                        top: 20%;
+                                        left: 50%;
+                                        height: 0;
+                                        transition: 0.6s;                                        
+                                    }
+                                    .type{
+                                        padding-bottom: 7.36%;
+                                        font-size: 0.9vw;
+                                        color: #42210B;
+                                    }
+                                    .title{
+                                        width: 100%;
+                                        font-size: 1.3vw;
+                                        padding-bottom: 10%;
+                                        color: black;
+                                    }
+                                    .content{
+                                        width: 100%;
+                                        // height: 57%;
+                                        font-size: 0.9vw;
+                                        color: black;
+                                        overflow: hidden;  
+                                        display: -webkit-inline-box;                                      
+                                        -webkit-line-clamp: 4;
+                                        -webkit-box-orient: vertical;
+                                        text-overflow: ellipsis;
+                                        
+                                        @media (max-width:1200px){
+                                            font-size: 0.875rem;
+                                            -webkit-line-clamp: 3;
+                                        }
+                                        @media (max-width:1050px){
+                                            font-size: 0.875rem;
+                                            -webkit-line-clamp: 3;
+                                        }
+                                        @media (max-width:900px){
+                                            font-size: 0.875rem;
+                                            -webkit-line-clamp: 2;
+                                        }
+                                        @media (max-width:876px){
+                                            display: none;;
+                                        }
+                                        @media (max-width:768px){
+                                            display: block;
+                                        }                                        
+                                    }
+                                }
+                                .photo{
+                                    opacity: 0;
+                                    position: absolute;
+                                    top: 100%;
+                                    left: 50%;
+                                    transform: translate(-50%,-50%);
+                                    width: 80%;
+                                    padding-bottom: 0%;                                    
+                                    background-image: url('/img/frontpage/aboutUs/玄米茶.jpg');
+                                    background-position: center;
+                                    background-size: cover;
+                                    transition: 0.6s;
+                                    &.photo-active{
+                                        opacity: 1;
+                                        top: 50%;
+                                        left: 50%;
+                                        padding-bottom: 70%;
+                                        transition: 0.6s;
+                                        transition-delay:0.3s
+                                    }
+                                }
+                                
+
+                                .month{
+                                    width: 44.4%;
+                                    height: 40px;
+                                    display:inline-block;
+                                    position: absolute;
+                                    top: -20px;
+                                    left: 50%;;
+                                    transform: translate(-50%,0);
+                                    background-color: #E6E3E0;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-content: center;
+                                    .month-text{                                        
+                                        font-size: 1.77vw;
+                                        font-weight: 600;
+                                        line-height: 1.77vw;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+                                    .date-text{                                        
+                                        font-size: 1.77vw;
+                                        font-weight: 600;
+                                        line-height: 1.77vw;
+                                        margin-left: 1rem;
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+                                }
+                                .top{
+                                    position: absolute;
+                                    top: 0;
+                                    left: 4.65%;
+                                    width: 90.7%;
+                                    height: 5.3px;
+                                    background-color: #603813;
+                                }
+                                .right{
+                                    position: absolute;
+                                    top: 1.0416vw;
+                                    right: 0;
+                                    width: 5.3px;
+                                    height: 91.6%;
+                                    background-color: #603813;
+                                }
+                                .left{
+                                    position: absolute;
+                                    top: 1.0416vw;
+                                    left: 0;
+                                    width: 5.3px;
+                                    height: 91.6%;
+                                    background-color: #603813;
+                                }
+                                .down{
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 4.65%;
+                                    width: 90.7%;
+                                    height: 5.3px;
+                                    background-color: #603813;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+                .pagination{
+                    width: 100%;
+                    height: 5.625vw;
+                    margin-bottom: 9.375vw;
+                    // background-color: aqua;
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-end;
+                    .page-frame{
+                        display: flex;
+                        justify-content: space-around;
+                        align-content: center;
+                        .page-btn{
+                            width: 2rem;
+                            height: 2rem;
+                            font-size: 1.5rem; 
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-left: 1.5rem;
+                            border: 0px solid #42210B;
+                            cursor: pointer;               
+                        }
+                    }
+                }
+            }
+        }
+    }
+}   
