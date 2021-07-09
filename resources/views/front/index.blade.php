@@ -86,7 +86,7 @@
     <nav class="d-flex bgc-gray-2 front-nav">
         <div class="container-fluid d-flex align-items-center justify-content-end nav-container"
             style="height: 100%;padding: 0 30px;">
-            <a href="{{ asset('/') }}">
+            <a href="">
                 <div class="logo d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 178.99">
 

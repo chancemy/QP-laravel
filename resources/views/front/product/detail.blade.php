@@ -21,150 +21,54 @@
             <div class="col-lg-6 pr-lg-4 d-flex flex-column m-lg-0 mb-4">
                 <div
                     class="w-100 mb-3 product-title d-flex align-items-lg-end justify-content-lg-start align-items-center justify-content-center">
-                    年年有甜</div>
+                    {{ $record->name }}</div>
                 <div class="w-100 row no-gutters product-img flex-column-reverse flex-lg-row">
                     <div class="col-lg-2 w-100 d-flex flex-lg-column-reverse flex-row img-small pr-lg-4 pt-3">
+                        <div class="product-imgs  mt-lg-4 mr-2">
+                            <div class="img-container">
+                                <div class="mask"></div>
+                                <img data-src="{{ $record->img }}" src="{{ $record->img }}" alt="">
+                            </div>
+                        </div>
+                        @if ($record->photos)
+                        @foreach ($record->photos as $photo)
+
 
                         <div class="product-imgs  mt-lg-4 mr-2">
                             <div class="img-container">
                                 <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_1.png"
-                                    src="/img/frontpage/product/detail/sample_1.png" alt="">
+                                <img data-src="{{ $photo->photo }}" src="{{ $photo->photo }}" alt="">
                             </div>
                         </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_2.png"
-                                    src="/img/frontpage/product/detail/sample_2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_3.png"
-                                    src="/img/frontpage/product/detail/sample_3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_1.png"
-                                    src="/img/frontpage/product/detail/sample_1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_2.png"
-                                    src="/img/frontpage/product/detail/sample_2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_3.png"
-                                    src="/img/frontpage/product/detail/sample_3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_1.png"
-                                    src="/img/frontpage/product/detail/sample_1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_2.png"
-                                    src="/img/frontpage/product/detail/sample_2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_3.png"
-                                    src="/img/frontpage/product/detail/sample_3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_1.png"
-                                    src="/img/frontpage/product/detail/sample_1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_2.png"
-                                    src="/img/frontpage/product/detail/sample_2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_3.png"
-                                    src="/img/frontpage/product/detail/sample_3.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_1.png"
-                                    src="/img/frontpage/product/detail/sample_1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_2.png"
-                                    src="/img/frontpage/product/detail/sample_2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="product-imgs  mt-lg-4 mr-2">
-                            <div class="img-container">
-                                <div class="mask"></div>
-                                <img data-src="/img/frontpage/product/detail/sample_3.png"
-                                    src="/img/frontpage/product/detail/sample_3.png" alt="">
-                            </div>
-                        </div>
+                        @endforeach
+                        @endif
+
 
 
                     </div>
                     <div class="col-lg-10 w-100 img-big">
 
-                        <img src="/img/frontpage/product/detail/sample_1.png" alt="">
+                        <img src="{{ $record->img }}" alt="">
                     </div>
                 </div>
             </div>
             <div class="col-lg-6 pl-lg-4 d-flex flex-column m-lg-0 mt-4 position-relative">
 
-                <div class="product-type pb-2">期間限定商品</div>
+                <div class="product-type pb-2">{{ $record->type->type }}</div>
                 <div>
                     <div class="title-area d-flex justify-content-center align-items-center">
-                        NT$ 550 / 盒
+                        NT$ {{ $record->price }} / {{ $record->unit }}
                     </div>
                     <div class="bgc-yellow-2 p-lg-5 p-4">
                         <p style="color: #333333;">
-                            2021春節限定禮盒開始預購了唷</p>
+                            {{ $record->discript }}</p>
                     </div>
                     <div class="title-area d-flex justify-content-center align-items-center">
 
                         內容物
                     </div>
                     <div class="bgc-yellow-2 p-lg-5 p-4 content">
-                        <p>
-                            楓糖無花果磅蛋糕切片 1 入</p>
-                        <p>
-                            泰式奶茶瑪德蓮 1 入</p>
-                        <p>
-                            莊園巧克力費南雪（4入一組) 1 組</p>
-                        <p>
-                            青檸橄欖油瑪德蓮 1 入</p>
-                        <p class="pt-2">
-                            *常溫點心皆為蛋奶素</p>
+                        {!! $record->content !!}
                     </div>
                     <div class="bar"></div>
                     <div class="bgc-yellow-2 p-4 d-flex justify-content-around">
@@ -188,7 +92,14 @@
 
                         </div>
                     </div>
-                    <div class="time text-right">販售期間 : 22/01/01 ~ 22/02/21</div>
+                    <div class="time text-right">販售期間 :
+                        @if ($record->type->type == '固定菜單')
+                        無限期
+                        @else
+                        {{ $record->start_date }} ~ {{ $record->end_date }}
+                        @endif
+
+                    </div>
 
 
                 </div>

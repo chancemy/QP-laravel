@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< Updated upstream
 use App\NewsType;
+=======
+use App\Product;
+use App\ProductType;
+>>>>>>> Stashed changes
 use Illuminate\Http\Request;
 
 class FrontController extends Controller
@@ -40,11 +45,19 @@ class FrontController extends Controller
     // 產品、線上商店
     public function product()
     {
-        return view('front.product.index');
+        $todayDate = date('Y-m-d');
+
+        $products = Product::where('start_date', '<=', $todayDate)->where('end_date', '>=', $todayDate)->get();
+        $types = ProductType::TYPE;
+        $product_types = ProductType::get();
+
+        return view('front.product.index', compact('products', 'types','product_types'));
     }
-    public function productDetail()
+
+    public function productDetail($id)
     {
-        return view('front.product.detail');
+        $record = Product::find($id);
+        return view('front.product.detail', compact('record'));
     }
 
 

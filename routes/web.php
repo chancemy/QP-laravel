@@ -23,7 +23,7 @@ Route::get('/newsIndex', 'FrontController@newsIndex');
 Route::get('/newsdetail', 'FrontController@newsDetail');
 
 Route::get('/product', 'FrontController@product');
-Route::get('/productdetail', 'FrontController@productDetail');
+Route::get('/product/detail/{id}', 'FrontController@productDetail');
 
 Route::prefix('/cart')->group(function () {
     Route::get('/step1', 'FrontController@cartStep1');

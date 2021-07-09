@@ -39,7 +39,7 @@
             </div>
             <div class="card-body">
                 <form method="POST" action="{{ asset('/admin/product/item/update') }}/{{ $record->id }}" enctype="multipart/form-data"
-                    class="w-75 mx-auto">
+                    class="w-75 mx-auto add-form">
                     @csrf
                     <div class="form-group">
                         <label for="type_id" class=" text-md-right">分類</label>
@@ -146,7 +146,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-10 offset-md-2">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary add-btn">
                                 編輯完成
                             </button>
                         </div>
@@ -199,6 +199,22 @@
 
         }
     }
+    const addBtn = document.querySelector('.add-btn');
+    const form = document.querySelector('.add-form');
+    let typeSelect = document.querySelector('#type');
+
+
+    addBtn.onclick = function(e){
+        e.preventDefault();
+
+        let startDate = document.querySelector('#start_date').value;
+        let endDate = document.querySelector('#end_date').value;
+        if(startDate > endDate){
+            alert('開始販售日期不可比結束販售日期早！');
+        }else{
+            form.submit();
+        }
+    };
 </script>
 
 @endsection

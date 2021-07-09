@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','後臺管理首頁')
+@section('title','新增產品')
 @section('css')
 <style>
     .form-area {
@@ -39,7 +39,8 @@
                         <div>
                             <select class="form-control" id="type" name="type_id">
                                 @foreach ($types as $type)
-                                <option value="{{ $type->id }}">{{ $type->type }}-{{ $type->type_name }}</option>
+                                <option data-type={{ $type->type }} value="{{ $type->id }}">
+                                    {{ $type->type }}-{{ $type->type_name }}</option>
 
                                 @endforeach
 
@@ -130,25 +131,30 @@
 
 @endsection
 @section('js')
-{{-- summernote --}}
+
 <script>
     $('#content').summernote({
       placeholder: '所見及所得',
       tabsize: 2,
       height: 300
     });
-    // const addBtn = document.querySelector('.add-btn');
-    // const form = document.querySelector('.add-form');
-    // addBtn.onclick = function(e){
-    //     e.preventDefault();
-    //     if
-    //     let startDate = document.querySelector('#start_date').value;
-    //     let endDate = document.querySelector('#end_date').value;
-    //     console.log( startDate );
-    //     console.log( endDate );
+
+    const addBtn = document.querySelector('.add-btn');
+    const form = document.querySelector('.add-form');
+    let typeSelect = document.querySelector('#type');
 
 
-    // }
+    addBtn.onclick = function(e){
+        e.preventDefault();
+
+        let startDate = document.querySelector('#start_date').value;
+        let endDate = document.querySelector('#end_date').value;
+        if(startDate > endDate){
+            alert('開始販售日期不可比結束販售日期早！');
+        }else{
+            form.submit();
+        }
+    };
 
 </script>
 
