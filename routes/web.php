@@ -37,7 +37,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
         });
 
         //type
-        Route::prefix('type')->group(function(){
+        Route::prefix('type')->group(function () {
             Route::get('/', 'NewsTypeController@type');
             Route::get('/create', 'NewsTypeController@create');
             Route::post('/store', 'NewsTypeController@store');
@@ -55,11 +55,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
             Route::post('/update/{id}', 'ProductTypeController@update');
             Route::delete('/delete/{id}', 'ProductTypeController@delete');
         });
-        Route::prefix('item')->group(function(){
-            Route::get('/','ProductController@index');
-            Route::get('/create','ProductController@create');
+        Route::prefix('item')->group(function () {
+            Route::get('/', 'ProductController@index');
+            Route::get('/create', 'ProductController@create');
             Route::post('/store', 'ProductController@store');
+            Route::get('/edit/{id}', 'ProductController@edit');
+            Route::post('/update/{id}','ProductController@update');
         });
+        Route::post('/deleteImage', 'ProductController@deleteImage');
     });
 });
 
