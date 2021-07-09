@@ -31,7 +31,7 @@
             </div>
             <div class="card-body">
                 <form method="POST" action="{{ asset('/admin/product/item/store') }}" enctype="multipart/form-data"
-                    class="w-75 mx-auto">
+                    class="w-75 mx-auto add-form">
                     @csrf
                     <div class="form-group">
                         <label for="type_id" class=" text-md-right">分類</label>
@@ -66,14 +66,15 @@
                             <label for="unit" class="col-form-label text-md-right">單位</label>
 
                             <div>
-                                <input id="unit" type="text" class="form-control" name="unit" required autofocus placeholder="六吋、八吋、盒、個">
+                                <input id="unit" type="text" class="form-control" name="unit" required autofocus
+                                    placeholder="六吋、八吋、盒、個">
                             </div>
 
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-6">
-                            <label for="start_date" class="col-form-label text-md-right">開始販售日期</label>
+                            <label for="start_date" class="col-form-label text-md-right">開始販售日期（固定菜單不必填）</label>
 
                             <div>
                                 <input id="start_date" type="date" class="form-control" name="start_date" autofocus>
@@ -81,7 +82,7 @@
 
                         </div>
                         <div class="col-6">
-                            <label for="end_date" class="col-form-label text-md-right">結束販售日期</label>
+                            <label for="end_date" class="col-form-label text-md-right">結束販售日期（固定菜單不必填）</label>
 
                             <div>
                                 <input id="end_date" type="date" class="form-control" name="end_date" autofocus>
@@ -99,7 +100,7 @@
                         <label for="photos[]" class=" col-form-label text-md-right">產品其他圖片</label>
 
                         <div>
-                            <input id="photos[]" type="file" name="photos[]"  multiple>
+                            <input id="photos[]" type="file" name="photos[]" multiple>
                         </div>
                     </div>
                     <div class="form-group ">
@@ -107,7 +108,7 @@
                         <textarea required class="w-100" name="discript" id="discript" cols="30" rows="5"></textarea>
                     </div>
                     <div class="form-group ">
-                        <label for="content" class=" col-form-label text-md-right">內容物</label>
+                        <label for="content" class="col-form-label text-md-right">內容物</label>
 
                         <div>
                             <textarea required id="content" name="content"></textarea>
@@ -116,7 +117,7 @@
 
                     <div class="form-group row mb-0">
                         <div class="col-md-10 offset-md-2">
-                            <button type="submit" class="btn btn-primary">
+                            <button type="submit" class="btn btn-primary add-btn">
                                 新增
                             </button>
                         </div>
@@ -136,6 +137,19 @@
       tabsize: 2,
       height: 300
     });
+    // const addBtn = document.querySelector('.add-btn');
+    // const form = document.querySelector('.add-form');
+    // addBtn.onclick = function(e){
+    //     e.preventDefault();
+    //     if
+    //     let startDate = document.querySelector('#start_date').value;
+    //     let endDate = document.querySelector('#end_date').value;
+    //     console.log( startDate );
+    //     console.log( endDate );
+
+
+    // }
+
 </script>
 
 @endsection

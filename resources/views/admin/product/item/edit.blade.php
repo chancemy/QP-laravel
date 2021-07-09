@@ -86,7 +86,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-6">
-                            <label for="start_date" class="col-form-label text-md-right">開始販售日期</label>
+                            <label for="start_date" class="col-form-label text-md-right">開始販售日期（固定菜單可不必填）</label>
 
                             <div>
                                 <input id="start_date" type="date" class="form-control" name="start_date" autofocus
@@ -95,7 +95,7 @@
 
                         </div>
                         <div class="col-6">
-                            <label for="end_date" class="col-form-label text-md-right">結束販售日期</label>
+                            <label for="end_date" class="col-form-label text-md-right">結束販售日期（固定菜單可不必填）</label>
 
                             <div>
                                 <input id="end_date" type="date" class="form-control" name="end_date" autofocus

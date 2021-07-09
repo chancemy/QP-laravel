@@ -16,11 +16,6 @@
                 </nav>
             </div>
             <div class="col-12">
-                @if(Session::has('message'))
-                <div class="alert alert-success" role="alert">
-                    {{ Session::get('message') }}
-                </div>
-                @endif
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">產品種類管理</h1>

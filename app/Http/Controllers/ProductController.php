@@ -7,6 +7,7 @@ use App\ProductImg;
 use App\ProductType;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
@@ -29,6 +30,7 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
+        
         if ($request->img) {
 
             $file = $request->file('img');
@@ -150,10 +152,10 @@ class ProductController extends Controller
         $old_Product_img = ProductImg::where('product_id', $old_record->id)->get();
 
         foreach ($old_Product_img as $old_img) {
-            File::delete(public_path() . $old_img->photos);
+            File::delete(public_path() . $old_img->photo);
             $old_img->delete();
         }
-        File::delete(public_path() . $old_record->photo);
+        File::delete(public_path() . $old_record->img);
 
         $old_record->delete();
 
