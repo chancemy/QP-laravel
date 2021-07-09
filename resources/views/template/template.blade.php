@@ -38,7 +38,6 @@
 </head>
 
 <body>
-    <div id="top"></div>
     <nav class="d-flex bgc-gray-2">
         <div class="container-fluid d-flex align-items-center justify-content-end nav-container"
             style="height: 100%;padding: 0 30px;">
