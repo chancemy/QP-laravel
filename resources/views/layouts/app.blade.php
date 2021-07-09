@@ -15,7 +15,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    {{-- datatables --}}
     <link rel="stylesheet" href="{{ asset('https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css') }}">
+
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+
     @yield('css')
 </head>
 
@@ -98,6 +104,11 @@
         </nav>
 
         <main class="py-4">
+            @if(Session::has('message'))
+            <div class="alert alert-success" role="alert">
+                {{ Session::get('message') }}
+            </div>
+            @endif
             @yield('content')
         </main>
     </div>
@@ -105,7 +116,8 @@
     <script src="{{ asset('js/app.js') }}"></script>
     {{-- datatable --}}
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-
+    <!-- include summernote css/js -->
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
     @yield('js')
 </body>
 

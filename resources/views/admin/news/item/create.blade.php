@@ -6,45 +6,65 @@
 @section('content')
 <main>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">後臺管理首頁</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">最新消息管理</li>
-                    </ol>
-                </nav>
-            </div>
-            <div class="col-12">
-                @if(Session::has('message'))
-                <div class="alert alert-success" role="alert">
-                    {{ Session::get('message') }}
-                </div>
-                @endif
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title">最新消息管理</h1>
-                        <form>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1"></label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp" placeholder="Enter email">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                    anyone else.</small>
-                            </div>
-                            <div class="form-group">
-                                <label for="exampleInputPassword1">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1"
-                                    placeholder="Password">
-                            </div>
-                            <div class="form-group form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{{ asset('/home') }}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ asset('admin/news') }}">最新消息管理</a></li>
+              <li class="breadcrumb-item active" aria-current="page">新增最新消息</li>
+            </ol>
+        </nav>
+        <div class="card">
+            <div class="card-header"><h2>新增消息</h2></div>
+            <div class="card-body">
+                <form method="POST" action="{{ asset('/admin/news/item/store') }}" enctype="multipart/form-data">
+                    @csrf
+                    <div class="form-group row">
+                        <label for="type" class="col-md-2 col-form-label text-md-right">分類</label>
+
+                        <div class="col-md-10">
+                            <select class="form-control" id="type" name="type">
+                                {{-- @foreach ($news as $key => $item)
+                                    <option>{{ $item }}</option>
+                                @endforeach --}}
+                            </select>
+                        </div>
                     </div>
-                </div>
+                    <div class="form-group row">
+                        <label for="title" class="col-md-2 col-form-label text-md-right" >標題</label>
+
+                        <div class="col-md-10">
+                            <input id="title" type="text" class="form-control" name="title"  required autocomplete="name" autofocus>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="img" class="col-md-2 col-form-label text-md-right">圖片</label>
+
+                        <div class="col-md-10">
+                            <input type="file" name="img" required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="summernote" class="col-md-2 col-form-label text-md-right">描述</label>
+
+                        <div class="col-md-10">
+                            <textarea id="summernote" name="description"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="remarks" class="col-md-2 col-form-label text-md-right">備註</label>
+
+                        <div class="col-md-10">
+                            <textarea class="form-control" id="remarks" name="remarks" rows="2" required></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row mb-0">
+                        <div class="col-md-10 offset-md-2">
+                            <button type="submit" class="btn btn-primary">
+                                新增
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
@@ -52,9 +72,18 @@
 
 @endsection
 @section('js')
+{{-- dataTable --}}
 <script>
     $(document).ready(function() {
             $('#example').DataTable();
         } );
 </script>
+{{-- summernote --}}
+<script>
+    $('#summernote').summernote({
+      placeholder: '所見及所得',
+      tabsize: 2,
+      height: 300
+    });
+  </script>
 @endsection

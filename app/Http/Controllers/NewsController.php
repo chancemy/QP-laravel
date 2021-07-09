@@ -14,8 +14,8 @@ class NewsController extends Controller
         return view('admin.news.item.create');
     }
 
-    public function store(){
-
+    public function store(Request $request){
+        dd($request->all());
     }
 
     public function edit(){

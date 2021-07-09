@@ -24,7 +24,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">最新消息管理</h1>
-                        <button type="button" class="btn btn-lg btn-outline-primary m-3" >新增</button>
+                        <a href="{{ asset('/admin/news/item/create') }}" class="btn btn-lg btn-outline-primary m-3" >新增</a>
                         <table id="example" class="display" style="width:100%">
                             <thead>
                                 <tr>
