@@ -27,23 +27,32 @@
                                     <th>日期</th>
                                     <th>圖片</th>
                                     <th>標題</th>
-                                    <th>內文</th>
-                                    <th>價格</th>
+                                    <th>備註</th>
                                     <th>操作</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($news as $new)
+                                @php
+                                    $newDate = explode('-',$new->date);
+                                    $month = $newDate[1];
+                                    $date = $newDate[2];
+                                @endphp
                                 <tr>
                                     <td>{{ $new->is_display }}</td>
-                                    <td>{{ $new->date }}</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
+                                    <td>{{ $month.'-'.$date }}</td>
+                                    <td>
+                                        <img width="100px" src="{{ asset($new->img) }}" alt="">
+                                    </td>
+                                    <td>{{ $new->title }}</td>
+                                    <td>{{ $new->remarks }}</td>
                                     <td class="d-flex justify-content-around align-content-center">
-                                        <button type="button" class="btn btn-sm btn-outline-info">編輯</button>
-                                        <button type="button" class="btn btn-sm btn-outline-danger">刪除</button>
+                                        <a href="{{ asset('/admin/news/item/edit') }}/{{ $new->id }}"  class="btn btn-sm btn-outline-info ml-2">編輯</a>
+                                        <form action="{{ asset('/admin/news/item/delete') }}/{{ $new->id }}" method="POST">
+                                            @method('delete')
+                                            @csrf
+                                            <button type="submit" class="btn btn-sm btn-outline-danger ml-2">刪除</button>
+                                        </form>
                                     </td>
                                 </tr>
                                 @endforeach

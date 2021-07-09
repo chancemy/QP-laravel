@@ -52,7 +52,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
             Route::get('/create', 'NewsController@create');
             Route::post('/store', 'NewsController@store');
             Route::get('/edit/{id}', 'NewsController@edit');
-            Route::post('/update', 'NewsController@update');
+            Route::post('/update/{id}', 'NewsController@update');
             Route::delete('/delete/{id}', 'NewsController@delete');
         });
 

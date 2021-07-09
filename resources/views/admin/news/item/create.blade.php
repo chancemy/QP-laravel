@@ -8,13 +8,15 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="{{ asset('/home') }}">Home</a></li>
-              <li class="breadcrumb-item"><a href="{{ asset('admin/news') }}">最新消息管理</a></li>
-              <li class="breadcrumb-item active" aria-current="page">新增最新消息</li>
+                <li class="breadcrumb-item"><a href="{{ asset('/home') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ asset('admin/news') }}">最新消息管理</a></li>
+                <li class="breadcrumb-item active" aria-current="page">新增最新消息</li>
             </ol>
         </nav>
         <div class="card">
-            <div class="card-header"><h2>新增消息</h2></div>
+            <div class="card-header">
+                <h2>新增消息</h2>
+            </div>
             <div class="card-body">
                 <form method="POST" action="{{ asset('/admin/news/item/store') }}" enctype="multipart/form-data">
                     @csrf
@@ -24,17 +26,24 @@
                         <div class="col-md-10">
                             <select class="form-control" id="type_name" name="type_id">
                                 @foreach ($newsTypes as $newsType)
-                                    <option value="{{  $newsType->id }}">{{ $newsType->type_name }}</option>
+                                <option value="{{  $newsType->id }}">{{ $newsType->type_name }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-                    
                     <div class="form-group row">
-                        <label for="title" class="col-md-2 col-form-label text-md-right" >標題</label>
+                        <label for="date" class="col-md-2 col-form-label text-md-right">日期</label>
 
                         <div class="col-md-10">
-                            <input id="title" type="text" class="form-control" name="title"  required  autofocus>
+                            <input id="date" type="date" class="form-control" name="date" required autofocus>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label for="title" class="col-md-2 col-form-label text-md-right">標題</label>
+
+                        <div class="col-md-10">
+                            <input id="title" type="text" class="form-control" name="title" required >
                         </div>
                     </div>
                     <div class="form-group row">
@@ -86,5 +95,6 @@
       tabsize: 2,
       height: 300
     });
-  </script>
+</script>
+
 @endsection
