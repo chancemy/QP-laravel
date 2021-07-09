@@ -30,8 +30,11 @@
         integrity="sha512-Woz+DqWYJ51bpVk5Fv0yES/edIMXjj3Ynda+KWTIkGoynAMHrqTcDUQltbipuiaD5ymEo9520lyoVOo9jCQOCA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+    <title> @yield('page-title')</title>
+
     <link rel="stylesheet" href="/css/template.css">
-    <title>Document</title>
+    @yield('css')
 </head>
 
 <body>
@@ -90,13 +93,13 @@
             </div>
             <div class="nav-group d-md-flex align-items-center">
                 <ul class="d-flex align-items-center">
-                    <li><a href="">關於我們</a></li>
-                    <li><a href="">最新消息</a></li>
-                    <li><a href="">線上商城</a></li>
-                    <li><a href="">聯絡我們</a></li>
+                    <li><a href="{{ asset('/aboutus') }}">關於我們</a></li>
+                    <li><a href="{{ asset('/news') }}">最新消息</a></li>
+                    <li><a href="{{ asset('/product') }}">線上商城</a></li>
+                    <li><a href="{{ asset('/contactus') }}">聯絡我們</a></li>
                 </ul>
                 <div class="d-md-flex  align-items-center justify-content-between icon-group">
-                    <a href="">
+                    <a href="{{ asset('/cart/step1') }}">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
                     <a href="">
@@ -107,16 +110,17 @@
         </div>
     </nav>
 
-    <div class="top-btn">
+    {{-- <div class="top-btn">
         <a href="#top">
             <i class="far fa-arrow-alt-circle-up"></i>
         </a>
-
-    </div>
+    </div> --}}
 
 
     <main>
+        @yield('step')
 
+        @yield('main')
     </main>
 
     <footer>
@@ -127,14 +131,14 @@
 
     <!-- bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
     <!-- 滾輪特效套件 -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- parallax 套件 -->
@@ -149,6 +153,7 @@
 
     <script src="/js/template.js"></script>
 
+    @yield('js')
 </body>
 
 </html>

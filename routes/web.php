@@ -14,10 +14,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// 前端
+Route::get('/', 'FrontController@index');
+
+Route::get('/aboutus', 'FrontController@aboutUs');
+
+Route::get('/news', 'FrontController@news');
+Route::get('/newsdetail', 'FrontController@newsDetail');
+
+Route::get('/product', 'FrontController@product');
+Route::get('/productdetail', 'FrontController@productDetail');
+
+Route::prefix('/cart')->group(function () {
+    Route::get('/step1', 'FrontController@cartStep1');
+    Route::get('/step2', 'FrontController@cartStep2');
+    Route::get('/step3', 'FrontController@cartStep3');
+    Route::get('/step4', 'FrontController@cartStep4');
 });
 
+Route::get('/contactus', 'FrontController@contactus');
+
+
+
+
+// 後端
 Auth::routes();
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
     Route::get('/', function () {

@@ -137,13 +137,13 @@
             </div>
             <div class="nav-group d-md-flex align-items-center">
                 <ul class="d-flex align-items-center">
-                    <li><a href="">關於我們</a></li>
-                    <li><a href="">最新消息</a></li>
-                    <li><a href="">線上商城</a></li>
-                    <li><a href="">聯絡我們</a></li>
+                    <li><a href="{{ asset('/aboutus') }}">關於我們</a></li>
+                    <li><a href="{{ asset('/news') }}">最新消息</a></li>
+                    <li><a href="{{ asset('/product') }}">線上商城</a></li>
+                    <li><a href="{{ asset('/contactus') }}">聯絡我們</a></li>
                 </ul>
                 <div class="d-md-flex  align-items-center justify-content-between icon-group">
-                    <a href="">
+                    <a href="{{ asset('/cart/step1') }}">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
                     <a href="">
@@ -444,7 +444,7 @@
 			c2.97,0.28,4.64,0.4,6.06,1.6c1.4,1.19,1.85,2.75,1.85,4.32c-0.16,4.24-3.12,7.07-10.37,7.13c-4.69,0-8.48-1.18-11.62-3.54
 			l1.68-2.57C1350.45,339.12,1354.13,340.38,1357.61,340.4z" />
                             </g>
-                            <polygon class="st1" points="1294.6,319.88 1297.41,319.88 1299.6,317.54 1301.81,319.88 1304.6,319.88 1300.78,315.29 
+                            <polygon class="st1" points="1294.6,319.88 1297.41,319.88 1299.6,317.54 1301.81,319.88 1304.6,319.88 1300.78,315.29
 		1298.53,315.29 	" />
                         </g>
                         <line class="st0" x1="17.5" y1="380.5" x2="1067.5" y2="380.5" />
