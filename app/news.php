@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class news extends Model
+class News extends Model
 {
     protected $fillable = ['date','img','title','description','price','is_display','type_id'];
 

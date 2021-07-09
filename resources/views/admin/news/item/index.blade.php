@@ -10,17 +10,12 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">後臺管理首頁</a></li>
+                        <li class="breadcrumb-item"><a href="/admin">後臺管理首頁</a></li>
                         <li class="breadcrumb-item active" aria-current="page">最新消息管理</li>
                     </ol>
                 </nav>
             </div>
             <div class="col-12">
-                @if(Session::has('message'))
-                    <div class="alert alert-success" role="alert">
-                        {{ Session::get('message') }}
-                    </div>
-                @endif
                 <div class="card">
                     <div class="card-body">
                         <h1 class="card-title">最新消息管理</h1>

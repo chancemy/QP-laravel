@@ -31,9 +31,19 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
             Route::get('/', 'NewsController@news');
             Route::get('/create', 'NewsController@create');
             Route::post('/store', 'NewsController@store');
-            Route::get('/edit', 'NewsController@edit');
+            Route::get('/edit/{id}', 'NewsController@edit');
             Route::post('/update', 'NewsController@update');
-            Route::delete('/delete', 'NewsController@delete');
+            Route::delete('/delete/{id}', 'NewsController@delete');
+        });
+
+        //type
+        Route::prefix('type')->group(function(){
+            Route::get('/', 'NewsTypeController@type');
+            Route::get('/create', 'NewsTypeController@create');
+            Route::post('/store', 'NewsTypeController@store');
+            Route::get('/edit/{id}', 'NewsTypeController@edit');
+            Route::post('/update/{id}', 'NewsTypeController@update');
+            Route::delete('/delete/{id}', 'NewsTypeController@delete');
         });
     });
 });
