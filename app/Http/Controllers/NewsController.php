@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use App\News;
 use App\NewsType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class NewsController extends Controller
 {
     public function news(){
-        $news = News::with('news')->get();
+        $news = News::with('type')->get();
         return view('admin.news.item.index',compact('news'));
     }
 
@@ -19,9 +20,10 @@ class NewsController extends Controller
     }
 
     public function store(Request $request){
-        dd($request->all());
+        // $newDate = explode('-',$request->date);
+        // dd($newDate);
         $file = $request->file('img');
-        $path = FileCroller::newsImgUpload($file);
+        $path = FileController::newsImgUpload($file);
         News::create([
             'type_id' => $request->type_id,
             'title' => $request->title,
@@ -36,26 +38,32 @@ class NewsController extends Controller
     }
 
     public function edit($id){
-        $oldNews  = News::find($id);
-        return view('admin.news.type.edit',compact('oldNews'));
+        $oldNews  = News::with('type')->find($id);
+        $newsTypes = NewsType::get();
+        return view('admin.news.item.edit',compact('oldNews','newsTypes'));
     }
 
     public function update(Request $request,$id){
-
         $oldNews  = News::find($id);
+        $file = $request->file('img');
+        if($file){
+            File::delete(\public_path().$oldNews->img);
+            $path = FileController::newsImgUpload($file);
+        }
         $oldNews->type_id = $request->type_id;
         $oldNews->title = $request->title;
-        $oldNews->img = $request->img;
+        $oldNews->img = $path;
         $oldNews->date = $request->date;
         $oldNews->description = $request->description;
         $oldNews->remarks = $request->remarks;
-        $oldNews->is_display = $request->is_display;
+        $oldNews->is_display = "1";
         $oldNews->save();
         return redirect('/admin/news/item')->with('message','編輯成功') ;
     }
 
     public function delete($id){
         $oldNews = News::find($id);
+        File::delete(\public_path().$oldNews->img);
         $oldNews->delete();
         return redirect('/admin/news/item')->with('message','刪除成功') ;
     }

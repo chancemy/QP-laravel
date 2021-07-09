@@ -35,45 +35,57 @@
         <div class="card">
             <div class="card-header"><h2>編輯消息</h2></div>
             <div class="card-body">
-                <form method="POST" action="{{ asset('/admin/news/edit') }}/{{ $oldNewsData->id }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ asset('/admin/news/item/update') }}/{{ $oldNews->id }}" enctype="multipart/form-data">
                     @csrf
+
                     <div class="form-group row">
-                        <label for="type" class="col-md-1 col-form-label text-md-right">分類</label>
+                        <label for="date" class="col-md-2 col-form-label text-md-right">分類</label>
 
                         <div class="col-md-10">
-                            <select class="form-control" id="type" name="type">
-                                @foreach ($news as $key => $item)
-                                    <option @if ($item == $oldNewsData->type) selected @endif>{{ $item }}</option>
+                            <select class="form-control" id="type_name" name="type_id">
+                                @foreach ($newsTypes as $newsType)
+                                    <option value="{{ $newsType->id }}" @if ($newsType->id == $oldNews->type_id) selected @endif>{{ $newsType->type_name }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="title" class="col-md-1 col-form-label text-md-right" >標題</label>
+                        <label for="date" class="col-md-2 col-form-label text-md-right">日期</label>
 
                         <div class="col-md-10">
-                            <input id="title" type="text" class="form-control" name="title"  value="{{ $oldNewsData->title }}"  required autocomplete="name" autofocus>
+                            <input id="date" type="date" class="form-control" name="date" required autofocus value="{{ $oldNews->date }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        <label for="img" class="col-md-1 col-form-label text-md-right">圖片</label>
+                        <label for="title" class="col-md-2 col-form-label text-md-right">標題</label>
 
                         <div class="col-md-10">
-                            <img width="200px" src="{{ $oldNewsData->img }}" alt="">
-                            <input type="file" name="img" >
+                            <input id="title" type="text" class="form-control" name="title" required value="{{ $oldNews->title }}">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="content" class="col-md-1 col-form-label text-md-right">內容</label>
+                        <label for="img" class="col-md-2 col-form-label text-md-right">圖片</label>
                         <div class="col-md-10">
-                            <textarea class="form-control" id="content" name="content" rows="3" required>{{ $oldNewsData->content }}</textarea>
+                            <input type="file" name="img" required>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label for="summernote" class="col-md-2 col-form-label text-md-right">描述</label>
 
+                        <div class="col-md-10">
+                            <textarea id="summernote" name="description">{{ $oldNews->description }}</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="remarks" class="col-md-2 col-form-label text-md-right">備註</label>
 
+                        <div class="col-md-10">
+                            <textarea class="form-control" id="remarks" name="remarks" rows="3" required>{{ $oldNews->remarks }}</textarea>
+                        </div>
+                    </div>
                     <div class="form-group row mb-0">
-                        <div class="col-md-10 offset-md-4">
+                        <div class="col-md-10 offset-md-2">
                             <button type="submit" class="btn btn-primary">
                                 更新
                             </button>
@@ -84,4 +96,13 @@
         </div>
     </div>
 </main>
+@endsection
+@section('js')
+<script>
+    $('#summernote').summernote({
+      placeholder: '所見及所得',
+      tabsize: 2,
+      height: 300
+    });
+</script>
 @endsection
