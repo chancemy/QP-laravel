@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Noto Serif TC", serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    //以下是格式初始化
+
+    a {
+        color: unset;
+    }
+    a:hover {
+        color: unset;
+        text-decoration: unset;
+    }
+    a:visited {
+        color: unset;
+    }
+    h1 {
+        font-family: "Noto Serif JP", serif;
+        font-family: "Noto Serif TC", serif;
+        font-weight: 700;
+        font-size: 150px;
+        @media (max-width: 1500px) {
+            font-size: 100px;
+        }
+        @media(max-width: 576px){
+            font-size: 80px;
+        }
+    }
+    ul,
+    ol {
+        list-style: none;
+        margin: 0%;
+    }
+    p {
+        font-size: 18px;
+        margin: 0%;
+        @media (max-width: 576px) {
+            font-size: 14px;
+        }
+    }
+    label {
+        margin: 0;
+    }
+    //以下nav內容
+
+    nav {
+        font-size: 16px;
+        letter-spacing: 2px;
+        z-index: 100;
+        height: 108px;
+        width: 100%;
+        position: fixed;
+        transition: 0.4s ease-in-out;
+        top: 0;
+        @media (max-width: 576px) {
+            height: 80px;
+        }
+
+        .logo {
+            position: absolute;
+            left: 30px;
+            top: 50%;
+            width: 88px;
+            height: 88px;
+            transform: translate(0, -50%);
+            .a {
+                fill: #201512;
+            }
+
+            .b {
+                fill: none;
+                stroke: #201512;
+                stroke-miterlimit: 10;
+                stroke-width: 2px;
+            }
+            @media (max-width: 576px) {
+                height: 60px;
+                width: 60px;
+            }
+        }
+        //這個是把nav藏起來用的 不要放東西在裡面
+        &.hide-up {
+            top: -127px;
+        }
+        li {
+            padding: 20px;
+        }
+        .burger-icon {
+            z-index: 150;
+            display: none;
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translate(0, -50%);
+            @media (max-width: 768px) {
+                display: inline-block;
+                cursor: pointer;
+                .bar1,
+                .bar2,
+                .bar3 {
+                    width: 35px;
+                    height: 5px;
+                    background-color: #333;
+                    margin: 6px 0;
+                    transition: 0.4s;
+                }
+
+                &.change {
+                    .bar1 {
+                        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+                        transform: rotate(-45deg) translate(-9px, 6px);
+                    }
+                    .bar2 {
+                        opacity: 0;
+                    }
+                    .bar3 {
+                        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+                        transform: rotate(45deg) translate(-8px, -8px);
+                    }
+                }
+            }
+        }
+        .nav-group {
+            @media (max-width: 768px) {
+                position: fixed;
+                z-index: 120;
+                right: -100%;
+                top: 0;
+                height: 100vh;
+                width: 60%;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                flex-direction: column;
+                background-color: rgb(244, 243, 239);
+                transition: 0.4s;
+
+                ul {
+                    padding: 0;
+                    flex-direction: column;
+                }
+            }
+            &.show {
+                right: 0;
+
+                opacity: 1;
+            }
+            .icon-group {
+                width: 120px;
+                margin-left: 10px;
+                font-size: 30px;
+                @media (max-width: 768px) {
+                    margin: 0;
+                }
+            }
+        }
+    }
+    //回到最頂按鈕
+    .top-btn {
+        position: fixed;
+        bottom: 65px;
+        right: 128px;
+        z-index: 20;
+        font-size: 55px;
+        color: #4d4d4d;
+        @media (max-width: 576px) {
+            font-size: 35px;
+            right: 48px;
+            bottom: 46px;
+        }
+    }
+    //main預設高度
+
+    main {
+        min-height: calc(100vh - 108px);
+    }
+
+    //以下footer
+    footer {
+        background-color: #000;
+
+        height: 108px;
+        width: 100%;
+        @media (max-width: 576px) {
+            height: 80px;
+        }
+
+        span {
+            color: #fff;
+            font-family: times, serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            @media (max-width: 576px) {
+                font-size: 14px;
+            }
+            @media (max-width: 430px) {
+                font-size: 12px;
+            }
+        }
+        .footer-container {
+            height: 100%;
+        }
+    }
+
+    //預設內容會用到的色塊顏色
+    .bgc-gray {
+        background-color: #f4f3ef;
+    }
+    .bgc-yellow {
+        background-color: #e6e3e0;
+    }
+    .bgc-yellow-2 {
+        background-color: #fffbef;
+    }
+    .bgc-cart {
+        background-color: #fffbf6;
+    }
+    .bgc-gray-2 {
+        background-color: rgb(244, 243, 239);
+    }
+    .bgc-gray-3 {
+        background-color: #54594d;
+    }
+}

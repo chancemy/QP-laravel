@@ -1,0 +1,211 @@
+body {
+    img {
+        display: block;
+        -o-object-position: center;
+        object-position: center;
+        -o-object-fit: cover;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+    main {
+        padding-top: 108px;
+        .top-gray-block {
+            height: 280px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            z-index: 2;
+            @media (max-width: 992px) {
+                height: 200px;
+            }
+        }
+        .top-white-block {
+            height: 100px;
+            width: 80%;
+            background-color: white;
+            z-index: 3;
+            position: absolute;
+            top: 180px;
+            left: 0;
+            @media (max-width: 992px) {
+                height: 40px;
+                top: 160px;
+            }
+        }
+        .product-area {
+            .type-area {
+                @media (max-width: 992px) {
+                    height: 80px;
+                }
+            }
+            padding: 100px 2.5% 0;
+            @media (max-width: 992px) {
+                padding: 0%;
+            }
+            h1 {
+                margin-bottom: 10vh;
+                @media (max-width: 992px) {
+                    margin: 0%;
+                }
+                @media (max-width: 768px) {
+                    font-size: 80px;
+                }
+            }
+            .product-type {
+                position: absolute;
+                top: 100px;
+                left: 5%;
+                font-size: 17px;
+                line-height: 35px;
+
+                @media (max-width: 992px) {
+                    width: 300px;
+                    margin: auto;
+                    position: static;
+                    top: unset;
+                    left: unset;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                }
+
+                ul {
+                    padding: 0;
+                    position: relative;
+                    .type-btn {
+                        @media (max-width: 992px) {
+                            font-size: 14px;
+                        }
+                        &::before {
+                            content: "";
+                            display: inline-block;
+                            margin-right: 1.3125rem;
+                            width: 1rem;
+                            height: 1rem;
+                            border-radius: 50%;
+                            border: #42210b solid 0.33rem;
+                            @media (max-width: 992px) {
+                                margin-right: 0;
+                                display: none;
+                            }
+                        }
+                        &.checked::before {
+                            content: "";
+                            display: inline-block;
+                            margin-right: 1.3125rem;
+                            width: 1rem;
+                            height: 1rem;
+                            border-radius: 50%;
+                            background-color: #42210b;
+                            @media (max-width: 992px) {
+                                display: none;
+                            }
+                        }
+                        &.checked > span {
+                            @media (max-width: 992px) {
+                                border-bottom: 2px solid #42210b;
+                            }
+                        }
+
+                        ul {
+                            padding-left: 2rem;
+
+                            @media (max-width: 992px) {
+                                padding: 0%;
+                            }
+                        }
+                        .item-btn {
+                            &.hide {
+                                display: none;
+                            }
+                            & > li {
+                                @media (max-width: 992px) {
+                                    margin: 4px 8px;
+                                    line-height: 18px;
+                                }
+                            }
+                            & > li::before {
+                                content: "";
+                                display: inline-block;
+                                margin-right: 1.3125rem;
+                                width: 10px;
+                                height: 4px;
+                                border-radius: 50%;
+                                background-color: #42210b;
+                                @media (max-width: 992px) {
+                                    display: none;
+                                }
+                            }
+                            & > li.checked {
+                                @media (max-width: 992px) {
+                                    border-bottom: 2px solid #42210b;
+                                }
+                            }
+                            @media (max-width: 992px) {
+                                display: flex;
+                                width: max-content;
+                                z-index: 50;
+                                justify-content: space-around;
+                                position: absolute;
+                                top: 100%;
+                                left: 50%;
+                                transform: translate(-50%,0);
+                                background-color: white;
+                                border-radius: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .product-list-area {
+                max-height: 80vh;
+                overflow-y: auto;
+                &::-webkit-scrollbar {
+                    width: 10px;
+                }
+
+                /* Track */
+                &::-webkit-scrollbar-track {
+                    background: transparent;
+                }
+
+                /* Handle */
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    background: #888;
+                }
+
+                /* Handle on hover */
+                &::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                }
+                .product-container {
+                    width: calc(100% / 3);
+                    @media (max-width: 768px) {
+                        width: 50%;
+                        font-size: 12px;
+                        @media (max-width: 500px) {
+                            width: 100%;
+                            font-size: 12px;
+                        }
+                    }
+                    .img-container {
+                        width: 100%;
+                        padding-top: 100%; /* 1:1 Aspect Ratio */
+                        position: relative;
+
+                        img {
+                            position: absolute;
+                            top: 0;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
