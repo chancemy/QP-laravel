@@ -30,19 +30,11 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
-        
+
         if ($request->img) {
 
             $file = $request->file('img');
-            if (!is_dir('upload/')) {
-                //創造一個上傳檔案的資料夾
-                mkdir('upload/');
-            }
-            $extension = $file->getClientOriginalExtension();
-            $filename = md5((uniqid(rand()))) . '.' . $extension;
-            $path = '/upload/' . $filename;
-
-            move_uploaded_file($file, public_path() . $path);
+            $path = FileController::productImgUpload($file);
         }
         $old_record = Product::create(
             [
@@ -64,16 +56,7 @@ class ProductController extends Controller
             foreach ($request->photos as $photo) {
                 $file = $photo;
 
-                if (!is_dir('upload/')) {
-                    //創造一個上傳檔案的資料夾
-                    mkdir('upload/');
-                }
-
-                $extension = $file->getClientOriginalExtension();
-                $filename = md5((uniqid(rand()))) . '.' . $extension;
-                $path = '/upload/' . $filename;
-
-                move_uploaded_file($file, public_path() . $path);
+                $path = FileController::productImgUpload($file);
 
                 ProductImg::create([
                     'product_id' => $old_record->id,
@@ -106,14 +89,7 @@ class ProductController extends Controller
         if ($request->img) {
             File::delete(public_path() . $old_record->img);
             $file = $request->file('img');
-            if (!is_dir('upload/')) {
-                mkdir('upload/');
-            }
-            $extension = $file->getClientOriginalExtension();
-            $filename = md5((uniqid(rand()))) . '.' . $extension;
-            $path = '/upload/' . $filename;
-
-            move_uploaded_file($file, public_path() . $path);
+            $path = FileController::productImgUpload($file);
             $old_record->img = $path;
         }
         $old_record->type_id = $request->type_id;
