@@ -39,7 +39,7 @@
                     聯絡我們
                 </div>
                 <!-- 回饋 -->
-                <form action="{{ asset('contactus/store') }}" method="POST"
+                <form action="{{ asset('contactus/store') }}" method="POST" id="form-contact"
                     class="introduce-container d-flex bg-white justify-content-end">
                     @csrf
                     <div class="bgc-yellow-2 p-lg-5 p-4 content col-12">
@@ -48,14 +48,14 @@
                             <div class="col-sm-6">
                                 <div class="md-form mb-0">
                                     <label for="name" class="mb-1">姓名</label>
-                                    <input type="text" id="name" name="name" class="form-control">
+                                    <input type="text" id="name" name="name" class="form-control" required>
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="md-form mb-0">
                                     <label for="phone" class="mb-1">電話</label>
-                                    <input type="text" id="phone" name="phone" class="form-control">
+                                    <input type="text" id="phone" name="phone" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +65,7 @@
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
                                     <label for="email" class="mb-1">信箱</label>
-                                    <input type="email" id="email" name="email" class="form-control">
+                                    <input type="email" id="email" name="email" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -75,7 +75,7 @@
                             <div class="col-md-12">
                                 <div class="md-form mb-0">
                                     <label for="subject" class="mb-1">主旨</label>
-                                    <input type="text" id="subject" name="subject" class="form-control">
+                                    <input type="text" id="subject" name="subject" class="form-control" required>
                                 </div>
                             </div>
                         </div>
@@ -86,13 +86,13 @@
                                 <div class="md-form">
                                     <label for="message" class="mb-1">內文</label>
                                     <textarea type="text" id="message" name="message" rows="4"
-                                        class="form-control md-textarea"></textarea>
+                                        class="form-control md-textarea" required></textarea>
                                 </div>
                             </div>
                         </div>
 
                         <!-- 送出按鈕 -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block mb-3"
+                        <button type="submit" class="btn btn-primary btn-lg btn-block mb-3" id="submit-btn"
                             style=" background-color: #85a596;">
                             送出
                         </button>
@@ -113,5 +113,16 @@
 
 
 @section('js')
+
+<script>
+    document.querySelector('#submit-btn').addEventListener('click',function(){
+        alert('確定送出表單嗎?')
+    });
+
+    var form = document.getElementById("form-contact");
+    form.addEventListener('submit', function (event) {
+        alert('聯絡我們成功，請等候我們的聯繫。')
+    });
+</script>
 
 @endsection
