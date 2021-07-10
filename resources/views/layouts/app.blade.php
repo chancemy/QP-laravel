@@ -63,6 +63,9 @@
                             </div>
                         </li>
                         <li class="nav-item">
+                            <a href="{{asset('/admin/order')}}" class="nav-link">訂單管理</a>
+                        </li>
+                        <li class="nav-item">
                             <a href="{{asset('/admin/contactus')}}" class="nav-link">聯絡我們管理</a>
                         </li>
                     </ul>

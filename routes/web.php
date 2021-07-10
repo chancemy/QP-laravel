@@ -84,7 +84,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
         });
     });
 
-
+    //產品管理
     Route::prefix('product')->group(function () {
         Route::prefix('type')->group(function () {
             Route::get('/', 'ProductTypeController@index');
@@ -111,6 +111,13 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
         Route::get('/', 'ContactUsController@index');
         Route::get('/seemore/{id}', 'ContactUsController@seemore');
         Route::delete('/delete/{id}', 'ContactUsController@delete');
+    });
+    //訂單管理
+    Route::prefix('order')->group(function () {
+        Route::get('/', 'OrderController@index');
+        Route::get('/edit/{id}', 'OrderController@edit');
+        Route::post('/update/{id}', 'OrderController@update');
+        Route::delete('/delete/{id}', 'OrderController@delete');
     });
 });
 
