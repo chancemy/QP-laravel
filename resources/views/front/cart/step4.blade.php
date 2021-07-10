@@ -61,7 +61,7 @@
             <table class="cart-table bgc-yellow-2 w-100 ">
                 <thead class="px-4" style="height: 70px;">
                     <tr class="position-relative">
-                        <th scope="col" style="width:180px;border-top-left-radius:10px;"></th>
+                        <th scope="col" class="thead-img" style="border-top-left-radius:10px;"></th>
                         <th scope="col">品名</th>
                         <th scope="col">數量</th>
                         <th scope="col">單價</th>

@@ -57,12 +57,15 @@ class FrontController extends Controller
         $record = Product::find($id);
         return view('front.product.detail', compact('record'));
     }
-    
+
     public function add(Request $request)
     {
 
         $product = Product::find($request->productId);
-        if (\Cart::get($product->id)) {
+        $todayDate = date('Y-m-d');
+        if ($product->end_date <  $todayDate || $product->start_date >  $todayDate) {
+            return 'fail';
+        } else if (\Cart::get($product->id)) {
             \Cart::update($request->productId, array(
                 'quantity' => array(
                     'relative' => false,
@@ -77,11 +80,21 @@ class FrontController extends Controller
                 'price' => $product->price,
                 'quantity' => $request->quantity,
                 'attributes' => array(
-                    'photo' => $product->img,
+                    'img' => $product->img,
                 )
             ));
             return 'success';
         }
+    }
+    public function update(Request $request)
+    {
+        \Cart::update($request->productId, array(
+            'quantity' => array(
+                'relative' => false,
+                'value' => $request->qty
+            ),
+        ));
+        return 'success';
     }
     public function clear()
     {
@@ -98,8 +111,14 @@ class FrontController extends Controller
     // 購物車
     public function cartStep1()
     {
-        return view('front.cart.step1');
+        $cart_products = \Cart::getContent()->sortKeys();
+        return view('front.cart.step1', compact('cart_products'));
     }
+    public function delete(Request $request){
+        \Cart::remove($request->productId);
+        return 'success';
+    }
+
 
     public function cartStep2()
     {

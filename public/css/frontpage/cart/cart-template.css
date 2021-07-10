@@ -137,6 +137,10 @@ body main img {
   height: 100%;
 }
 
+body main .thead-img {
+  width: 180px;
+}
+
 body main .cart-title {
   color: white;
   height: 70px;
