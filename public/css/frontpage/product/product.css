@@ -108,6 +108,10 @@ body main .product-area .product-type ul {
   position: relative;
 }
 
+body main .product-area .product-type ul .type-btn {
+  cursor: pointer;
+}
+
 @media (max-width: 992px) {
   body main .product-area .product-type ul .type-btn {
     font-size: 14px;
@@ -161,6 +165,10 @@ body main .product-area .product-type ul .type-btn ul {
   body main .product-area .product-type ul .type-btn ul {
     padding: 0%;
   }
+}
+
+body main .product-area .product-type ul .type-btn .item-btn {
+  cursor: pointer;
 }
 
 body main .product-area .product-type ul .type-btn .item-btn.hide {

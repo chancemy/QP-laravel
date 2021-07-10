@@ -74,6 +74,7 @@ body {
                     padding: 0;
                     position: relative;
                     .type-btn {
+                        cursor: pointer;
                         @media (max-width: 992px) {
                             font-size: 14px;
                         }
@@ -116,6 +117,7 @@ body {
                             }
                         }
                         .item-btn {
+                            cursor: pointer;
                             &.hide {
                                 display: none;
                             }
