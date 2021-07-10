@@ -57,7 +57,7 @@ body{
                 justify-content: center;
                 align-content: center;
                 @media (max-width:768px) {
-                    height: unset;                    
+                    height: unset;
                 }
                 .type-frame{
                     @media (max-width:768px) {
@@ -73,7 +73,7 @@ body{
                         align-items: center;
                         // margin: 0 auto 10px;
                         margin: 32px auto ;
-                        color: #42210B;                    
+                        color: #42210B;
                         @media (max-width:768px) {
                             display: inline;
                             font-size: 14px;
@@ -81,26 +81,26 @@ body{
                                 border-bottom: 2px solid #42210b;
                             }
                         }
-                                        
+
                     }
                 }
-                
+
                 .type::before{
                     content:'';
-                    display: inline-block; 
-                    margin-right: 1.3125rem;               
+                    display: inline-block;
+                    margin-right: 1.3125rem;
                     width: 15px;
                     height: 15px;
                     border-radius: 50%;
                     border: #42210B solid 0.33rem;
                     @media (max-width:768px) {
                         display: none;
-                    } 
+                    }
                 }
                 .checked::before{
                     content:'';
-                    display: inline-block; 
-                    margin-right: 1.3125rem;               
+                    display: inline-block;
+                    margin-right: 1.3125rem;
                     width: 15px;
                     height: 15px;
                     border-radius: 50%;
@@ -109,7 +109,7 @@ body{
                         display: none;
                     }
                 }
-                
+
             }
             .swiper-frame{
                 .swiper-container {
@@ -122,7 +122,7 @@ body{
                         // background-color: yellow;
                         margin-top: 20px;
                         .news-frame{
-                            width: 100%;                            
+                            width: 100%;
                             .line-frame{
                                 width: 100%;
                                 padding-bottom: 87.6%;
@@ -145,7 +145,7 @@ body{
                                         top: 20%;
                                         left: 50%;
                                         height: 0;
-                                        transition: 0.6s;                                        
+                                        transition: 0.6s;
                                     }
                                     .type{
                                         padding-bottom: 7.36%;
@@ -163,12 +163,12 @@ body{
                                         // height: 57%;
                                         font-size: 0.9vw;
                                         color: black;
-                                        overflow: hidden;  
-                                        display: -webkit-inline-box;                                      
+                                        overflow: hidden;
+                                        display: -webkit-inline-box;
                                         -webkit-line-clamp: 4;
                                         -webkit-box-orient: vertical;
                                         text-overflow: ellipsis;
-                                        
+
                                         @media (max-width:1200px){
                                             font-size: 0.875rem;
                                             -webkit-line-clamp: 3;
@@ -186,7 +186,7 @@ body{
                                         }
                                         @media (max-width:768px){
                                             display: block;
-                                        }                                        
+                                        }
                                     }
                                 }
                                 .photo{
@@ -196,8 +196,8 @@ body{
                                     left: 50%;
                                     transform: translate(-50%,-50%);
                                     width: 80%;
-                                    padding-bottom: 0%;                                    
-                                    background-image: url('/img/frontpage/aboutUs/玄米茶.jpg');
+                                    padding-bottom: 0%;
+                                    // background-image: url('/img/frontpage/aboutUs/玄米茶.jpg');
                                     background-position: center;
                                     background-size: cover;
                                     transition: 0.6s;
@@ -210,7 +210,7 @@ body{
                                         transition-delay:0.3s
                                     }
                                 }
-                                
+
 
                                 .month{
                                     width: 44.4%;
@@ -224,7 +224,7 @@ body{
                                     display: flex;
                                     justify-content: center;
                                     align-content: center;
-                                    .month-text{                                        
+                                    .month-text{
                                         font-size: 1.77vw;
                                         font-weight: 600;
                                         line-height: 1.77vw;
@@ -232,7 +232,7 @@ body{
                                         justify-content: center;
                                         align-items: center;
                                     }
-                                    .date-text{                                        
+                                    .date-text{
                                         font-size: 1.77vw;
                                         font-weight: 600;
                                         line-height: 1.77vw;
@@ -276,7 +276,7 @@ body{
                                 }
                             }
                         }
-                        
+
                     }
                 }
                 .pagination{
@@ -294,17 +294,17 @@ body{
                         .page-btn{
                             width: 2rem;
                             height: 2rem;
-                            font-size: 1.5rem; 
+                            font-size: 1.5rem;
                             display: flex;
                             justify-content: center;
                             align-items: center;
                             margin-left: 1.5rem;
                             border: 0px solid #42210B;
-                            cursor: pointer;               
+                            cursor: pointer;
                         }
                     }
                 }
             }
         }
     }
-}   
+}

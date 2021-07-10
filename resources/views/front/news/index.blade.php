@@ -31,16 +31,23 @@
             <div class="col-12 col-md-9 swiper-frame">
                 <!-- Slider main container -->
                 @php
+<<<<<<< Updated upstream
                 $sliderQty = ceil(count($news)/6) ;
                 $newsLength = count($news);
                 $newsKey = 0;
                 // dd( $sliderQty);
                 // $news[$key]->title
+=======
+                    $sliderQty = ceil(count($news)/6) ;
+                    $newsLength = count($news);
+                    $newsKey = 0;
+>>>>>>> Stashed changes
                 @endphp
                 <div class="swiper-container">
                     <!-- Additional required wrapper -->
                     <div class="swiper-wrapper" data-newsLength="{{ count($news) }}" data-newsKey="">
                         <!-- Slides -->
+<<<<<<< Updated upstream
                         <div class="swiper-slide">
                             <div class="row no-gutters">
                                 <div class="col-6 col-md-4 news-frame">
@@ -168,10 +175,80 @@
                                                 </div>
                                                 <div class="col-3 date-text">
                                                     <span>30</span>
+=======
+                        @for ($i = 0; $i < $sliderQty; $i++)
+                        <div class="swiper-slide">
+                            <div class="row no-gutters">
+                                @for ($key = $newsKey; $key < $newsLength ; $key++)
+                                    @if ($key > (5 +(($sliderQty-2)*6))&&($sliderQty>1))
+                                        @php
+                                            $newsKey = 6 + (($sliderQty-2)*6);
+                                        @endphp
+                                        @break
+                                    @endif
+                                    <div class="col-6 col-md-4 news-frame" data-newsKey="{{ $newsKey }}">
+                                        <div class="line-frame">
+                                            <div class="description">
+                                                <div class="row no-gutters">
+                                                    <div class="col-12">
+                                                        <div class="type">{{ $news[$key]->type->type_name }}</div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="title">{{ $key }}</div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div data-summerNote="{{ $news[$key]->description }}"
+                                                            class="content summer-note">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @if ($key == 2)
+                                            <div class="right"></div>
+                                            @endif
+                                            @if ($key == 3 || $key == 4)
+                                            <div class="down"></div>
+                                            @endif
+                                            @if ($key == 5 )
+                                            <div class="right"></div>
+                                            <div class="down"></div>
+                                            @endif
+                                            <div class="photo" style="background-image: url('{{ $news[$key]->img }}')">
+                                            </div>
+                                            <div class="top"></div>
+                                            <div class="left"></div>
+                                            <div class="">
+                                                @php
+                                                $date = explode('-',$news[$key]->date);
+                                                $mm = $date[1];
+                                                $dd = $date[2];
+                                                $Month_Englesh = array(
+                                                '01' => "JAN",
+                                                '02' => "FEB",
+                                                '03' => "MAR",
+                                                '04' => "APR",
+                                                '05' => "MAY",
+                                                '06' => "JUN",
+                                                '07' => "JUL",
+                                                '08' => "AUG",
+                                                '09' => "SEP",
+                                                '10' => "OCT",
+                                                '11' => "NOV",
+                                                '12' => "DEC");
+                                                @endphp
+                                                <div class="row no-gutters month">
+                                                    <div class="col-4 month-text">
+                                                        <span>{{ $Month_Englesh[$mm] }}</span>
+                                                    </div>
+                                                    <div class="col-3 date-text">
+                                                        <span>{{ $dd }}</span>
+                                                    </div>
+>>>>>>> Stashed changes
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+<<<<<<< Updated upstream
                                 </div>
                                 <div class="col-6 col-md-4 news-frame">
                                     <div class="line-frame">
@@ -242,6 +319,12 @@
                                 </div>
                             </div>
                         </div>
+=======
+                                    @endfor
+                            </div>
+                        </div>
+                        @endfor
+>>>>>>> Stashed changes
                     </div>
                 </div>
                 <div class="pagination">
@@ -266,8 +349,102 @@
 
 @section('js')
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<<<<<<< Updated upstream
 <script src="/js/frontpage/news.js"></script>
 <script>
+=======
+
+<script>
+    // var mySwiper = document.querySelector('.swiper-wrapper');
+    // var newsLength = mySwiper.getAttribute('data-newsLength');
+    // console.log(newsLength);
+    // var sliderQty =  Math.ceil(newsLength/6);
+    // console.log(sliderQty);
+    // for (let slider = 0; slider < sliderQty; slider++) {
+    //     mySwiper.innerHTML +=
+    //     `
+    //     <div class="swiper-slide">
+    //         <div class="row no-gutters">
+    //             @php
+    //                 if($newsKey != 0){
+    //                     dd($newsKey);
+    //                 }
+    //             @endphp
+    //             @for ($key = $newsKey; $key < $newsLength ; $key++)
+    //                 @if ($key > (5 +(($sliderQty-2)*6))&&($sliderQty>1))
+    //                     @php
+    //                         $newsKey = 6 + (($sliderQty-2)*6);
+    //                     @endphp
+    //                     @break
+    //                 @endif
+    //                 <div class="col-6 col-md-4 news-frame" data-newsKey="{{ $newsKey }}">
+    //                     <div class="line-frame">
+    //                         <div class="description">
+    //                             <div class="row no-gutters">
+    //                                 <div class="col-12">
+    //                                     <div class="type">{{ $news[$key]->type->type_name }}</div>
+    //                                 </div>
+    //                                 <div class="col-12">
+    //                                     <div class="title">{{ $key }}</div>
+    //                                 </div>
+    //                                 <div class="col-12">
+    //                                     <div data-summerNote="{{ $news[$key]->description }}"
+    //                                         class="content summer-note">
+    //                                     </div>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                         @if ($key == 2)
+    //                         <div class="right"></div>
+    //                         @endif
+    //                         @if ($key == 3 || $key == 4)
+    //                         <div class="down"></div>
+    //                         @endif
+    //                         @if ($key == 5 )
+    //                         <div class="right"></div>
+    //                         <div class="down"></div>
+    //                         @endif
+    //                         <div class="photo" style="background-image: url('{{ $news[$key]->img }}')">
+    //                         </div>
+    //                         <div class="top"></div>
+    //                         <div class="left"></div>
+    //                         <div class="">
+    //                             @php
+    //                             $date = explode('-',$news[$key]->date);
+    //                             $mm = $date[1];
+    //                             $dd = $date[2];
+    //                             $Month_Englesh = array(
+    //                             '01' => "JAN",
+    //                             '02' => "FEB",
+    //                             '03' => "MAR",
+    //                             '04' => "APR",
+    //                             '05' => "MAY",
+    //                             '06' => "JUN",
+    //                             '07' => "JUL",
+    //                             '08' => "AUG",
+    //                             '09' => "SEP",
+    //                             '10' => "OCT",
+    //                             '11' => "NOV",
+    //                             '12' => "DEC");
+    //                             @endphp
+    //                             <div class="row no-gutters month">
+    //                                 <div class="col-4 month-text">
+    //                                     <span>{{ $Month_Englesh[$mm] }}</span>
+    //                                 </div>
+    //                                 <div class="col-3 date-text">
+    //                                     <span>{{ $dd }}</span>
+    //                                 </div>
+    //                             </div>
+    //                         </div>
+    //                     </div>
+    //                 </div>
+    //                 @endfor
+    //         </div>
+    //     </div>
+    //     `
+
+    // }
+>>>>>>> Stashed changes
     //去除summernote的標籤
     var summerNotes = document.querySelectorAll('.summer-note');
     summerNotes.forEach(function(summerNote){
@@ -278,6 +455,10 @@
     });
 
 </script>
+<<<<<<< Updated upstream
+=======
+<script src="/js/frontpage/news.js"></script>
+>>>>>>> Stashed changes
 
 @endsection
 
