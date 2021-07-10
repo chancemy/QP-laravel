@@ -31,7 +31,7 @@ class FrontController extends Controller
     {
         $newsTypes = NewsType::get();
         $news = News::with('type')->get();
-        return view('front.news.index',compact('newsTypes','news'));
+        return view('front.news.index', compact('newsTypes', 'news'));
     }
 
     public function newsDetail()
@@ -49,13 +49,49 @@ class FrontController extends Controller
         $types = ProductType::TYPE;
         $product_types = ProductType::get();
 
-        return view('front.product.index', compact('products', 'types','product_types'));
+        return view('front.product.index', compact('products', 'types', 'product_types'));
     }
 
     public function productDetail($id)
     {
         $record = Product::find($id);
         return view('front.product.detail', compact('record'));
+    }
+    
+    public function add(Request $request)
+    {
+
+        $product = Product::find($request->productId);
+        if (\Cart::get($product->id)) {
+            \Cart::update($request->productId, array(
+                'quantity' => array(
+                    'relative' => false,
+                    'value' => $request->quantity,
+                ),
+            ));
+            return 'update-success';
+        } else {
+            \Cart::add(array(
+                'id' => $product->id, // inique row ID
+                'name' => $product->name,
+                'price' => $product->price,
+                'quantity' => $request->quantity,
+                'attributes' => array(
+                    'photo' => $product->img,
+                )
+            ));
+            return 'success';
+        }
+    }
+    public function clear()
+    {
+        \Cart::clear();
+        return '清空購物車';
+    }
+    public function content()
+    {
+        $cartCollection = \Cart::getContent();
+        dd($cartCollection);
     }
 
 

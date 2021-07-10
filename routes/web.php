@@ -25,7 +25,12 @@ Route::get('/newsdetail', 'FrontController@newsDetail');
 Route::get('/product', 'FrontController@product');
 Route::get('/product/detail/{id}', 'FrontController@productDetail');
 
+
 Route::prefix('/cart')->group(function () {
+    Route::post('/add', 'FrontController@add');
+    Route::get('/addtest', 'FrontController@addtest');
+    Route::get('/clear', 'FrontController@clear');
+    Route::get('/content', 'FrontController@content');
     Route::get('/step1', 'FrontController@cartStep1');
     Route::get('/step2', 'FrontController@cartStep2');
     Route::get('/step3', 'FrontController@cartStep3');
