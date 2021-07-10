@@ -229,7 +229,7 @@
                         <img src="/img/frontpage/index/section1.jpg" alt="" data-aos="fade-up" data-aos-duration="3000">
                     </div>
                 </div>
-                <div class="content col-lg-5 d-flex flex-column justify-content-center align-items-center">
+                <div class="content col-lg-5 d-flex flex-column justify-content-center align-items-center i5-margin">
                     <div class="title mb-3">
                         <h1 class="d-inline-block">About</h1><a href=""><i
                                 class="far fa-arrow-alt-circle-right d-inline-block arrow ml-4"></i></a>
@@ -246,18 +246,18 @@
             <div class="news-cherry"><img src="/img/frontpage/index/cherry.png" alt=""></div>
             <div class="container-fluid row no-gutters container-news flex-column flex-lg-row">
                 <div class="col-lg-3 ">
-                    <div class="d-flex flex-column justify-content-center align-items-center text-area-news">
-
+                    <div class="d-flex flex-column justify-content-center align-items-center text-area-news i5-margin">
                         <div class="title mb-3 ">
                             <h1 class="d-inline-block">News</h1>
+                            <a href="" class="news-arrow2-a" style="margin-left: 20px"><i
+                                class="far fa-arrow-alt-circle-right text-center arrow news-arrow2"></i></a>
                         </div>
 
-                        <div class="text-area d-flex flex-column align-items-center">
-                            <p class="text-center mb-4">Quelque法文的意思是某些，像是quelque
-                                chose指某物，quelquun指某人，Quelques就是複數，指某些某些。
+                        <div class="text-area d-flex flex-column align-items-center news-text" >
+                            <p class="text-center mb-4" style="padding: 0px">以千層為基底蜜桃泡芙與蜜桃餡，適合夏秋的，適合夏秋的，甜蜜花園午茶小點心。
                             </p>
                             <a href=""><i
-                                    class="far fa-arrow-alt-circle-right text-center d-inline-block arrow"></i></a>
+                                    class="far fa-arrow-alt-circle-right text-center  arrow news-arrow"></i></a>
                         </div>
                     </div>
                 </div>
@@ -314,8 +314,8 @@
                 <div
                     class="store-title text-lg-right text-center d-lg-block d-flex justify-content-center align-items-center flex-wrap">
                     <div class="store-bg-yellow-2 bgc-yellow-2"></div>
-                    <h1 class="our-store">
-                        Our Store</h1>
+                    <div class="our-store">
+                        Our Store</div>
 
                 </div>
                 <div class="store-bg-white">
@@ -341,7 +341,7 @@
                     <div class="col-lg-6">
                         <p>106 臺北市安和路一段102巷23號
                         </p>
-                        <p>13 : 00 ～ 19 : 00／週一、二 固定公休
+                        <p>13 : 00 ～ 19 : 00 / 週一、二固定公休
                         </p>
                         <p>02 - 2755 4097
                         </p>
