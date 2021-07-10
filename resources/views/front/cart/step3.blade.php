@@ -54,7 +54,8 @@
     <!--  以下表單內容  -->
     <section class="bgc-yellow py-5">
         <div class="container">
-            <form action="" class="bgc-yellow-2 w-100 cart-form">
+            <form action="{{ asset('/cart/shipment_check') }}" class="bgc-yellow-2 w-100 cart-form" method="POST">
+                @csrf
                 <div class="w-100 bgc-gray-3 cart-title d-flex justify-content-center align-items-center ">
                     訂購人資訊
                 </div>
@@ -136,7 +137,7 @@
 
 
             <div class="d-flex justify-content-between pt-4 pb-3 px-4">
-                <a href="">
+                <a href="{{ asset('cart/step2') }}">
                     <div class="back-btn px-3 py-2"><i class="fas fa-chevron-left mr-2"></i>上一步</div>
                 </a>
 

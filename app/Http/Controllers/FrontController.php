@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\News;
-use App\NewsType;
+use App\Order;
 use App\Product;
+use App\NewsType;
+use App\OrderDetail;
 use App\ProductType;
 use Illuminate\Http\Request;
 
@@ -114,25 +117,92 @@ class FrontController extends Controller
         $cart_products = \Cart::getContent()->sortKeys();
         return view('front.cart.step1', compact('cart_products'));
     }
-    public function delete(Request $request){
+    public function delete(Request $request)
+    {
         \Cart::remove($request->productId);
         return 'success';
     }
 
-
     public function cartStep2()
     {
+
         return view('front.cart.step2');
     }
-
+    public function paymentCheck(Request $request)
+    {
+        Session::put('payment', $request->payment);
+        Session::put('shipment', $request->shipment);
+        Session::put('shipping_fee', $request->shipping_fee);
+        return redirect('cart/step3');
+    }
     public function cartStep3()
     {
-        return view('front.cart.step3');
+        if (Session::has('payment') && Session::has('shipment')) {
+            return view('front.cart.step3');
+        } else {
+            return redirect('cart/step2');
+        }
+    }
+    public function shipmentCheck(Request $request)
+    {
+
+
+        $cartProducts = \Cart::getContent();
+        $order = Order::create([
+            'order_no' => 'DP' . time() . rand(1, 999),
+            'name' => $request->name,
+            'phone' => $request->phone,
+            'email' => $request->email,
+            'county' => $request->county,
+            'district' => $request->district,
+            'zipcode' => $request->zipcode,
+            'address' => $request->address,
+            'price' => 999999999,
+            'payment' => Session::get('payment'),
+            'shipment' => Session::get('shipment'),
+            'shipping_fee' => Session::get('shipping_fee'),
+            'shipping_status_id' => 0,
+            'order_status_id' => 0,
+        ]);
+        $totalPrice = 0;
+        $totalQty = 0;
+        foreach ($cartProducts as $cartProduct) {
+            $product = Product::find($cartProduct->id);
+            $totalPrice += $product->price * $cartProduct->quantity;
+            $totalQty += $cartProduct->quantity;
+            OrderDetail::create([
+                'order_id' => $order->id,
+                'product_id' => $product->id,
+                'quantity' => $cartProduct->quantity,
+                'old_data' => json_encode($product),
+            ]);
+        }
+        $order->update([
+            'price' => $totalPrice,
+
+        ]);
+        Session::forget('payment');
+        Session::forget('shipment');
+        \Cart::clear();
+
+        return redirect('cart/step4')->with('order', $order);
     }
 
     public function cartStep4()
     {
-        return view('front.cart.step4');
+        if (Session::has('order')) {
+
+            $order = Session::get('order');
+            $orderDetails = $order->details;
+            $totalQty = 0;
+            foreach ($orderDetails as $orderDetail) {
+                $totalQty += $orderDetail->quantity;
+            }
+            return view('front.cart.step4', compact('order', 'orderDetails', 'totalQty'));
+        } else {
+            return redirect('/');
+        }
+
     }
 
 

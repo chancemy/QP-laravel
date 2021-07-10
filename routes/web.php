@@ -34,11 +34,18 @@ Route::prefix('/cart')->group(function () {
     Route::get('/content', 'FrontController@content');
 
     Route::get('/step1', 'FrontController@cartStep1');
-    Route::post('/update','FrontController@update');
+    Route::post('/update', 'FrontController@update');
     Route::post('/delete', 'FrontController@delete');
+    Route::middleware(['cart'])->group(function () {
+        Route::get('/step2', 'FrontController@cartStep2');
+        Route::post('/payment_check', 'FrontController@paymentCheck');
 
-    Route::get('/step2', 'FrontController@cartStep2');
-    Route::get('/step3', 'FrontController@cartStep3');
+        Route::get('/step3', 'FrontController@cartStep3');
+        Route::post('/shipment_check', 'FrontController@shipmentCheck');
+    });
+
+
+
     Route::get('/step4', 'FrontController@cartStep4');
 });
 
