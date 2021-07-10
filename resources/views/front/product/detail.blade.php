@@ -162,7 +162,14 @@ cartBtn.onclick = function (e) {
                                 icon: "success",
                                 button: "確認",
                             });
-                        }
+                        }else if (result == 'fail') {
+                            swal({
+                                title: "加入失敗！",
+                                text: "並非此商品販售期間！",
+                                icon: "warning",
+                                button: "確認",
+                            });
+                }
                     }
                 )
             }
@@ -188,6 +195,13 @@ cartBtn.onclick = function (e) {
                         title: "加入成功！",
                         text: "已經放入購物車",
                         icon: "success",
+                        button: "確認",
+                    });
+                }else if (result == 'fail') {
+                    swal({
+                        title: "加入失敗！",
+                        text: "此商品並非販售期間！",
+                        icon: "warning",
                         button: "確認",
                     });
                 }
