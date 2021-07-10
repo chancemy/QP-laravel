@@ -94,7 +94,7 @@
                             </select></td>
                         <td class="text-center">NT$ <span class="item-price"
                                 data-price="{{ $product->price }}">{{ $product->price }}</span></td>
-                        <td class="text-center">NT$ <span class="item-total">100</span></td>
+                        <td class="text-center">NT$ <span class="item-total">{{ $product->price * $product->quantity }}</span></td>
                         <td class="text-center">
                             <div data-id="{{ $product->id }}" class="delete-btn"><i class="far fa-trash-alt"></i></div>
                         </td>
@@ -109,11 +109,11 @@
                 <div style="width: 328px;">
                     <div class="d-flex justify-content-between align-items-center">
                         <span class=" mr-2 ">數量</span>
-                        <span id="qty-total">3</span>
+                        <span id="qty-total">0</span>
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                         <span class=" mr-2 ">小計</span>
-                        <span id="sub-total">NT$ 31.5</span>
+                        <span id="sub-total">NT$ 0</span>
                     </div>
                     <div class="w-100 py-2">
                         <div style="background-color: black;height:1px;"></div>
@@ -121,7 +121,7 @@
 
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="">訂單總計</span>
-                        <span id="total" class="position-relative">NT$ 56.4</span>
+                        <span id="total" class="position-relative">NT$ 0</span>
                     </div>
                     <div class="d-flex justify-content-end align-items-center">
 
@@ -150,7 +150,7 @@
 {{-- <script src="/js/frontpage/cart.js"></script> --}}
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-    sumUp();
+sumUp();
 var qtySelect = document.querySelectorAll('.qty-select')
 qtySelect.forEach(element => element.addEventListener('change', subTotal));
 function subTotal(e) {
@@ -222,7 +222,7 @@ deleteBtn.forEach(element => element.addEventListener('click',function(e){
             }).then(function(result){
                 if (result == 'success') {
                     sumUp();
-                            swal({
+                    swal({
                                 title: "移除成功",
                                 text: "已從購物車內移除此商品",
                                 icon: "success",
