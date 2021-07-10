@@ -38,44 +38,48 @@
                     <div class="swiper-container">
                         <!-- Additional required wrapper -->
                         <div class="swiper-wrapper">
+                            @for ($sliderNo = 0; $sliderNo < $sliderQty; $sliderNo++)
                             <!-- Slides -->
                             <div class="swiper-slide">
                                 <div class="row no-gutters">
-                                    @for ($key = $newsKey; $key < $newsLength ; $key++)
-                                        @if ($key> (5 +(($sliderQty-2)*6))&&($sliderQty>1))
-                                            @php
-                                                $newsKey = 6 + (($sliderQty-2)*6);
-                                            @endphp
-                                            @break
-                                        @endif
-                                        <div class="col-6 col-md-4 news-frame" data-newsKey="{{ $newsKey }}">
+                                @if ($sliderNo == 1)
+                                @endif
+                                @for ($key = $newsKey; $key < ($key+6) ; $key++)
+                                    @if ($key> (5 +(($sliderNo)*6)))
+                                        @php
+                                            $newsKey = 6 + (($sliderNo)*6);
+                                        @endphp
+                                        @break
+                                    @endif
+                                    <div class="col-6 col-md-4 news-frame">
+                                        @if ($key<$newsLength)
                                             <div class="line-frame">
                                                 <div class="description">
                                                     <div class="row no-gutters">
                                                         <div class="col-12">
-                                                            <div class="type">{{ $news[$key]->type->type_name }}</div>
+                                                            <div class="type">{{ $news[$key]->type->type_name??'' }}</div>
                                                         </div>
                                                         <div class="col-12">
-                                                            <div class="title">{{ $key }}</div>
+                                                            <div class="title">{{ $key??'' }}</div>
                                                         </div>
                                                         <div class="col-12">
-                                                            <div data-summerNote="{{ $news[$key]->description }}"
+                                                            <div data-summerNote="{{ $news[$key]->description??'' }}"
                                                                 class="content summer-note">
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                @if ($key == 2)
+                                                @if ($key == (2+($sliderNo)*6))
                                                 <div class="right"></div>
                                                 @endif
-                                                @if ($key == 3 || $key == 4)
+                                                @if ($key == (3+($sliderNo)*6) || $key == (4+($sliderNo)*6))
                                                 <div class="down"></div>
                                                 @endif
-                                                @if ($key == 5 )
+                                                @if ($key == (5+($sliderNo)*6) )
                                                 <div class="right"></div>
                                                 <div class="down"></div>
                                                 @endif
-                                                <div class="photo" style="background-image: url('{{ $news[$key]->img }}')">
+                                                <div class="photo" style="background-image: url('{{ $news[$key]->img??'' }}')">
                                                 </div>
                                                 <div class="top"></div>
                                                 <div class="left"></div>
@@ -100,18 +104,62 @@
                                                     @endphp
                                                     <div class="row no-gutters month">
                                                         <div class="col-4 month-text">
-                                                            <span>{{ $Month_Englesh[$mm] }}</span>
+                                                            <span>{{ $Month_Englesh[$mm]??'' }}</span>
                                                         </div>
                                                         <div class="col-3 date-text">
-                                                            <span>{{ $dd }}</span>
+                                                            <span>{{ $dd??'' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                        @else
+                                        <div class="line-frame">
+                                            <div class="description">
+                                                <div class="row no-gutters">
+                                                    <div class="col-12">
+                                                        <div class="type"></div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div class="title"></div>
+                                                    </div>
+                                                    <div class="col-12">
+                                                        <div data-summerNote=""
+                                                            class="content summer-note">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            @if ($key == (2+($sliderNo)*6))
+                                            <div class="right"></div>
+                                            @endif
+                                            @if ($key == (3+($sliderNo)*6) || $key == (4+($sliderNo)*6))
+                                            <div class="down"></div>
+                                            @endif
+                                            @if ($key == (5+($sliderNo)*6) )
+                                            <div class="right"></div>
+                                            <div class="down"></div>
+                                            @endif
+                                            <div class="photo" style="background-image: url('')">
+                                            </div>
+                                            <div class="top"></div>
+                                            <div class="left"></div>
+                                            <div class="">
+                                                <div class="row no-gutters month">
+                                                    <div class="col-4 month-text">
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="col-3 date-text">
+                                                        <span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    @endfor
+                                        @endif
+                                    </div>
+                                @endfor
                                 </div>
                             </div>
+                            @endfor
                         </div>
                     </div>
                     <div class="pagination">
