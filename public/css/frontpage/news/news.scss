@@ -119,6 +119,18 @@ body{
                         margin: 8.68vw auto 0;
                     }
                     .swiper-slide{
+                        &.pc-slide{
+                            display: block;
+                            @media (max-width:768px) {
+                                display: none;
+                            }
+                        }
+                        &.mobile-slide{
+                            display: none;
+                            @media (max-width:768px) {
+                                display: block;
+                            }
+                        }
                         // background-color: yellow;
                         margin-top: 20px;
                         .news-frame{

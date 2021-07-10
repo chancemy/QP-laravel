@@ -175,6 +175,26 @@ body main .block-a .swiper-frame .swiper-container .swiper-slide {
   margin-top: 20px;
 }
 
+body main .block-a .swiper-frame .swiper-container .swiper-slide.pc-slide {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  body main .block-a .swiper-frame .swiper-container .swiper-slide.pc-slide {
+    display: none;
+  }
+}
+
+body main .block-a .swiper-frame .swiper-container .swiper-slide.mobile-slide {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body main .block-a .swiper-frame .swiper-container .swiper-slide.mobile-slide {
+    display: block;
+  }
+}
+
 body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame {
   width: 100%;
 }
