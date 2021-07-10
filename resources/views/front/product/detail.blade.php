@@ -2,9 +2,10 @@
 
 @section('page-title','產品細節')
 
-
 @section('css')
-<link rel="stylesheet" href="/css/frontpage/product/detail.css">
+
+<link rel="stylesheet" href="{{ asset('/css/frontpage/product/detail.css') }}">
+
 @endsection
 
 
@@ -86,7 +87,8 @@
                             </div>
 
                         </div>
-                        <div class="cart-btn py-1 px-4">
+
+                        <div data-id="{{ $record->id }}" class=" cart-btn py-1 px-4">
                             加入購物車 <i class="fas fa-chevron-right"></i>
 
 
@@ -112,5 +114,92 @@
 
 
 @section('js')
-<script src="/js/frontpage/product_detail.js"></script>
+
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{ asset('/js/frontpage/product_detail.js') }}"></script>
+<script>
+    var cartBtn = document.querySelector('.cart-btn');
+//加入購物車
+cartBtn.onclick = function (e) {
+    let productId = this.dataset.id;
+    let formData = new FormData();
+    let qty = document.querySelector('.quantity-select').value;
+    let cartCheck = '<?php echo \Cart::get($record->id) ?>'
+    formData.append('_token', '{{ csrf_token() }}');
+    formData.append('productId', productId);
+    formData.append('quantity', qty);
+    if (cartCheck!='') {
+        swal({
+            title: "購物車內已經有此商品",
+            text: "是否重新加入購物車？",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        }).then((willDelete) => {
+            if (!willDelete) {
+                return swal("已取消！");
+            } else {
+
+                fetch('/cart/add', {
+                    'method': 'post',
+                    'body': formData,
+                }).then(function (response) {
+                    return response.text();
+                }).then(
+                    function (result) {
+                        if (result == 'update-success') {
+                            swal({
+                                title: "更新成功！",
+                                text: "已更新購物車內產品數量",
+                                icon: "success",
+                                button: "確認",
+                            });
+                        } else if (result == 'success') {
+                            swal({
+                                title: "加入成功！",
+                                text: "已經放入購物車",
+                                icon: "success",
+                                button: "確認",
+                            });
+                        }
+                    }
+                )
+            }
+        });
+    } else {
+        fetch('/cart/add', {
+            'method': 'post',
+            'body': formData,
+        }).then(function (response) {
+            return response.text();
+        }).then(
+
+            function (result) {
+                if (result == 'update-success') {
+                    swal({
+                        title: "加入成功！",
+                        text: "已更新購物車內產品數量",
+                        icon: "success",
+                        button: "確認",
+                    });
+                } else if (result == 'success') {
+                    swal({
+                        title: "加入成功！",
+                        text: "已經放入購物車",
+                        icon: "success",
+                        button: "確認",
+                    });
+                }
+            }
+        )
+
+    }
+}
+
+
+</script>
+
+
+
 @endsection
