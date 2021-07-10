@@ -39,7 +39,7 @@
                     聯絡我們
                 </div>
                 <!-- 回饋 -->
-                <form action="{{ asset('admin/contactus/store') }}" method="POST"
+                <form action="{{ asset('contactus/store') }}" method="POST"
                     class="introduce-container d-flex bg-white justify-content-end">
                     @csrf
                     <div class="bgc-yellow-2 p-lg-5 p-4 content col-12">
