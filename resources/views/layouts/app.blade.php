@@ -62,9 +62,9 @@
                                 <a class="dropdown-item" href="{{ asset('/admin/product/item') }}">產品品項</a>
                             </div>
                         </li>
-                        {{-- <li class="nav-item">
-                            <a href="{{asset('')}}" class="nav-link"></a>
-                        </li> --}}
+                        <li class="nav-item">
+                            <a href="{{asset('/admin/contactus')}}" class="nav-link">聯絡我們管理</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

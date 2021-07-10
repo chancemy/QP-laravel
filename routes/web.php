@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'FrontController@index');
 
 Route::get('/aboutus', 'FrontController@aboutUs');
+Route::post('/contactus/store', 'ContactUsController@store');
 
 Route::get('/newsIndex', 'FrontController@newsIndex');
 Route::get('/newsdetail', 'FrontController@newsDetail');
@@ -28,10 +29,14 @@ Route::get('/product/detail/{id}', 'FrontController@productDetail');
 
 Route::prefix('/cart')->group(function () {
     Route::post('/add', 'FrontController@add');
-    Route::get('/addtest', 'FrontController@addtest');
+    // Route::get('/addtest', 'FrontController@addtest');
     Route::get('/clear', 'FrontController@clear');
     Route::get('/content', 'FrontController@content');
+
     Route::get('/step1', 'FrontController@cartStep1');
+    Route::post('/update','FrontController@update');
+    Route::post('/delete', 'FrontController@delete');
+
     Route::get('/step2', 'FrontController@cartStep2');
     Route::get('/step3', 'FrontController@cartStep3');
     Route::get('/step4', 'FrontController@cartStep4');
@@ -71,6 +76,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
             Route::delete('/delete/{id}', 'NewsTypeController@delete');
         });
     });
+
+
     Route::prefix('product')->group(function () {
         Route::prefix('type')->group(function () {
             Route::get('/', 'ProductTypeController@index');
@@ -89,6 +96,14 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
             Route::delete('/delete/{id}', 'ProductController@delete');
         });
         Route::post('/deleteImage', 'ProductController@deleteImage');
+    });
+
+
+    // 聯絡我們管理
+    Route::prefix('contactus')->group(function () {
+        Route::get('/', 'ContactUsController@index');
+        Route::get('/seemore/{id}', 'ContactUsController@seemore');
+        Route::delete('/delete/{id}', 'ContactUsController@delete');
     });
 });
 
