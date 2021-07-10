@@ -40,7 +40,7 @@
                         <div class="swiper-wrapper">
                             @for ($sliderNo = 0; $sliderNo < $sliderQty; $sliderNo++)
                             <!-- Slides -->
-                            <div class="swiper-slide">
+                            <div class="swiper-slide pc-slide">
                                 <div class="row no-gutters">
                                 @if ($sliderNo == 1)
                                 @endif
