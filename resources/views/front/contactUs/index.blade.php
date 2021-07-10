@@ -32,7 +32,7 @@
                 <div class="title-area d-flex justify-content-center align-items-center">
                     項目內容
                 </div>
-                <div class="bgc-yellow-2 p-lg-5 p-4">
+                <div class="bgc-yellow-2 p-lg-5 p-4 col-12">
                     <p style="color: #333333;">客製化商品包含外匯、造型聖多諾黑、婚禮禮盒及彌月禮盒。</p>
                 </div>
                 <div class="title-area d-flex justify-content-center align-items-center">
@@ -42,7 +42,7 @@
                 <form action="{{ asset('admin/contactus/store') }}" method="POST"
                     class="introduce-container d-flex bg-white justify-content-end">
                     @csrf
-                    <div class="bgc-yellow-2 p-lg-5 p-4 content">
+                    <div class="bgc-yellow-2 p-lg-5 p-4 content col-12">
                         <!-- 姓名、電話 -->
                         <div class="row mb-3">
                             <div class="col-sm-6">
