@@ -66,6 +66,8 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
             Route::delete('/delete/{id}', 'NewsTypeController@delete');
         });
     });
+
+
     Route::prefix('product')->group(function () {
         Route::prefix('type')->group(function () {
             Route::get('/', 'ProductTypeController@index');
@@ -80,10 +82,19 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
             Route::get('/create', 'ProductController@create');
             Route::post('/store', 'ProductController@store');
             Route::get('/edit/{id}', 'ProductController@edit');
-            Route::post('/update/{id}','ProductController@update');
+            Route::post('/update/{id}', 'ProductController@update');
             Route::delete('/delete/{id}', 'ProductController@delete');
         });
         Route::post('/deleteImage', 'ProductController@deleteImage');
+    });
+
+
+    // 聯絡我們管理
+    Route::prefix('contactus')->group(function () {
+        Route::get('/', 'ContactUsController@index');
+        Route::post('/store', 'ContactUsController@store');
+        Route::get('/seemore/{id}', 'ContactUsController@seemore');
+        Route::delete('/delete/{id}', 'ContactUsController@delete');
     });
 });
 
