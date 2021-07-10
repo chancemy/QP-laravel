@@ -94,7 +94,8 @@
                             </select></td>
                         <td class="text-center">NT$ <span class="item-price"
                                 data-price="{{ $product->price }}">{{ $product->price }}</span></td>
-                        <td class="text-center">NT$ <span class="item-total">{{ $product->price * $product->quantity }}</span></td>
+                        <td class="text-center">NT$ <span
+                                class="item-total">{{ $product->price * $product->quantity }}</span></td>
                         <td class="text-center">
                             <div data-id="{{ $product->id }}" class="delete-btn"><i class="far fa-trash-alt"></i></div>
                         </td>
@@ -150,7 +151,7 @@
 {{-- <script src="/js/frontpage/cart.js"></script> --}}
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
-sumUp();
+    sumUp();
 var qtySelect = document.querySelectorAll('.qty-select')
 qtySelect.forEach(element => element.addEventListener('change', subTotal));
 function subTotal(e) {
@@ -182,6 +183,11 @@ function sumUp() {
     var products = document.querySelectorAll('.cart-products');
     let qty = 0;
     let subTotal = 0;
+    if (products.length == 0) {
+        qty_total.innerHTML = qty;
+        sub_total.innerHTML = 'NT$ ' + subTotal;
+        total.innerHTML = 'NT$ ' + subTotal;
+    }else{
     products.forEach(product => {
 
         qty += parseInt(product.querySelector('.qty-select').value);
@@ -191,6 +197,7 @@ function sumUp() {
         sub_total.innerHTML = 'NT$ ' + subTotal;
         total.innerHTML = 'NT$ ' + subTotal;
     });
+    }
 }
 var deleteBtn = document.querySelectorAll('.delete-btn');
 deleteBtn.forEach(element => element.addEventListener('click',function(e){
