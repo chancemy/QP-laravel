@@ -117,11 +117,11 @@
     </div> --}}
 
 
-    <main>
-        @yield('step')
+    {{-- <main> --}}
+    @yield('step')
 
-        @yield('main')
-    </main>
+    @yield('main')
+    {{-- </main> --}}
 
     <footer>
         <div class="container-fluid d-flex align-items-center justify-content-center p-0 footer-container"><span>

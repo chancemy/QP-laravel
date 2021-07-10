@@ -161,8 +161,6 @@
     </div>
 
     <main>
-
-
         <div class="banner">
             <div id="scene">
                 <div data-depth="0">
