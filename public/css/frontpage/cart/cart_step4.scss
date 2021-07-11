@@ -1,10 +1,8 @@
 .cart-table {
     text-align: center;
-    font-size: 18px;
+
     thead {
         height: 70px;
-        font-size: 26px;
-        font-weight: 200;
         tr::after {
             content: "";
             width: 95%;
@@ -14,14 +12,9 @@
             bottom: 0%;
             left: 2.5%;
         }
+
     }
-    .cart-products {
-        height: 130px;
-    }
-    .cart-img {
-        width: 120px;
-        height: 72px;
-    }
+   
     tbody {
         tr::after {
             content: "";
@@ -46,6 +39,10 @@
 
 .info-area {
     padding: 10px 0;
+    font-size: 18px;
+    @media(max-width:768px){
+        font-size: 14px;
+    }
 }
 .info-area .row {
     padding: 10px 5%;

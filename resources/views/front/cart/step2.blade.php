@@ -5,15 +5,13 @@
 @section('css')
 <link rel="stylesheet" href="/css/frontpage/cart/cart-template.css">
 
-<!-- 已整理，可以留一個p.2 的css就好-->{{-- 我看不懂先照貼 --}}
+
 <link rel="stylesheet" href="/css/frontpage/cart/cart.css">
-<link rel="stylesheet" href="/css/frontpage/cart/cart_step2.css">
-<link rel="stylesheet" href="/css/frontpage/cart/cart-2.css">
 @endsection
 
 @section('main')
 <main class="bgc-gray">
-    <section class="d-flex justify-content-center align-items-end" style="height: 338px;">
+    <section class="d-flex justify-content-center align-items-end pb-4" style="height: 338px;">
         <div class="container">
 
             <!-- 以下結帳進度條 -->
@@ -63,7 +61,7 @@
                 $payment = Session::get('payment');
                 $shipment = Session::get('shipment');
                 @endphp
-                <div class="w-100 bgc-gray-3 cart-title d-flex justify-content-center align-items-center">
+                <div class="w-100 bgc-gray-3 cart-title first d-flex justify-content-center align-items-center">
                     付款方式
                 </div>
                 <div class="py-2">
@@ -124,14 +122,14 @@
                 <button type="submit" hidden id="form-submit"></button>
                 <!-- 以下表單內結帳部分 -->
                 <div class="d-flex flex-column align-items-end justify-content-end  bgc-yellow-2 cart-bottom ">
-                    <div style="width: 328px;">
+                    <div style="width: 328px;max-width:100%;">
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">數量</span>
                             <span id="qty-total">{{ $numberCount }}</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">運費</span>
-                            <span id="shipping">{{ $shipping_fee }}</span>
+                            <span id="shipping">{{ $shipping_fee??'請選擇運送方式' }}</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">小計</span>
@@ -156,7 +154,7 @@
                 style="height: 40px;border-bottom-left-radius: 10px;border-bottom-right-radius: 10px;"></div>
 
             <div class="d-flex justify-content-between pt-4 pb-3 px-4">
-                <a href="{{asset('cart/step2')}}">
+                <a href="{{asset('cart/step1')}}">
                     <div class="back-btn px-3 py-2"><i class="fas fa-chevron-left mr-2"></i>上一步</div>
                 </a>
 

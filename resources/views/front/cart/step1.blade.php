@@ -67,7 +67,7 @@
                 </thead>
                 <tbody>
                     @foreach ($cart_products as $product)
-                    <tr style="height: 130px;position: relative;" class="cart-products">
+                    <tr style="position: relative;" class="cart-products">
                         <td scope="row d-flex justify-content-center">
                             <div class="mx-auto cart-img"><img src="{{ $product->attributes->img }}" alt="">
                             </div>
@@ -105,7 +105,7 @@
 
             </table>
             <div class="d-flex flex-column align-items-end justify-content-end  bgc-yellow-2 cart-bottom ">
-                <div style="width: 328px;">
+                <div style="width: 328px;max-width:100%;">
                     <div class="d-flex justify-content-between align-items-center">
                         <span class=" mr-2 ">數量</span>
                         <span id="qty-total">0</span>

@@ -34,7 +34,7 @@ body main .progress-style .quarter-round .round .roundcircle-style {
   font-size: 26px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   body main .progress-style .quarter-round .round .roundcircle-style {
     width: 40px;
     height: 40px;
@@ -54,6 +54,13 @@ body main .progress-style .quarter-round .round .roundcircle-style::after {
 }
 
 @media (max-width: 768px) {
+  body main .progress-style .quarter-round .round .roundcircle-style::after {
+    width: 75%;
+    right: 106%;
+  }
+}
+
+@media (max-width: 576px) {
   body main .progress-style .quarter-round .round .roundcircle-style::after {
     top: 20px;
   }
@@ -119,52 +126,6 @@ body main .input-area:last-child::after {
   position: absolute;
   bottom: 0%;
   left: 2.5%;
-}
-
-body main img {
-  display: block;
-  -o-object-position: center;
-     object-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100%;
-}
-
-body main .thead-img {
-  width: 180px;
-}
-
-body main .cart-title {
-  color: white;
-  height: 70px;
-  font-size: 26px;
-  font-weight: 200;
-}
-
-body main .cart-title:first-child {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-}
-
-body main .cart-form {
-  border-radius: 10px;
-  font-size: 18px;
-}
-
-body main .cart-bottom {
-  height: 265px;
-  font-size: 18px;
-  padding: 30px 2.5%;
-}
-
-body main .back-btn {
-  border: #54594d 1px solid;
-}
-
-body main .next-btn {
-  background-color: #54594d;
-  color: white;
 }
 
 body .bgc-gray {
