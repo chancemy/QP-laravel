@@ -53,7 +53,7 @@
     </section>
     <section class="bgc-yellow py-5">
         <div class="container ">
-            <div class="w-100 bgc-gray-3 cart-title d-flex justify-content-center align-items-center">
+            <div class="w-100 bgc-gray-3 cart-title d-flex justify-content-center align-items-center first">
                 您的訂單已成立！
             </div>
             <table class="cart-table bgc-yellow-2 w-100 ">

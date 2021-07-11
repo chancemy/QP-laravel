@@ -52,7 +52,7 @@
         </div>
     </section>
 
-    <section class="bgc-yellow py-5">
+    <section class="bgc-yellow py-5" style="min-height : calc(100vh - 446px);">
         <div class="container">
             <table class="cart-table bgc-yellow-2 w-100 ">
                 <thead class="bgc-gray-3 px-4" style="color: white;height: 70px;">

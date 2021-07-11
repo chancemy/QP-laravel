@@ -64,34 +64,34 @@
                 <div class=" text-center py-3"><span> * 務必正確輸入訂購人姓名電話及地址以確保正確送達</span></div>
                 <div class="row mx-auto py-3 form-group3">
                     <div class="col-6   d-flex flex-column">
-                        <label for="name">姓名</label>
-                        <input required id="name" type="text" name="name" placeholder="請輸入訂購人姓名">
+                        <label class="mb-1" for="name">姓名</label>
+                        <input class="form-control" required id="name" type="text" name="name" placeholder="請輸入訂購人姓名">
                     </div>
                     <div class="col-6  d-flex flex-column">
-                        <label for="phone">電話</label>
-                        <input required id="phone" type="text" name="phone" placeholder="請輸入訂購人電話">
+                        <label class="mb-1" for="phone">電話</label>
+                        <input  class="form-control" required id="phone" type="text" name="phone" placeholder="請輸入訂購人電話">
                     </div>
                 </div>
                 <div class="row mx-auto py-3 form-group3">
                     <div class="col-12 d-flex flex-column">
-                        <label for="address">地址</label>
+                        <label  class="mb-1" for="address">地址</label>
                         <div class="city-selector-set row">
-                            <div class="col-4 d-flex">
+                            <div class="col-12 d-flex" >
                                 <!-- 郵遞區號欄位 (建議加入 readonly 屬性，防止修改) -->
-                                <input class="zipcode w-100" name="zipcode" type="text" size="3" readonly required
-                                    placeholder="郵遞區號">
+                                <input class="zipcode w-100 form-control" name="zipcode" type="text"size="3" readonly required
+                                    placeholder="郵遞區號" hidden>
                             </div>
-                            <div class="col-4 d-flex">
+                            <div class="col-6 d-flex ">
                                 <!-- 縣市選單 -->
-                                <select name="county" required class="county w-100"></select>
+                                <select name="county" required class="form-control county w-100"></select>
                             </div>
-                            <div class="col-4 d-flex">
+                            <div class="col-6 d-flex">
                                 <!-- 區域選單 -->
-                                <select required class="district w-100" name="district"></select>
+                                <select required class="form-control form-control district w-100" name="district"></select>
                             </div>
-                            <div class="col-12 d-flex mt-3">
+                            <div class="col-12 d-flex mt-1">
                                 <!-- 區域選單 -->
-                                <input class="w-100" type="text" name="address" required placeholder="地址">
+                                <input class="w-100 form-control" type="text" name="address" required placeholder="地址">
                             </div>
 
                         </div>
@@ -100,8 +100,8 @@
                 </div>
                 <div class="row mx-auto py-3 form-group3">
                     <div class="col-12 d-flex flex-column">
-                        <label for="email">信箱</label>
-                        <input id="email" type="email" required name="email" placeholder="請輸入電子郵件">
+                        <label class="mb-1" for="email">信箱</label>
+                        <input class="form-control" id="email" type="email" required name="email" placeholder="請輸入電子郵件">
                     </div>
                     <div class="col-12"><span>*我們會將您的通知信寄送至此</span></div>
                 </div>

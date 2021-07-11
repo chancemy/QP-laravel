@@ -76,7 +76,7 @@ body main .progress-style .quarterround-text-pd {
   color: #b2b2b2;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   body main .progress-style .quarterround-text-pd {
     font-size: 12px;
   }

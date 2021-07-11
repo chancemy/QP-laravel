@@ -4,7 +4,7 @@ body {
 
         //結帳進度條樣式
         .progress-style {
-            
+
             .quarter-round {
                 width: 25%;
                 display: flex;
@@ -68,7 +68,7 @@ body {
             .quarterround-text-pd {
                 color: #b2b2b2;
 
-                @media (max-width: 768px) {
+                @media (max-width: 576px) {
                     font-size: 12px;
                 }
             }
