@@ -90,14 +90,14 @@
                     運送方式
                 </div>
                 <div class="py-2">
-                    <div class="input-area position-relative d-flex justify-content-between align-items-center">
+                    {{-- <div class="input-area position-relative d-flex justify-content-between align-items-center">
                         <div><input type="radio" name="shipment" id="store" value="store" data-price="60" @if ($shipment == 'store') checked
 
                         @endif><label
                                 for="store">超商配送</label></div>
                         <div>60 元</div>
 
-                    </div>
+                    </div> --}}
                     <div class="input-area position-relative  d-flex justify-content-between align-items-center">
                         <div>
                             <input type="radio" name="shipment" id="blackcat" value="blackcat" data-price="80" @if ($shipment == 'blackcat') checked

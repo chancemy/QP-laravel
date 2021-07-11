@@ -103,22 +103,25 @@
                     </div>
                     <div class="col-12"><span>*我們會將您的通知信寄送至此</span></div>
                 </div>
-
-
+                @php
+                $numberCount = \Cart::getTotalQuantity();
+                $subTotal = \Cart::getSubTotal();
+                $shipping_fee = Session::get('shipping_fee');
+                @endphp
                 <button type="submit" hidden id="form-submit"></button><!-- 表單內結帳資訊 -->
                 <div class="d-flex flex-column align-items-end justify-content-end  bgc-yellow-2  cart-bottom  ">
                     <div style="width: 328px;">
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">數量</span>
-                            <span id="qty-total">3</span>
+                            <span id="qty-total">{{  $numberCount }}</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">運費</span>
-                            <span id="shipping">NT$ 31.5</span>
+                            <span id="shipping">NT$ {{ $shipping_fee }}</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">小計</span>
-                            <span id="sub-total">NT$ 31.5</span>
+                            <span id="sub-total">NT$ {{$subTotal }}</span>
                         </div>
                         <div class="w-100 py-2">
                             <div style="background-color: black;height:1px;"></div>
@@ -126,7 +129,7 @@
 
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="">訂單總計</span>
-                            <span id="total">NT$ 56.4</span>
+                            <span id="total">NT$ {{$subTotal+  $shipping_fee }}</span>
                         </div>
                     </div>
                 </div>
@@ -154,12 +157,12 @@
 
 @section('js')
 <script src="/js/frontpage/tw-city-selector.js"></script>
-    <script>
-        new TwCitySelector({
+<script>
+    new TwCitySelector({
             el: '.city-selector-set',
             elCounty: '.county', // 在 el 裡查找 element
             elDistrict: '.district', // 在 el 裡查找 element
             elZipcode: '.zipcode' // 在 el 裡查找 element
         });
-    </script>
+</script>
 @endsection

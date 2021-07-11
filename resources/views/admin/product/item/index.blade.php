@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','產品分類管理')
+@section('title','產品品項管理')
 @section('css')
 
 @endsection
