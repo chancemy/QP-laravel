@@ -38,6 +38,11 @@ class FrontController extends Controller
         return view('front.news.index', compact('newsTypes', 'news'));
     }
 
+    public function typeNews(Request $request)
+    {
+        $news = News::with('type')->where('type_id',$request->id);
+    }
+
     public function newsDetail($id)
     {
         $new = News::find($id);

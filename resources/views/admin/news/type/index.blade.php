@@ -36,7 +36,7 @@
                                         <form action="{{ asset('/admin/news/type/delete') }}/{{ $newsType->id }}" method="POST">
                                             @method('delete')
                                             @csrf
-                                            <button type="submit" class="btn btn-sm btn-outline-danger ml-2">刪除</button>
+                                            <button type="submit" class="btn btn-sm btn-outline-danger ml-2 delete-btn">刪除</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -53,8 +53,23 @@
 @endsection
 @section('js')
 <script>
-     $(document).ready(function() {
+    $(document).ready(function() {
             $('#example').DataTable();
         } );
+
+    var deleteBtn = document.querySelectorAll('.delete-btn');
+
+    deleteBtn.forEach(element => element.addEventListener('click',function(e){
+        e.preventDefault();
+        let deleteForm = this.parentElement;
+
+        let yes = confirm('確定刪除？');
+        if(yes){
+            deleteForm.submit();
+        }else{
+            alert('已取消')
+
+        }
+    }))
 </script>
 @endsection

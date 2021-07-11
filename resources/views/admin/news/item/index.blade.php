@@ -46,12 +46,12 @@
                                     </td>
                                     <td>{{ $new->title }}</td>
                                     <td>{{ $new->remarks }}</td>
-                                    <td class="d-flex justify-content-around align-content-center">
+                                    <td class="d-flex justify-content-around ">
                                         <a href="{{ asset('/admin/news/item/edit') }}/{{ $new->id }}"  class="btn btn-sm btn-outline-info ml-2">編輯</a>
                                         <form action="{{ asset('/admin/news/item/delete') }}/{{ $new->id }}" method="POST">
                                             @method('delete')
                                             @csrf
-                                            <button type="submit" class="btn btn-sm btn-outline-danger ml-2">刪除</button>
+                                            <button type="submit" class="btn btn-sm btn-outline-danger ml-2 delete-btn">刪除</button>
                                         </form>
                                     </td>
                                 </tr>
@@ -68,8 +68,23 @@
 @endsection
 @section('js')
 <script>
-     $(document).ready(function() {
-            $('#example').DataTable();
-        } );
+    $(document).ready(function() {
+        $('#example').DataTable();
+    } );
+
+    var deleteBtn = document.querySelectorAll('.delete-btn');
+
+    deleteBtn.forEach(element => element.addEventListener('click',function(e){
+        e.preventDefault();
+        let deleteForm = this.parentElement;
+
+        let yes = confirm('確定刪除？');
+        if(yes){
+            deleteForm.submit();
+        }else{
+            alert('已取消')
+
+        }
+    }))
 </script>
 @endsection

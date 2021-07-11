@@ -9,7 +9,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ asset('/admin') }}">後臺管理首頁</a></li>
-                <li class="breadcrumb-item"><a href="{{ asset('admin/news') }}">最新消息管理</a></li>
+                <li class="breadcrumb-item"><a href="{{ asset('admin/news/item') }}">編輯消息管理</a></li>
                 <li class="breadcrumb-item active" aria-current="page">新增最新消息</li>
             </ol>
         </nav>

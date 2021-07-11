@@ -33,8 +33,8 @@
                     @php
                         $sliderQty = ceil(count($news)/6) ;
                         $newsLength = count($news);
-                        $typeQty = count($newsTypes);
                         $newsKey = 0;
+                        $newsTypeKey = 0;
                         $countTypeNewsLength = 0;
                     @endphp
                     <div class="swiper-container">
@@ -160,130 +160,30 @@
                                     </div>
                                 </div>
                             @endfor
-                            @for ($sliderNo = 0; $sliderNo < $typeQty; $sliderNo++)
-                                <div class="swiper-slide pc-slide hide">
-                                    <div class="row no-gutters">
-                                    @foreach ($newsTypes as $newsType)
-                                        @for ($key = $newsKey; $key < ($key+6) ; $key++)
-                                            @if ($key> (5 +(($sliderNo)*6)))
+                            @foreach ($newsTypes as $key => $newsType)
+                                @php
+                                    $typeSlideQty = ceil(count($newsType->news)/6);
+                                    $typeNewsQty = count($newsType->news);
+                                @endphp
+                                {{-- {{ $typeQty }} --}}
+                                @for ($sliderNo = 0; $sliderNo < $typeSlideQty; $sliderNo++)
+                                    @for ($i = $newsTypeKey; $i < ($key+6); $i++)
+                                        @if ($newsTypeKey>5+($sliderNo*6))
+                                            {{ '超過六個拉'.$key }}<br>
                                                 @php
-                                                    $newsKey = 6 + (($sliderNo)*6);
+                                                    $newsTypeKey = 6+($sliderNo*6)
                                                 @endphp
-                                                @break
-                                            @endif
-                                            @if ( $news[$key]->type_id == $newsType->id)
-                                            <div class="col-6 col-md-4 news-frame">
-                                                @if ($key < $newsLength)
-                                                    <div class="line-frame">
-                                                        <div class="description">
-                                                            <div class="row no-gutters">
-                                                                <div class="col-12">
-                                                                    <div class="type">{{ $news[$key]->type->type_name??'' }}</div>
-                                                                </div>
-                                                                <div class="col-12">
-                                                                    <div class="title">{{ $key??'' }}</div>
-                                                                </div>
-                                                                <div class="col-12">
-                                                                    <div data-summerNote="{{ $news[$key]->description??'' }}"
-                                                                        class="content summer-note">
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        @if ($key == (2+($sliderNo)*6))
-                                                        <div class="right"></div>
-                                                        @endif
-                                                        @if ($key == (3+($sliderNo)*6) || $key == (4+($sliderNo)*6))
-                                                        <div class="down"></div>
-                                                        @endif
-                                                        @if ($key == (5+($sliderNo)*6) )
-                                                        <div class="right"></div>
-                                                        <div class="down"></div>
-                                                        @endif
-                                                        <div class="photo" style="background-image: url('{{ $news[$key]->img??'' }}')">
-                                                        </div>
-                                                        <div class="top"></div>
-                                                        <div class="left"></div>
-                                                        <div class="">
-                                                            @php
-                                                            $date = explode('-',$news[$key]->date);
-                                                            $mm = $date[1];
-                                                            $dd = $date[2];
-                                                            $Month_Englesh = array(
-                                                            '01' => "JAN",
-                                                            '02' => "FEB",
-                                                            '03' => "MAR",
-                                                            '04' => "APR",
-                                                            '05' => "MAY",
-                                                            '06' => "JUN",
-                                                            '07' => "JUL",
-                                                            '08' => "AUG",
-                                                            '09' => "SEP",
-                                                            '10' => "OCT",
-                                                            '11' => "NOV",
-                                                            '12' => "DEC");
-                                                            @endphp
-                                                            <div class="row no-gutters month">
-                                                                <div class="col-4 month-text">
-                                                                    <span>{{ $Month_Englesh[$mm]??'' }}</span>
-                                                                </div>
-                                                                <div class="col-3 date-text">
-                                                                    <span>{{ $dd??'' }}</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                @else
-                                                <div class="line-frame">
-                                                    <div class="description">
-                                                        <div class="row no-gutters">
-                                                            <div class="col-12">
-                                                                <div class="type"></div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div class="title"></div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div data-summerNote=""
-                                                                    class="content summer-note">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    @if ($key == (2+($sliderNo)*6))
-                                                    <div class="right"></div>
-                                                    @endif
-                                                    @if ($key == (3+($sliderNo)*6) || $key == (4+($sliderNo)*6))
-                                                    <div class="down"></div>
-                                                    @endif
-                                                    @if ($key == (5+($sliderNo)*6) )
-                                                    <div class="right"></div>
-                                                    <div class="down"></div>
-                                                    @endif
-                                                    <div class="photo" style="background-image: url('')">
-                                                    </div>
-                                                    <div class="top"></div>
-                                                    <div class="left"></div>
-                                                    <div class="">
-                                                        <div class="row no-gutters month">
-                                                            <div class="col-4 month-text">
-                                                                <span></span>
-                                                            </div>
-                                                            <div class="col-3 date-text">
-                                                                <span></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                @endif
-                                            </div>
-                                            @endif
+                                                {{-- @break --}}
+                                                {{ $news[$newsTypeKey]->type->type_name."第".$i."筆" }}<br>
 
-                                        @endfor
-                                    @endforeach
-                                </div>
-                            </div>
-                            @endfor
+                                        @endif
+                                        @if ($newsType->id == $news[$newsTypeKey]->type_id)
+                                        {{ $news[$i]->type->type_name."第".$i."筆" }}<br>
+                                        @endif
+                                    @endfor
+                                @endfor
+                            @endforeach
+
                         </div>
                     </div>
                     <div class="pagination">
