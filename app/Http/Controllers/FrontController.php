@@ -40,7 +40,7 @@ class FrontController extends Controller
 
     public function typeNews(Request $request)
     {
-        $news = News::with('type')->where('type_id',$request->id);
+        $news = News::with('type')->where('type_id', $request->id);
     }
 
     public function newsDetail($id)
@@ -58,8 +58,13 @@ class FrontController extends Controller
 
         $products = Product::where('start_date', '<=', $todayDate)->where('end_date', '>=', $todayDate)->get();
         $types = ProductType::TYPE;
-        $product_types = ProductType::get();
-
+        $all_product_types = ProductType::get();
+        $product_types = collect([]);
+        foreach ($all_product_types as $product_type) {
+            if ($product_type->products->count() != 0) {
+                $product_types->push($product_type);
+            }
+        }
         return view('front.product.index', compact('products', 'types', 'product_types'));
     }
 

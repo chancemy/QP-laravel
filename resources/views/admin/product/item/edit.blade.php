@@ -47,7 +47,7 @@
                         <div>
                             <select class="form-control" id="type" name="type_id">
                                 @foreach ($types as $type)
-                                <option @if ($record->type_id == $type->id) selected
+                                <option data-type={{ $type->type }} @if ($record->type_id == $type->id) selected
 
                                     @endif value="{{ $type->id }}">{{ $type->type }}-{{ $type->type_name }}</option>
 
