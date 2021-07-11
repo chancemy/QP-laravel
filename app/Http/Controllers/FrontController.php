@@ -64,7 +64,7 @@ class FrontController extends Controller
             if ($product_type->products->count() != 0) {
                 $product_types->push($product_type);
             }
-        }
+        };
         return view('front.product.index', compact('products', 'types', 'product_types'));
     }
 
