@@ -121,6 +121,7 @@
                 @php
                 $numberCount = \Cart::getTotalQuantity();
                 $subTotal = \Cart::getSubTotal();
+                $shipping_fee = Session::get('shipping_fee');
                 @endphp
                 <button type="submit" hidden id="form-submit"></button>
                 <!-- 以下表單內結帳部分 -->
@@ -132,11 +133,11 @@
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">運費</span>
-                            <span id="shipping">尚未選擇運送方式</span>
+                            <span id="shipping">{{ $shipping_fee }}</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">小計</span>
-                            <span id="sub-total">NT$ {{ $subTotal }}</span>
+                            <span id="sub-total">NT$ {{ $subTotal + $shipping_fee }}</span>
                         </div>
                         <div class="w-100 py-2">
                             <div style="background-color: black;height:1px;"></div>

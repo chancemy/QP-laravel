@@ -76,20 +76,20 @@
                         <div class="city-selector-set row">
                             <div class="col-4 d-flex">
                                 <!-- 郵遞區號欄位 (建議加入 readonly 屬性，防止修改) -->
-                                <input class="zipcode w-100" name="zipcode" type="text" size="3" readonly
+                                <input class="zipcode w-100" name="zipcode" type="text" size="3" readonly required
                                     placeholder="郵遞區號">
                             </div>
                             <div class="col-4 d-flex">
                                 <!-- 縣市選單 -->
-                                <select name="county" class="county w-100"></select>
+                                <select name="county" required class="county w-100"></select>
                             </div>
                             <div class="col-4 d-flex">
                                 <!-- 區域選單 -->
-                                <select class="district w-100" name="district"></select>
+                                <select required class="district w-100" name="district"></select>
                             </div>
                             <div class="col-12 d-flex mt-3">
                                 <!-- 區域選單 -->
-                                <input class="w-100" type="text" name="address" placeholder="地址">
+                                <input class="w-100" type="text" name="address" required placeholder="地址">
                             </div>
 
                         </div>
