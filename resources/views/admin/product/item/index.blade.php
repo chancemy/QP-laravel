@@ -41,6 +41,9 @@
                                     <td>{{ $item->price }}／{{ $item->unit }}</td>
                                     <td><img src="{{ $item->img }}" alt="" style="width:200px;"></td>
                                     <td>
+
+                                        <a href="{{ asset('/admin/product/item/edit') }}/{{ $item->id }}"><button
+                                                type="button" class="btn btn-outline-info d-inline">編輯</button></a>
                                         <form class="delete-form d-inline"
                                             action="{{ asset('/admin/product/item/delete') }}/{{ $item->id }}"
                                             method="POST">
@@ -48,9 +51,7 @@
                                             @method('delete')
                                             <button type="submit" class="btn btn-outline-danger delete-btn">刪除</button>
                                         </form>
-                                        <a href="{{ asset('/admin/product/item/edit') }}/{{ $item->id }}"><button
-                                                type="button" class="btn btn-outline-info">編輯</button>
-                                    </td></a>
+                                    </td>
 
                                 </tr>
                                 @endforeach

@@ -154,14 +154,75 @@ body main .arrow {
   font-size: 40px;
 }
 
+@media (max-width: 500px) {
+  body main .arrow {
+    font-size: 30px;
+  }
+}
+
 body main .text-area {
-  max-width: 517px;
+  max-width: 700px;
+  padding: 0 20px;
+}
+
+body main .news-text {
+  width: 550px;
+}
+
+@media (max-width: 1400px) {
+  body main .news-text {
+    width: 350px;
+  }
+}
+
+@media (max-width: 992px) {
+  body main .news-text {
+    width: 530px;
+  }
+}
+
+@media (max-width: 700px) {
+  body main .news-text {
+    width: 400px;
+  }
+}
+
+@media (max-width: 500px) {
+  body main .news-text {
+    width: 300px;
+  }
+}
+
+body main .news-text .news-arrow2 {
+  display: none;
+}
+
+@media (max-height: 800px) {
+  body main .news-text .news-arrow2 {
+    display: block;
+  }
+}
+
+body main .news-text .news-arrow {
+  display: block;
+}
+
+@media (max-height: 800px) {
+  body main .news-text .news-arrow {
+    display: none;
+  }
 }
 
 body main section {
   z-index: -10;
   overflow-x: hidden;
   overflow-y: hidden;
+}
+
+@media (max-height: 800px) {
+  body main section .i5-margin {
+    margin: 20px 0;
+  }
 }
 
 body main .section-about .cherry {
@@ -249,7 +310,7 @@ body main .section-news .news-cherry img {
 
 @media (max-width: 576px) {
   body main .section-news .news-cherry {
-    width: 40%;
+    display: none;
   }
 }
 
@@ -266,7 +327,7 @@ body main .section-news .container-news {
 body main .section-news .text-area-news {
   position: absolute;
   top: 50%;
-  left: 35%;
+  left: 15%;
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   z-index: 5;
@@ -278,6 +339,17 @@ body main .section-news .text-area-news {
     top: unset;
     left: 25%;
     width: 80%;
+    -webkit-transform: unset;
+            transform: unset;
+    height: 40vh;
+  }
+}
+
+@media (max-width: 576px) {
+  body main .section-news .text-area-news {
+    position: static;
+    top: unset;
+    width: 100%;
     -webkit-transform: unset;
             transform: unset;
     height: 40vh;
@@ -434,6 +506,37 @@ body main .section-store .container-store .store-title {
   }
 }
 
+body main .section-store .container-store .store-title .our-store {
+  font-family: "Noto Serif JP", serif;
+  font-family: "Noto Serif TC", serif;
+  font-weight: 700;
+  font-size: 150px;
+}
+
+@media (max-width: 1300px) {
+  body main .section-store .container-store .store-title .our-store {
+    font-size: 130px;
+  }
+}
+
+@media (max-width: 992px) {
+  body main .section-store .container-store .store-title .our-store {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  body main .section-store .container-store .store-title .our-store {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  body main .section-store .container-store .store-title .our-store {
+    font-size: 60px;
+  }
+}
+
 body main .section-store .container-store .store-img {
   z-index: 5;
 }
@@ -460,7 +563,13 @@ body main .section-store .container-store .address {
 }
 
 body main .section-store .container-store .address p {
-  font-size: 24px;
+  font-size: 22px;
+}
+
+@media (max-width: 1500px) {
+  body main .section-store .container-store .address p {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 576px) {

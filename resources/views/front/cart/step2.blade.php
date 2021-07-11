@@ -59,19 +59,30 @@
     <!-- 以下開始表單內容 -->
     <section class="bgc-yellow py-5">
         <div class="container">
-            <form action="" class="bgc-yellow-2 w-100 cart-form">
+            <form action="{{ asset('cart/payment_check') }}" class="bgc-yellow-2 w-100 cart-form" method="POST">
+                @csrf
+                @php
+                $payment = Session::get('payment');
+                $shipment = Session::get('shipment');
+                @endphp
                 <div class="w-100 bgc-gray-3 cart-title d-flex justify-content-center align-items-center">
                     付款方式
                 </div>
                 <div class="py-2">
                     <div class="input-area position-relative d-flex justify-content-start align-items-center"><input
-                            type="radio" name="payment" id="ATM" value="ATM"><label for="ATM">實體／網路ATM</label></div>
+                            type="radio" name="payment" id="ATM" value="ATM" @if ($payment == 'ATM') checked
+
+                            @endif><label for="ATM">實體／網路ATM</label></div>
                     <div class="input-area position-relative  d-flex justify-content-start align-items-center">
-                        <input type="radio" name="payment" id="on-delivery" value="on-delivery"><label
+                        <input type="radio" name="payment" id="on-delivery" value="on-delivery" @if ($payment == 'on-delivery') checked
+
+                        @endif><label
                             for="on-delivery">貨到付款</label>
                     </div>
                     <div class="input-area position-relative  d-flex justify-content-start align-items-center">
-                        <input type="radio" name="payment" id="credit-card" value="credit-card"><label
+                        <input type="radio" name="payment" id="credit-card" value="credit-card"  @if ($payment == 'credit-card') checked
+
+                        @endif><label
                             for="credit-card">信用卡</label>
                     </div>
                 </div>
@@ -80,41 +91,52 @@
                 </div>
                 <div class="py-2">
                     <div class="input-area position-relative d-flex justify-content-between align-items-center">
-                        <div><input type="radio" name="shipment" id="store" value="store" data-price="60"><label
+                        <div><input type="radio" name="shipment" id="store" value="store" data-price="60" @if ($shipment == 'store') checked
+
+                        @endif><label
                                 for="store">超商配送</label></div>
                         <div>60 元</div>
 
                     </div>
                     <div class="input-area position-relative  d-flex justify-content-between align-items-center">
                         <div>
-                            <input type="radio" name="shipment" id="blackcat" value="blackcat" data-price="80"><label
+                            <input type="radio" name="shipment" id="blackcat" value="blackcat" data-price="80" @if ($shipment == 'blackcat') checked
+
+                            @endif><label
                                 for="blackcat">黑貓宅配</label>
                         </div>
                         <div>80 元</div>
                     </div>
                     <div class="input-area position-relative  d-flex justify-content-between align-items-center">
                         <div>
-                            <input type="radio" name="shipment" id="fedex" value="fedex" data-price="80"><label
+                            <input type="radio" name="shipment" id="fedex" value="fedex" data-price="100" @if ($shipment == 'fedex') checked
+
+                            @endif><label
                                 for="fedex">順豐快遞</label>
                         </div>
                         <div>100 元</div>
                     </div>
+                    <div hidden><input type="text" name="shipping_fee" id="shipping_fee"></div>
                 </div>
+                @php
+                $numberCount = \Cart::getTotalQuantity();
+                $subTotal = \Cart::getSubTotal();
+                @endphp
                 <button type="submit" hidden id="form-submit"></button>
                 <!-- 以下表單內結帳部分 -->
                 <div class="d-flex flex-column align-items-end justify-content-end  bgc-yellow-2 cart-bottom ">
                     <div style="width: 328px;">
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">數量</span>
-                            <span id="qty-total">3</span>
+                            <span id="qty-total">{{ $numberCount }}</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">運費</span>
-                            <span id="shipping">NT$ 31.5</span>
+                            <span id="shipping">尚未選擇運送方式</span>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">小計</span>
-                            <span id="sub-total">NT$ 31.5</span>
+                            <span id="sub-total">NT$ {{ $subTotal }}</span>
                         </div>
                         <div class="w-100 py-2">
                             <div style="background-color: black;height:1px;"></div>
@@ -122,7 +144,7 @@
 
                         <div class="d-flex justify-content-between align-items-center">
                             <span class="">訂單總計</span>
-                            <span id="total">NT$ 56.4</span>
+                            <span id="total">NT$ {{ $subTotal }}</span>
                         </div>
 
                     </div>
@@ -152,5 +174,59 @@
 
 
 @section('js')
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+var shipmentCheck = document.querySelector('input[name="shipment"]:checked');
+shipfeeCalculate();
+
+function shipfeeCalculate(){
+    if(shipmentCheck){
+        let shipfee = shipmentCheck.dataset.price;
+        const shipping = document.querySelector('#shipping');
+        const subTotal = {{ $subTotal }};
+        const Total = parseInt(subTotal) + parseInt(shipfee);
+        shipping.innerHTML = 'NT$ '+ shipfee;
+        total.innerHTML = 'NT$ ' + Total;
+    }else{
+        return
+    }
+
+}
+
+var shipment = document.querySelectorAll('input[name="shipment"]');
+shipment.forEach(element=>element.addEventListener('change',function(e){
+    let shipfee = this.dataset.price;
+    const shipping = document.querySelector('#shipping');
+    const total = document.querySelector('#total');
+    const subTotal = {{ $subTotal }};
+    const Total = parseInt(subTotal) + parseInt(shipfee);
+    shipping.innerHTML = 'NT$ '+ shipfee;
+    total.innerHTML = 'NT$ ' + Total;
+
+}))
+const nextBtn = document.querySelector('.next-btn');
+const form = document.querySelector('.cart-form');
+const shippingFee = document.querySelector('#shipping-fee');
+nextBtn.onclick = function(e){
+    e.preventDefault();
+    let shipmentCheck = document.querySelector('input[name="shipment"]:checked');
+    let paymentCheck = document.querySelector('input[name="payment"]:checked');
+    const shippingFee = document.querySelector('#shipping_fee');
+
+    if (!shipmentCheck || !paymentCheck) {
+        return swal({
+            title: "請選擇付款或運送方式！",
+            icon: "warning",
+            button: "確認",
+        });
+    }else{
+        shippingFee.value =  shipmentCheck.dataset.price;
+        form.submit();
+    }
+
+}
+
+
+</script>
 
 @endsection

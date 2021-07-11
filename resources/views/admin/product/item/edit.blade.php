@@ -30,7 +30,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ asset('/home') }}">Home</a></li>
                 <li class="breadcrumb-item"><a href="{{ asset('admin/product/item') }}">產品編輯</a></li>
-                <li class="breadcrumb-item active" aria-current="page">新增產品</li>
+                <li class="breadcrumb-item active" aria-current="page">編輯產品</li>
             </ol>
         </nav>
         <div class="card">

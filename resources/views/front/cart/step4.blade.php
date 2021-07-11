@@ -70,28 +70,24 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($orderDetails as $orderDetail)
+                    <?php
+                    $product = json_decode($orderDetail->old_data)
+                    ?>
                     <tr class="cart-products position-relative">
                         <td scope="row d-flex justify-content-center">
-                            <div class="mx-auto cart-img"><img src="/img/frontpage/cart/sample.jpg" alt="">
+                            <div class="mx-auto cart-img"><img src="{{  $product->img }}" alt="">
                             </div>
                         </td>
-                        <td class="text-center">十四松</td>
+                        <td class="text-center">{{  $product->name }}</td>
                         <td>1</td>
-                        <td class="text-center">NT$ <span class="item-price" data-price="200">200</span></td>
-                        <td class="text-center">NT$ <span class="item-total">100</span></td>
+                        <td class="text-center">NT$ <span class="item-price">{{  $product->price }}</span></td>
+                        <td class="text-center">NT$ <span class="item-total">{{  $product->price *  $orderDetail->quantity }}</span></td>
 
                     </tr>
-                    <tr class="cart-products position-relative">
-                        <td scope="row d-flex justify-content-center">
-                            <div class="mx-auto cart-img"><img src="/img/frontpage/cart/sample.jpg" alt="">
-                            </div>
-                        </td>
-                        <td class="text-center">十四松</td>
-                        <td>1</td>
-                        <td class="text-center">NT$<span class="item-price" data-price="100">100</span></td>
-                        <td class="text-center">NT$<span class="item-total">100</span></td>
 
-                    </tr>
+                    @endforeach
+
                 </tbody>
 
             </table>
@@ -101,19 +97,19 @@
             <div class="bgc-yellow-2 info-area">
                 <div class="row">
                     <div class="col-md-2 col-4">購買姓名</div>
-                    <div class="col-md-10 col-8">王曉明</div>
+                    <div class="col-md-10 col-8">{{ $order->name }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2 col-4">連絡電話</div>
-                    <div class="col-md-10 col-8">123456789</div>
+                    <div class="col-md-10 col-8">{{ $order->phone }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2 col-4">連絡地址</div>
-                    <div class="col-md-10 col-8">420 台中市小鎮村英雄路一號</div>
+                    <div class="col-md-10 col-8">{{ $order->zipcode }} {{ $order->county }}{{ $order->district }}{{ $order->address }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2 col-4">電子郵件</div>
-                    <div class="col-md-10 col-8">123456789@gmail.com</div>
+                    <div class="col-md-10 col-8">{{ $order->email }}</div>
                 </div>
             </div>
             <div class="w-100 bgc-gray-3 cart-title d-flex justify-content-center align-items-center">
@@ -122,19 +118,19 @@
             <div class="bgc-yellow-2 info-area">
                 <div class="row">
                     <div class="col-md-2 col-4">數量</div>
-                    <div class="col-md-10 col-8">3</div>
+                    <div class="col-md-10 col-8">{{ $totalQty }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2 col-4">運費</div>
-                    <div class="col-md-10 col-8">NT$ 60</div>
+                    <div class="col-md-10 col-8">NT$ {{ $order->shipping_fee }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2 col-4">小計</div>
-                    <div class="col-md-10 col-8">NT$ 60</div>
+                    <div class="col-md-10 col-8">NT$ {{ $order->price }}</div>
                 </div>
                 <div class="row">
                     <div class="col-md-2 col-4">總計</div>
-                    <div class="col-md-10 col-8">NT$ 60</div>
+                    <div class="col-md-10 col-8">NT$ {{ $order->price +  $order->shipping_fee  }}</div>
                 </div>
             </div>
             <div class="bgc-gray-3"

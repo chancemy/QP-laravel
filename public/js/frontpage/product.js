@@ -23,13 +23,10 @@ function toggleCheck(e) {
     checkBoxes.forEach(checkBox => checkBox.classList.remove('checked'));
     this.classList.add('checked');
 }
-var products = document.querySelectorAll('.product-container')
+var products = document.querySelectorAll('.product-container');
 typeBtns.forEach(typeBtn => typeBtn.addEventListener('click', showItem), {
     capture: false //為true的話 捕捉的順序由父層向子層
 });
-
-
-
 catagoryBtns.forEach(catagoryBtn => catagoryBtn.addEventListener('click', showType), {
     capture: false
     //為true的話 捕捉的順序由父層向子層
@@ -45,7 +42,6 @@ function showItem(e) {
         hideAll();
         console.log(type);
         products.forEach(element => {
-
             if (element.dataset.type == type) {
                 element.classList.remove('hidden');
             }
