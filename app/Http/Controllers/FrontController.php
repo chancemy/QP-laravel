@@ -29,14 +29,17 @@ class FrontController extends Controller
     // 最新消息
     public function newsIndex()
     {
-        $newsTypes = NewsType::get();
+        $newsTypes = NewsType::with('news')->get();
         $news = News::with('type')->get();
+
         return view('front.news.index', compact('newsTypes', 'news'));
     }
 
-    public function newsDetail()
+    public function newsDetail($id)
     {
-        return view('front.news.detail');
+        $new = News::find($id);
+
+        return view('front.news.detail', compact('new'));
     }
 
 

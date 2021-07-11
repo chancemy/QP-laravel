@@ -2,7 +2,7 @@
 
 const swiper = new Swiper('.swiper-container', {
     // Optional parameters
-    
+
     // slidesPerView: 1,
     direction: 'horizontal',
     loop: false,
@@ -31,6 +31,9 @@ pageBtns.forEach(pageBtn => {
 var typeCheckBoxs = document.querySelectorAll('.type');
 typeCheckBoxs.forEach(function (typeCheckBox) {
     typeCheckBox.addEventListener('click', function () {
+        ///blade
+        
+        ///css
         this.classList.toggle('checked'), ':before';
         this.classList.toggle('border-checked');
         var checked = this;

@@ -1,33 +1,13 @@
 
 @extends('layouts.app')
-@section('title','後臺管理首頁')
+@section('title','編輯最新消息')
 
 @section('content')
 <main>
     <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">後臺管理首頁</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Library</li>
-                    </ol>
-                </nav>
-            </div>
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title">後臺管理首頁</h1>
-                        <p class="card-text">歡迎</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="{{ asset('/home') }}">Home</a></li>
+              <li class="breadcrumb-item"><a href="{{ asset('/admin') }}">後臺管理首頁</a></li>
               <li class="breadcrumb-item"><a href="{{ asset('admin/news') }}">編輯消息管理</a></li>
               <li class="breadcrumb-item active" aria-current="page">編輯最新消息</li>
             </ol>

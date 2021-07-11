@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','後臺管理首頁')
+@section('title','最新消息管理')
 @section('css')
 
 @endsection
@@ -10,7 +10,7 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/admin">後臺管理首頁</a></li>
+                        <li class="breadcrumb-item"><a href="{{ asset('/admin') }}">後臺管理首頁</a></li>
                         <li class="breadcrumb-item active" aria-current="page">最新消息管理</li>
                     </ol>
                 </nav>

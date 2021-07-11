@@ -21,7 +21,7 @@ Route::get('/aboutus', 'FrontController@aboutUs');
 Route::post('/contactus/store', 'ContactUsController@store');
 
 Route::get('/newsIndex', 'FrontController@newsIndex');
-Route::get('/newsdetail', 'FrontController@newsDetail');
+Route::get('/newsdetail/{id}', 'FrontController@newsDetail');
 
 Route::get('/product', 'FrontController@product');
 Route::get('/product/detail/{id}', 'FrontController@productDetail');

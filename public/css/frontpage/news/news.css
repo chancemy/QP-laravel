@@ -195,6 +195,14 @@ body main .block-a .swiper-frame .swiper-container .swiper-slide.mobile-slide {
   }
 }
 
+body main .block-a .swiper-frame .swiper-container .swiper-slide.hide {
+  display: none;
+}
+
+body main .block-a .swiper-frame .swiper-container .swiper-slide.show {
+  display: block;
+}
+
 body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame {
   width: 100%;
 }

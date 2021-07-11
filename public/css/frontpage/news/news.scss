@@ -131,6 +131,12 @@ body{
                                 display: block;
                             }
                         }
+                        &.hide{
+                            display: none;
+                        }
+                        &.show{
+                            display: block;
+                        }
                         // background-color: yellow;
                         margin-top: 20px;
                         .news-frame{

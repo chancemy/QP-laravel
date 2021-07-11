@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title','後臺管理首頁')
+@section('title','消息分類管理')
 @section('css')
 
 @endsection
