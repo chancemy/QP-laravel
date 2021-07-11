@@ -12,7 +12,8 @@
 @section('main')
 <main class="move-down">
     <div class="container-fluid p-0 ">
-        <div class="block-a d-flex flex-wrap align-content-center justify-content-between section-about"style="background-color:#e6e3e0;">
+        <div class="block-a d-flex flex-wrap align-content-center justify-content-between section-about"
+            style="background-color:#e6e3e0;">
             <div class="img p-0"></div>
 
             <div class="text-frame">
@@ -38,26 +39,30 @@
             </div> --}}
         </div>
 
-
-        <div class="block-b">
-            <div class="img"></div>
-            <div class="content">
-                <div class="title">
-                    Lai 和 Jiou Jiou 在法國知名的斐杭迪廚藝學校相遇，因志同道合回台後聯手編織甜點夢。
+            <div class="block-b " style=" background-color: #e6e3e0;">
+                <div class="img">
+                    {{-- <div class="triangle"></div> --}}
                 </div>
-                <div class="mask">
+                <div class="content">
+                    <div class="title">
+                        Lai 和 Jiou Jiou 在法國知名的斐杭迪廚藝學校相遇，<br>因志同道合回台後聯手編織甜點夢。
+                    </div>
+                    {{-- <div class="mask">
                     <div class="triangle"></div>
+                </div> --}}
                 </div>
+                {{-- <div class="triangle"></div> --}}
             </div>
-        </div>
-        <div class="block-c">
+
+        <div class="block-c "style=" background-color: #e6e3e0;">
+            <div class="triangle"></div>
             <div class="row no-gutters">
                 <div class="col-12 col-md-6 title-frame order-md-2">
                     <div class="row no-gutters">
                         <div class="col-md-12">
-                            <div class="title">
+                            <h1 class="title">
                                 Feature
-                            </div>
+                            </h1>
                         </div>
                         <div class="col-md-12">
                             <div class="text">

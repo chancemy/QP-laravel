@@ -52,7 +52,6 @@ main .block-a .img {
   main .block-a .img {
     width: 100%;
     height: 50vh;
-    min-height: 300px;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -108,7 +107,7 @@ main .block-a .text-frame .about {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
   main .block-a .text-frame .about {
     font-size: 60px;
   }
@@ -154,13 +153,13 @@ main .block-a .text-frame .content .us {
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 580px) {
   main .block-a .text-frame .content .us {
     font-size: 80px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 460px) {
   main .block-a .text-frame .content .us {
     font-size: 60px;
   }
@@ -191,20 +190,39 @@ main .block-a .text-frame .content .text2 {
   main .block-a .text-frame .content .text2 {
     margin-left: 150px;
     font-size: 14px;
+    top: 35%;
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 580px) {
   main .block-a .text-frame .content .text2 {
     margin-left: 120px;
     width: 60vw;
+    top: 25%;
   }
 }
 
-@media (max-width: 450x) {
+@media (max-width: 530px) {
   main .block-a .text-frame .content .text2 {
-    width: 40vw;
-    margin-left: 100px;
+    margin-left: 120px;
+    width: 60vw;
+    top: 20%;
+    line-height: 26px;
+  }
+}
+
+@media (max-width: 460px) {
+  main .block-a .text-frame .content .text2 {
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-left: 90px;
+    line-height: 18px;
+  }
+}
+
+@media (max-width: 450px) {
+  main .block-a .text-frame .content .text2 {
+    width: 60vw;
   }
 }
 
@@ -241,23 +259,6 @@ main .block-a .text-frame .content .text {
   }
 }
 
-main .block-a .mask {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
-
-main .block-a .mask .white {
-  background-color: #f4f3ef;
-}
-
-main .block-a .mask .gray {
-  background-color: #e6e3e0;
-}
-
 main .block-b {
   width: 100%;
   position: relative;
@@ -267,11 +268,12 @@ main .block-b .img {
   width: 100%;
   height: 100vh;
   background-image: url("/img/frontpage/aboutUs/img-b.jpg");
-  background-position: center;
+  background-position: left;
   background-size: cover;
+  z-index: 333;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   main .block-b .img {
     width: 100%;
     height: 73vw;
@@ -280,19 +282,25 @@ main .block-b .img {
 
 main .block-b .content {
   position: absolute;
-  top: 0;
+  top: 50vh;
   right: 0;
-  width: 34%;
-  padding-top: 34vw;
+  min-width: 540px;
   padding-right: 1.9vw;
   color: white;
-  font-size: 26px;
-  text-align: center;
+  z-index: 333;
+  text-align: right;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1400px) {
+  main .block-b .content {
+    top: 80vh;
+  }
+}
+
+@media (max-width: 992px) {
   main .block-b .content {
     width: 100%;
+    text-align: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -302,29 +310,40 @@ main .block-b .content {
     padding-top: 6.95vw;
     position: relative;
     color: black;
-    font-size: 14px;
+    top: 0vh;
+    padding-bottom: 5vh;
   }
 }
 
 main .block-b .content .title {
   width: 100%;
+  line-height: 50px;
+  letter-spacing: 2px;
+  font-size: 24px;
+}
+
+@media (max-width: 992px) {
+  main .block-b .content .title {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 768px) {
   main .block-b .content .title {
-    width: 60%;
-    height: 27vw;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 460px) {
+  main .block-b .content .title {
+    font-size: 12px;
   }
 }
 
 main .block-b .content .mask {
   width: 100%;
-  height: 63.4vw;
-  z-index: -1;
+  z-index: 2;
   background-color: #e6e3e0;
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 main .block-b .content .mask .triangle {
@@ -338,14 +357,50 @@ main .block-b .content .mask .triangle {
   background-color: #f4f3ef;
 }
 
+main .block-b .triangle {
+  width: 100vw;
+  height: 320px;
+  position: absolute;
+  right: 0;
+  bottom: -30vh;
+  -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+          clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  background-color: #f4f3ef;
+  z-index: 2;
+}
+
+@media (max-width: 992px) {
+  main .block-b .triangle {
+    bottom: -15vh;
+  }
+}
+
 main .block-c {
   width: 100%;
   position: relative;
+  padding-top: 320px;
+}
+
+main .block-c .triangle {
+  width: 100vw;
+  height: 320px;
+  position: absolute;
+  right: 0;
+  top: -10vh;
+  -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+          clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  background-color: #f4f3ef;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  main .block-c .triangle {
+    top: -10vh;
+  }
 }
 
 main .block-c .title-frame {
   width: 100%;
-  padding-top: 13.38vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
