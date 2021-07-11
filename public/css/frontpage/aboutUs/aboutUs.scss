@@ -6,6 +6,12 @@ main{
             margin-top: 80px;
         }
     }
+    .section-about{
+        width: 80vh;
+    }
+    .section{
+        height: 100vh;
+    }
     .block-a{
         width: 100%;
         // height: 931px;
@@ -15,16 +21,22 @@ main{
             display: block;
         }
         .img{
-            width: 55.57%;
-            height: 37vw;
+            width: 50%;
+            height: auto;
+            // position: absolute;
+            // right: 100%;
+            // height: 37vw;
+            // width: 55.57%;
+            // height: auto;
+
             background-image: url('/img/frontpage/aboutUs/img-a.jpg');
-            background-position: center;
             background-size: cover;
+            background-position: center;
             order: 2;
-            margin-bottom: 280px;
+            // margin-bottom: 280px;
             @media (max-width:768px) {
                 width: 100%;
-                height: 74.52vw;
+                // height: 74.52vw;
                 order: 1;
                 margin-bottom: 0;
             }
@@ -65,10 +77,10 @@ main{
                         align-items: flex-start;
                         line-height: normal;
                         margin-bottom: 0;
-                        
+
                     }
                 }
-                .text{ 
+                .text{
                     font-size: 26px;
                     padding-left: 184px;
                     padding-right: 51px;
@@ -79,9 +91,9 @@ main{
                         padding-right: 0;
                     }
                 }
-                
+
             }
-            
+
         }
         .mask{
             width: 100%;
@@ -97,22 +109,22 @@ main{
                 top: 74.52vw;
                 left: 0;
             }
-            
+
             .white{
                 height: 35%;
                 background-color: #F4F3EF;
                 @media (max-width:768px) {
                     height: 50%;
-                }                
+                }
             }
             .gray{
                 height: 65%;
                 background-color: #E6E3E0;
                 @media (max-width:768px) {
                     height: 50%;
-                }                
+                }
             }
-        }    
+        }
     }
     .block-b{
         width: 100%;
@@ -159,10 +171,10 @@ main{
                 width: 100%;
                 height: 63.4vw;
                 z-index: -1;
-                background-color: #E6E3E0;                    
+                background-color: #E6E3E0;
                 position: absolute;
                 top: 0;
-                left: 0;                
+                left: 0;
                 .triangle{
                     width: 97.4vw;
                     height: 320px;
@@ -172,28 +184,28 @@ main{
                     clip-path: polygon(100% 0, 0 100%, 100% 100%);
                     background-color: #F4F3EF;
                 }
-            } 
+            }
         }
-         
+
     }
     .block-c{
         width: 100%;
         position: relative;
         .title-frame{
             width: 100%;
-            padding-top: 13.38vw;            
+            padding-top: 13.38vw;
             display: flex;
             justify-content: center;
             @media (max-width:768px) {
-                padding-top: 0;                
+                padding-top: 0;
                 height: 170px;
             }
-            
+
             .title{
                 font-size: 10.416vw;
                 line-height: 10.416vw;
                 text-align: center;
-                @media (max-width:768px) {                    
+                @media (max-width:768px) {
                     font-size: 100px;
                 }
             }
@@ -210,10 +222,10 @@ main{
         }
         .img-frame{
             display: flex;
-            justify-content: center;            
+            justify-content: center;
             .img{
                 width: 42.13vw;
-                height: 43.07vw;            
+                height: 43.07vw;
                 background-image: url('/img/frontpage/aboutUs/img-c.jpg');
                 background-position: center;
                 background-size: cover;
@@ -245,12 +257,12 @@ main{
                         width: 100%;
                         height: 100%;
                         z-index: -1;
-                        background-color: #F4F3EF;                    
+                        background-color: #F4F3EF;
                         position: absolute;
                         top: 0;
                         left: 0;
                     }
-                    .triangle{                        
+                    .triangle{
                         @media (max-width:768px) {
                             width: 246px;
                             height: 100%;
@@ -259,7 +271,7 @@ main{
                             right: 0;
                             clip-path: polygon(100% 0, 0 100%, 100% 100%);
                             background-color: #E6E3E0;
-                        }                        
+                        }
                     }
                 }
             }
@@ -284,7 +296,7 @@ main{
                 clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
                 background-color: white;
             }
-            
+
         }
     }
     .block-d{
@@ -315,7 +327,7 @@ main{
                 background-color: #E6E3E0;
                 margin: unset;
             }
-            .text{                
+            .text{
                 width: 52vw;
                 font-size: 26px;
                 margin-bottom: 9vw;
@@ -324,10 +336,10 @@ main{
                     font-size: 14px;
                     text-align: center;
                     margin: 0;
-                }                
+                }
             }
         }
-        .mask{            
+        .mask{
             position: absolute;
             top: 0;
             left: 0;

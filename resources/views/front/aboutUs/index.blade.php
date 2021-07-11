@@ -10,14 +10,15 @@
 
 @section('main')
 <main class="move-down">
-    <div class="container-fluid p-0">
-        <div class="block-a">
-            <div class="img"></div>
-            <div class="text-frame">
-                <div class="about">About</div>
+    <div class="container-fluid p-0 ">
+
+        <div class="block-a row d-flex flex-row align-content-center justify-content-between m-0 section-about">
+            <div class="img col-6 p-0"></div>
+            <div class="text-frame col-5">
+                <h1 class="about">About</h1>
                 <div class="content">
                     <div class="row no-gutters">
-                        <div class="col-3 col-md-5 us">Us</div>
+                        <h1 class="col-3 col-md-5 us">Us</h1>
                         <div class="col-2 "></div>
                         <div class="col-6 col-md-12 text">
                             名字或許在時間的的罅隙中溜走、在語言的罅隙中溜走，迷人的風味卻牢牢鐫刻在記憶裡。
@@ -30,6 +31,8 @@
                 <div class="gray"></div>
             </div>
         </div>
+
+
         <div class="block-b">
             <div class="img"></div>
             <div class="content">
