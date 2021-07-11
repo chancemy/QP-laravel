@@ -4,6 +4,7 @@
 
 @section('css')
 <link rel="stylesheet" href="/css/frontpage/aboutUs/aboutUs.css">
+{{-- <link rel="stylesheet" href="/css/template.css"> --}}
 <link rel="stylesheet" href="/font-cssstyle/font-style-guide.css">
 @endsection
 
@@ -12,24 +13,30 @@
 <main class="move-down">
     <div class="container-fluid p-0 ">
 
-        <div class="block-a row d-flex flex-row align-content-center justify-content-between m-0 section-about">
-            <div class="img col-6 p-0"></div>
-            <div class="text-frame col-5">
-                <h1 class="about">About</h1>
-                <div class="content">
+        <div class="block-a d-flex flex-wrap align-content-center justify-content-between section-about"style="background-color:  #e6e3e0">
+            <div class="img p-0"></div>
+
+            <div class="text-frame">
+                <div class="aaa " style="background-color: #f4f3ef;">
+                    <h1 class="about col-12">About</h1>
+                </div>
+                <div class="content ">
                     <div class="row no-gutters">
-                        <h1 class="col-3 col-md-5 us">Us</h1>
-                        <div class="col-2 "></div>
-                        <div class="col-6 col-md-12 text">
+                        <h1 class="us position-relative">Us
+                            <p class="text2 position-absolute">
+                                名字或許在時間的的罅隙中溜走、在語言的罅隙中溜走，迷人的風味卻牢牢鐫刻在記憶裡。
+                            </p>
+                        </h1>
+                        <p class="col-11 text ">
                             名字或許在時間的的罅隙中溜走、在語言的罅隙中溜走，迷人的風味卻牢牢鐫刻在記憶裡。
-                        </div>
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="mask">
+            {{-- <div class="mask">
                 <div class="white"></div>
                 <div class="gray"></div>
-            </div>
+            </div> --}}
         </div>
 
 

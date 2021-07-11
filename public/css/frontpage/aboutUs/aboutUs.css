@@ -14,6 +14,7 @@ main.move-down {
 
 main .section-about {
   width: 80vh;
+  padding: 0 0 10vh 0;
 }
 
 main .section {
@@ -22,10 +23,6 @@ main .section {
 
 main .block-a {
   width: 100%;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 @media (max-width: 768px) {
@@ -45,9 +42,11 @@ main .block-a .img {
           order: 2;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   main .block-a .img {
     width: 100%;
+    height: 50vh;
+    min-height: 300px;
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -59,10 +58,10 @@ main .block-a .text-frame {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  width: 44.43%;
+  width: 50%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   main .block-a .text-frame {
     width: 100%;
     -webkit-box-ordinal-group: 3;
@@ -78,6 +77,14 @@ main .block-a .text-frame .about {
   padding-left: 9.583vw;
 }
 
+@media (max-width: 992px) {
+  main .block-a .text-frame .about {
+    width: 100vw;
+    font-size: 120px;
+    line-height: normal;
+  }
+}
+
 @media (max-width: 768px) {
   main .block-a .text-frame .about {
     padding-top: 12vw;
@@ -89,8 +96,26 @@ main .block-a .text-frame .about {
   }
 }
 
+@media (max-width: 576px) {
+  main .block-a .text-frame .about {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  main .block-a .text-frame .about {
+    font-size: 70px;
+  }
+}
+
 main .block-a .text-frame .content {
   width: 100%;
+}
+
+@media (max-width: 992px) {
+  main .block-a .text-frame .content {
+    width: 100%;
+  }
 }
 
 main .block-a .text-frame .content .us {
@@ -98,6 +123,13 @@ main .block-a .text-frame .content .us {
   line-height: 10.416vw;
   padding-left: 9.583vw;
   margin-bottom: 4.166vw;
+}
+
+@media (max-width: 992px) {
+  main .block-a .text-frame .content .us {
+    font-size: 120px;
+    line-height: normal;
+  }
 }
 
 @media (max-width: 768px) {
@@ -116,10 +148,75 @@ main .block-a .text-frame .content .us {
   }
 }
 
+@media (max-width: 576px) {
+  main .block-a .text-frame .content .us {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 400px) {
+  main .block-a .text-frame .content .us {
+    font-size: 70px;
+  }
+}
+
+main .block-a .text-frame .content .text2 {
+  display: none;
+  font-size: 24px;
+  letter-spacing: 2px;
+  margin-left: 200px;
+  margin-right: 20px;
+  line-height: 36px;
+  font-weight: 400;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+@media (max-width: 992px) {
+  main .block-a .text-frame .content .text2 {
+    font-size: 18px;
+    display: block;
+    top: 40%;
+    width: 55vw;
+  }
+}
+
+@media (max-width: 768px) {
+  main .block-a .text-frame .content .text2 {
+    margin-left: 150px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  main .block-a .text-frame .content .text2 {
+    margin-left: 120px;
+    width: 60vw;
+  }
+}
+
 main .block-a .text-frame .content .text {
-  font-size: 26px;
-  padding-left: 184px;
-  padding-right: 51px;
+  display: block;
+  font-size: 24px;
+  letter-spacing: 2px;
+  padding-left: 9.583vw;
+  padding-right: 20px;
+  line-height: 36px;
+  text-align: justify;
+  text-justify: inter-ideograph;
+}
+
+@media (max-width: 1600px) {
+  main .block-a .text-frame .content .text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  main .block-a .text-frame .content .text {
+    font-size: 18px;
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
@@ -140,36 +237,12 @@ main .block-a .mask {
   z-index: -1;
 }
 
-@media (max-width: 768px) {
-  main .block-a .mask {
-    width: 100%;
-    height: 64.08vw;
-    position: absolute;
-    top: 74.52vw;
-    left: 0;
-  }
-}
-
 main .block-a .mask .white {
-  height: 35%;
-  background-color: #F4F3EF;
-}
-
-@media (max-width: 768px) {
-  main .block-a .mask .white {
-    height: 50%;
-  }
+  background-color: #f4f3ef;
 }
 
 main .block-a .mask .gray {
-  height: 65%;
-  background-color: #E6E3E0;
-}
-
-@media (max-width: 768px) {
-  main .block-a .mask .gray {
-    height: 50%;
-  }
+  background-color: #e6e3e0;
 }
 
 main .block-b {
@@ -235,7 +308,7 @@ main .block-b .content .mask {
   width: 100%;
   height: 63.4vw;
   z-index: -1;
-  background-color: #E6E3E0;
+  background-color: #e6e3e0;
   position: absolute;
   top: 0;
   left: 0;
@@ -249,7 +322,7 @@ main .block-b .content .mask .triangle {
   bottom: 0;
   -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
           clip-path: polygon(100% 0, 0 100%, 100% 100%);
-  background-color: #F4F3EF;
+  background-color: #f4f3ef;
 }
 
 main .block-c {
@@ -357,7 +430,7 @@ main .block-c .content {
     width: 100%;
     height: 100%;
     z-index: -1;
-    background-color: #F4F3EF;
+    background-color: #f4f3ef;
     position: absolute;
     top: 0;
     left: 0;
@@ -373,7 +446,7 @@ main .block-c .content {
     right: 0;
     -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
             clip-path: polygon(100% 0, 0 100%, 100% 100%);
-    background-color: #E6E3E0;
+    background-color: #e6e3e0;
   }
 }
 
@@ -384,7 +457,7 @@ main .block-c .mask {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #E6E3E0;
+  background-color: #e6e3e0;
 }
 
 @media (max-width: 768px) {
@@ -412,7 +485,7 @@ main .block-d {
 main .block-d .img {
   width: 56.45vw;
   height: 37.96vw;
-  margin: 9.53vw auto  5.2vw;
+  margin: 9.53vw auto 5.2vw;
   background-image: url("/img/frontpage/aboutUs/img-d.jpg");
   background-position: center;
   background-size: cover;
@@ -443,9 +516,13 @@ main .block-d .text-frame {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    background-color: #E6E3E0;
+    background-color: #e6e3e0;
     margin: unset;
   }
+}
+
+main .block-d .text-frame .aaa {
+  width: 100vw;
 }
 
 main .block-d .text-frame .text {
@@ -486,6 +563,6 @@ main .block-d .mask .triangle {
   height: 67.78%;
   -webkit-clip-path: polygon(0 59.63%, 100% 0, 100% 100%, 0 100%);
           clip-path: polygon(0 59.63%, 100% 0, 100% 100%, 0 100%);
-  background-color: #E6E3E0;
+  background-color: #e6e3e0;
 }
 /*# sourceMappingURL=aboutUs.css.map */
