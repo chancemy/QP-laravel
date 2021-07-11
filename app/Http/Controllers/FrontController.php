@@ -186,6 +186,7 @@ class FrontController extends Controller
         ]);
         Session::forget('payment');
         Session::forget('shipment');
+        Session::forget('shipping_fee');
         \Cart::clear();
 
         return redirect('cart/step4')->with('order', $order);
@@ -205,7 +206,6 @@ class FrontController extends Controller
         } else {
             return redirect('/');
         }
-
     }
 
 
