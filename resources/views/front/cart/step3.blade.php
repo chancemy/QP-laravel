@@ -3,10 +3,10 @@
 @section('page-title','購物車-3')
 
 @section('css')
-<link rel="stylesheet" href="/css/frontpage/cart/cart-template.css">
+<link rel="stylesheet" href="{{ asset('/css/frontpage/cart/cart-template.css') }}">
 
-<link rel="stylesheet" href="/css/frontpage/cart/cart.css">
-<link rel="stylesheet" href="/css/frontpage/cart/cart_step3.css">
+<link rel="stylesheet" href="{{ asset('/css/frontpage/cart/cart.css') }}">
+<link rel="stylesheet" href="{{ asset('/css/frontpage/cart/cart_step3.css') }}">
 @endsection
 
 
@@ -49,20 +49,20 @@
                 </div>
 
 
-        </div>
+            </div>
         </div>
     </section>
 
     <!--  以下表單內容  -->
     <section class="bgc-yellow py-5">
         <div class="container">
-            <form action="{{ asset('/cart/shipment_check') }}" class="bgc-yellow-2 w-100 cart-form" method="POST">
+            <form action="{{ asset('/cart/shipment_check') }}" class="bgc-yellow-2 w-100 cart-form " method="POST">
                 @csrf
-                <div class="w-100 bgc-gray-3 cart-title d-flex justify-content-center align-items-center ">
+                <div class=" bgc-gray-3 cart-title first d-flex justify-content-center align-items-center ">
                     訂購人資訊
                 </div>
-                <div class="w-100 text-center py-3"><span> * 務必正確輸入訂購人姓名電話及地址以確保正確送達</span></div>
-                <div class="row w-75 mx-auto py-3">
+                <div class=" text-center py-3"><span> * 務必正確輸入訂購人姓名電話及地址以確保正確送達</span></div>
+                <div class="row mx-auto py-3 form-group3">
                     <div class="col-6   d-flex flex-column">
                         <label for="name">姓名</label>
                         <input required id="name" type="text" name="name" placeholder="請輸入訂購人姓名">
@@ -72,7 +72,7 @@
                         <input required id="phone" type="text" name="phone" placeholder="請輸入訂購人電話">
                     </div>
                 </div>
-                <div class="row w-75 mx-auto py-3">
+                <div class="row mx-auto py-3 form-group3">
                     <div class="col-12 d-flex flex-column">
                         <label for="address">地址</label>
                         <div class="city-selector-set row">
@@ -98,7 +98,7 @@
                     </div>
 
                 </div>
-                <div class="row w-75 mx-auto py-3">
+                <div class="row mx-auto py-3 form-group3">
                     <div class="col-12 d-flex flex-column">
                         <label for="email">信箱</label>
                         <input id="email" type="email" required name="email" placeholder="請輸入電子郵件">
@@ -112,7 +112,7 @@
                 @endphp
                 <button type="submit" hidden id="form-submit"></button><!-- 表單內結帳資訊 -->
                 <div class="d-flex flex-column align-items-end justify-content-end  bgc-yellow-2  cart-bottom  ">
-                    <div style="width: 328px;">
+                    <div style="width: 328px;max-width:100%">
                         <div class="d-flex justify-content-between align-items-center">
                             <span class=" mr-2 ">數量</span>
                             <span id="qty-total">{{  $numberCount }}</span>
