@@ -42,8 +42,8 @@ class ProductController extends Controller
                 'name' => $request->name,
                 'price' => $request->price,
                 'unit' => $request->unit,
-                "start_date" => $request->start_date ?? '1999-01-01',
-                "end_date" => $request->end_date ?? '9999-12-31',
+                "start_date" => '1999-01-01',
+                "end_date" => '9999-12-31',
                 'discript' => $request->discript,
                 'content' => $request->content,
                 'img' => $path,
@@ -51,6 +51,11 @@ class ProductController extends Controller
             ]
 
         );
+        if ($old_record->type->type == '期間限定') {
+            $old_record->start_date = $request->start_date;
+            $old_record->end_date = $request->end_date;
+            $old_record->save();
+        }
         if ($request->photos) {
 
             foreach ($request->photos as $photo) {
@@ -97,22 +102,21 @@ class ProductController extends Controller
         $old_record->name = $request->name;
         $old_record->price = $request->price;
         $old_record->unit = $request->unit;
-        $old_record->start_date = $request->start_date??'1999-01-01';
-        $old_record->end_date = $request->end_date??'9999-12-31';
+        $old_record->start_date = '1999-01-01';
+        $old_record->end_date = '9999-12-31';
         $old_record->discript = $request->discript;
         $old_record->content = $request->content;
+        if ($old_record->type->type == '期間限定') {
+            $old_record->start_date = $request->start_date;
+            $old_record->end_date = $request->end_date;
 
+        }
         $old_record->save();
 
         if ($request->photos) {
             foreach ($request->photos as $photo) {
                 $file = $photo;
-
-                $extension = $file->getClientOriginalExtension();
-                $filename = md5((uniqid(rand()))) . '.' . $extension;
-                $path = '/upload/' . $filename;
-
-                move_uploaded_file($file, public_path() . $path);
+                $path = FileController::productImgUpload($file);
 
                 ProductImg::create([
                     'product_id' => $old_record->id,

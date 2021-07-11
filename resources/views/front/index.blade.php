@@ -226,7 +226,7 @@
             <div class="container-fluid row no-gutters container-about flex-column-reverse flex-lg-row">
                 <div class="col-lg-7 about-img">
                     <div class="w-100" style="height: 100%;">
-                        <img src="/img/frontpage/index/section1.jpg" alt="" data-aos="fade-up" data-aos-duration="3000">
+                        <img src="{{ asset('/img/frontpage/index/section1.jpg') }}" alt="" data-aos="fade-up" data-aos-duration="3000">
                     </div>
                 </div>
                 <div class="content col-lg-5 d-flex flex-column justify-content-center align-items-center i5-margin">

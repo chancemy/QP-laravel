@@ -56,7 +56,7 @@ class FrontController extends Controller
     {
         $todayDate = date('Y-m-d');
 
-        $products = Product::where('start_date', '<=', $todayDate)->where('end_date', '>=', $todayDate)->get();
+        $products = Product::where('start_date', '<=', $todayDate)->where('end_date', '>=', $todayDate)->get()->sortBy('end_date');
         $types = ProductType::TYPE;
         $all_product_types = ProductType::get();
         $product_types = collect([]);
