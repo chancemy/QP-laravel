@@ -169,12 +169,18 @@ body{
                                         padding-bottom: 7.36%;
                                         font-size: 0.9vw;
                                         color: #42210B;
+                                        @media (max-width:768px){
+                                            font-size: 3.02vw;
+                                        }
                                     }
                                     .title{
                                         width: 100%;
                                         font-size: 1.3vw;
                                         padding-bottom: 10%;
                                         color: black;
+                                        @media (max-width:768px){
+                                            font-size: 4.372vw;
+                                        }
                                     }
                                     .content{
                                         width: 100%;
@@ -203,6 +209,7 @@ body{
                                             display: none;;
                                         }
                                         @media (max-width:768px){
+                                            font-size: 3.02vw;
                                             display: block;
                                         }
                                     }
@@ -249,6 +256,9 @@ body{
                                         display: flex;
                                         justify-content: center;
                                         align-items: center;
+                                        @media (max-width:768px){
+                                            font-size: 4.87vw;
+                                        }
                                     }
                                     .date-text{
                                         font-size: 1.77vw;
@@ -258,6 +268,9 @@ body{
                                         display: flex;
                                         justify-content: center;
                                         align-items: center;
+                                        @media (max-width:768px){
+                                            font-size: 4.87vw;
+                                        }
                                     }
                                 }
                                 .top{
@@ -305,10 +318,16 @@ body{
                     display: flex;
                     justify-content: center;
                     align-items: flex-end;
+                    @media (max-width:768px) {
+                        margin-top: 8.3478vw;
+                    }
                     .page-frame{
                         display: flex;
                         justify-content: space-around;
                         align-content: center;
+                        @media (max-width:768px) {
+                            display: none;
+                        }
                         .page-btn{
                             width: 2rem;
                             height: 2rem;
@@ -319,9 +338,42 @@ body{
                             margin-left: 1.5rem;
                             border: 0px solid #42210B;
                             cursor: pointer;
+                            &.hide{
+                                display: none;
+                            }
+                            &.show{
+                                display: flex;
+                            }
+                        }
+                    }
+                    .mobile-page-frame{
+                        display: flex;
+                        justify-content: space-around;
+                        align-content: center;
+                        display: none;
+                        @media (max-width:768px) {
+                            display: flex;
+                        }
+                        .page-btn{
+                            width: 2rem;
+                            height: 2rem;
+                            font-size: 1.5rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            margin-left: 1.5rem;
+                            border: 0px solid #42210B;
+                            cursor: pointer;
+                            &.hide{
+                                display: none;
+                            }
+                            &.show{
+                                display: flex;
+                            }
                         }
                     }
                 }
+
             }
         }
     }

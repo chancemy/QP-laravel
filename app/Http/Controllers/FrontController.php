@@ -33,14 +33,16 @@ class FrontController extends Controller
     public function newsIndex(Request $request)
     {
         $newsTypes = NewsType::with('news')->get();
-        if($request->type_id && $request->type_id != 0){
-            $news = News::with('type')->where('type_id',$request->type_id)->get();
-            // dd(count($news));
+        $typeId = $request->type_id;
+        if($typeId && $typeId != 0){
+            $news = News::with('type')->where('type_id',$typeId)->get()->sortBy('date');
+            // dd($news);
         }else{
-            $news = News::with('type')->get();
+            $typeId = 0;
+            $news = News::with('type')->get()->sortBy('date');
         }
 
-        return view('front.news.index', compact('newsTypes', 'news'));
+        return view('front.news.index', compact('newsTypes', 'news','typeId'));
     }
 
     public function newsDetail($id)

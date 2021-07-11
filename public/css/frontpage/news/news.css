@@ -246,11 +246,23 @@ body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .li
   color: #42210B;
 }
 
+@media (max-width: 768px) {
+  body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .line-frame .description .type {
+    font-size: 3.02vw;
+  }
+}
+
 body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .line-frame .description .title {
   width: 100%;
   font-size: 1.3vw;
   padding-bottom: 10%;
   color: black;
+}
+
+@media (max-width: 768px) {
+  body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .line-frame .description .title {
+    font-size: 4.372vw;
+  }
 }
 
 body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .line-frame .description .content {
@@ -293,6 +305,7 @@ body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .li
 
 @media (max-width: 768px) {
   body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .line-frame .description .content {
+    font-size: 3.02vw;
     display: block;
   }
 }
@@ -358,6 +371,12 @@ body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .li
           align-items: center;
 }
 
+@media (max-width: 768px) {
+  body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .line-frame .month .month-text {
+    font-size: 4.87vw;
+  }
+}
+
 body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .line-frame .month .date-text {
   font-size: 1.77vw;
   font-weight: 600;
@@ -372,6 +391,12 @@ body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .li
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+@media (max-width: 768px) {
+  body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .line-frame .month .date-text {
+    font-size: 4.87vw;
+  }
 }
 
 body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .line-frame .top {
@@ -425,6 +450,12 @@ body main .block-a .swiper-frame .pagination {
           align-items: flex-end;
 }
 
+@media (max-width: 768px) {
+  body main .block-a .swiper-frame .pagination {
+    margin-top: 8.3478vw;
+  }
+}
+
 body main .block-a .swiper-frame .pagination .page-frame {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -433,6 +464,12 @@ body main .block-a .swiper-frame .pagination .page-frame {
       justify-content: space-around;
   -ms-flex-line-pack: center;
       align-content: center;
+}
+
+@media (max-width: 768px) {
+  body main .block-a .swiper-frame .pagination .page-frame {
+    display: none;
+  }
 }
 
 body main .block-a .swiper-frame .pagination .page-frame .page-btn {
@@ -451,5 +488,62 @@ body main .block-a .swiper-frame .pagination .page-frame .page-btn {
   margin-left: 1.5rem;
   border: 0px solid #42210B;
   cursor: pointer;
+}
+
+body main .block-a .swiper-frame .pagination .page-frame .page-btn.hide {
+  display: none;
+}
+
+body main .block-a .swiper-frame .pagination .page-frame .page-btn.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body main .block-a .swiper-frame .pagination .mobile-page-frame {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  body main .block-a .swiper-frame .pagination .mobile-page-frame {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+body main .block-a .swiper-frame .pagination .mobile-page-frame .page-btn {
+  width: 2rem;
+  height: 2rem;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 1.5rem;
+  border: 0px solid #42210B;
+  cursor: pointer;
+}
+
+body main .block-a .swiper-frame .pagination .mobile-page-frame .page-btn.hide {
+  display: none;
+}
+
+body main .block-a .swiper-frame .pagination .mobile-page-frame .page-btn.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=news.css.map */
