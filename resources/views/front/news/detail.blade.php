@@ -18,7 +18,7 @@
                 <div class="news-title">{{ $new->title }}</div>
             </div>
             <div class="col-xl-8 col-lg-6 news-img w-100">
-                <a href="/img/frontpage/news/detail/2021-04-24_010728.jpg" data-lightbox="news-img"
+                <a href="{{ asset($new->img) }}" data-lightbox="news-img"
                    ><img src="{{ asset($new->img) }}" alt=""></a>
 
 
