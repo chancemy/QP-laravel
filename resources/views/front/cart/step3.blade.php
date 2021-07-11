@@ -16,38 +16,40 @@
         <div class="container">
 
             <!-- 以下結帳進度條 -->
-            <div class="col-lg-12 progress-style d-flex flex-column justify-content-between">
-                <div class="d-flex">
-                    <div class="quarter-round">
-                        <div class="round">
-                            <div class="roundcircle-style-line active"> 1</div>
-                        </div>
-                    </div>
-                    <div class="quarter-round">
-                        <div class="round">
-                            <div class="roundcircle-style active"> 2</div>
-                        </div>
-                    </div>
-                    <div class="quarter-round">
-                        <div class="round">
-                            <div class="roundcircle-style active"> 3</div>
-                        </div>
-                    </div>
-                    <div class="quarter-round">
-                        <div class="round">
-                            <div class="roundcircle-style"> 4</div>
-                        </div>
+            <div class="progress-style d-flex justify-content-between align-items-start text-center">
+
+                <div class="quarter-round">
+                    <div class="round d-flex flex-column align-items-center w-100 justify-content-center">
+                        <div class="roundcircle-style active mb-2 d-flex align-items-center justify-content-center">
+                            1</div>
+                        <span class="quarterround-text-pd">確認購物車</span>
                     </div>
                 </div>
-                <div class="col-lg-12 d-flex p-0">
-                    <div class="w-100 mt-2 d-flex justify-content-around">
-                        <p class="quarterround-text-pd mr_1 active">確認購物車</p>
-                        <p class="quarterround-text-pd mr_2 active">付款與運送方式</p>
-                        <p class="quarterround-text-pd mr_3">填寫資料</p>
-                        <p class="quarterround-text-pd mr_4">完成訂購</p>
+                <div class="quarter-round">
+                    <div class="round d-flex flex-column align-items-center w-100 justify-content-center">
+                        <div class="roundcircle-style mb-2 d-flex align-items-center justify-content-center active">
+                            2</div>
+                        <span class="quarterround-text-pd ">付款與運送方式</span>
                     </div>
                 </div>
-            </div>
+                <div class="quarter-round">
+                    <div class="round d-flex flex-column align-items-center w-100 justify-content-center">
+                        <div class="roundcircle-style mb-2 d-flex align-items-center justify-content-center active">
+                            3</div>
+                        <span class="quarterround-text-pd ">填寫資料</span>
+                    </div>
+                </div>
+                <div class="quarter-round">
+                    <div class="round d-flex flex-column align-items-center w-100 justify-content-center">
+                        <div class="roundcircle-style mb-2 d-flex align-items-center justify-content-center">
+                            4</div>
+                        <span class="quarterround-text-pd ">完成訂購</span>
+
+                    </div>
+                </div>
+
+
+        </div>
         </div>
     </section>
 
