@@ -1,15 +1,19 @@
 main {
-    width: 100%;
+    background-color: #f4f3ef;
     &.move-down {
-        margin-top: 108px;
+        padding-top: 108px;
         @media (max-width: 768px) {
-            margin-top: 80px;
+            padding-top: 80px;
         }
     }
     .section-about {
-        width: 80vh;
+        width: 100%;
         padding: 0 0 10vh 0;
+        @media (max-width: 992px) {
+            padding: 0 0 2vh 0;
+        }
     }
+
     .section {
         height: 100vh;
     }
@@ -72,7 +76,7 @@ main {
                     font-size: 80px;
                 }
                 @media (max-width: 400px) {
-                    font-size: 70px;
+                    font-size: 60px;
                 }
             }
             .content {
@@ -102,7 +106,7 @@ main {
                         font-size: 80px;
                     }
                     @media (max-width: 400px) {
-                        font-size: 70px;
+                        font-size: 60px;
                     }
 
                 }
@@ -129,6 +133,10 @@ main {
                     @media (max-width: 576px) {
                         margin-left: 120px;
                         width: 60vw;
+                    }
+                    @media (max-width: 450x) {
+                        width:40vw;
+                        margin-left: 100px;
                     }
                 }
                 .text {

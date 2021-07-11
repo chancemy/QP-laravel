@@ -12,8 +12,7 @@
 @section('main')
 <main class="move-down">
     <div class="container-fluid p-0 ">
-
-        <div class="block-a d-flex flex-wrap align-content-center justify-content-between section-about"style="background-color:  #e6e3e0">
+        <div class="block-a d-flex flex-wrap align-content-center justify-content-between section-about"style="background-color:#e6e3e0;">
             <div class="img p-0"></div>
 
             <div class="text-frame">

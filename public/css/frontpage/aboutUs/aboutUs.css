@@ -1,20 +1,26 @@
 main {
-  width: 100%;
+  background-color: #f4f3ef;
 }
 
 main.move-down {
-  margin-top: 108px;
+  padding-top: 108px;
 }
 
 @media (max-width: 768px) {
   main.move-down {
-    margin-top: 80px;
+    padding-top: 80px;
   }
 }
 
 main .section-about {
-  width: 80vh;
+  width: 100%;
   padding: 0 0 10vh 0;
+}
+
+@media (max-width: 992px) {
+  main .section-about {
+    padding: 0 0 2vh 0;
+  }
 }
 
 main .section {
@@ -104,7 +110,7 @@ main .block-a .text-frame .about {
 
 @media (max-width: 400px) {
   main .block-a .text-frame .about {
-    font-size: 70px;
+    font-size: 60px;
   }
 }
 
@@ -156,7 +162,7 @@ main .block-a .text-frame .content .us {
 
 @media (max-width: 400px) {
   main .block-a .text-frame .content .us {
-    font-size: 70px;
+    font-size: 60px;
   }
 }
 
@@ -192,6 +198,13 @@ main .block-a .text-frame .content .text2 {
   main .block-a .text-frame .content .text2 {
     margin-left: 120px;
     width: 60vw;
+  }
+}
+
+@media (max-width: 450x) {
+  main .block-a .text-frame .content .text2 {
+    width: 40vw;
+    margin-left: 100px;
   }
 }
 
