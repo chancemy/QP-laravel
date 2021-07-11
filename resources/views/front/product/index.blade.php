@@ -44,10 +44,17 @@
                 </div>
                 <div class="col-lg-9 w-100 product-list-area p-lg-3 p-0 d-flex flex-wrap">
                     @foreach ($products as $product)
-                    <div class="p-sm-4 p-3 product-container mb-3" data-type="{{ $product->type->type }}" data-typeid="{{ $product->type_id }}">
+                    <div class="p-sm-4 p-3 product-container mb-3"
+                        data-type="{{ $product->type->type }}" data-typeid="{{ $product->type_id }}">
                         <a href="{{ asset('/product/detail') }}/{{ $product->id }}">
+
                             <div class="img-container">
                                 <img src="{{ $product->img }}" alt="">
+                                @if ($product->type->type == '期間限定')
+                                <div class="position-absolute"
+                                    style="font-size:12px;font-weight:600;color:white;background-color:red;top:5px;left:10px;padding:2px 5px;border-radius:6px;">
+                                    期間限定</div>
+                                @endif
                             </div>
                             <div><span class="mr-4">{{ $product->name }}</span> / <span class="ml-4">NT
                                     ${{ $product->price }}</span><i class="ml-4 fas fa-chevron-right"></i>

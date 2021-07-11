@@ -153,9 +153,13 @@ body {
         }
 
         section {
-            z-index: -10;
+
             overflow-x: hidden;
             overflow-y: hidden;
+            .container-fluid{
+                position: relative;
+                z-index: 2;
+            }
             .i5-margin{
                 @media (max-height: 800px) {
                     margin: 20px 0;
@@ -178,7 +182,7 @@ body {
                 bottom: 0%;
                 right: 10px;
                 width: 30%;
-                z-index: -1;
+                z-index: 1;
                 img {
                     display: block;
                     object-position: center;
@@ -213,7 +217,7 @@ body {
                 bottom: 0;
                 left: 50%;
                 transform: translate(-50%, 0);
-                z-index: -5;
+
             }
         }
         .section-news {
@@ -231,7 +235,7 @@ body {
                     bottom: 70vh;
                     right: 10px;
                     width: 30%;
-                    z-index: -1;
+
                 }
 
                 @media (max-width: 576px) {
@@ -278,7 +282,7 @@ body {
                 top: 0;
                 left: 50%;
                 transform: translate(-50%, 0);
-                z-index: -5;
+
                 @media (max-width: 992px) {
                     width: 80%;
                     height: 20%;
@@ -357,7 +361,7 @@ body {
                     width: 100%;
                     top: 0;
                     left: 0;
-                    z-index: -1;
+
                     display: none;
                     @media (max-width: 992px) {
                         display: block;
