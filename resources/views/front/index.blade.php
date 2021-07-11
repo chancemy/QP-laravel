@@ -231,8 +231,10 @@
                 </div>
                 <div class="content col-lg-5 d-flex flex-column justify-content-center align-items-center i5-margin">
                     <div class="title mb-3">
-                        <h1 class="d-inline-block">About</h1><a href=""><i
-                                class="far fa-arrow-alt-circle-right d-inline-block arrow ml-4"></i></a>
+                        <h1 class="d-inline-block">About</h1>
+                        <a href="{{ asset('/aboutus') }}">
+                            <i class="far fa-arrow-alt-circle-right d-inline-block arrow ml-4"></i>
+                        </a>
                     </div>
 
                     <div class="text-area">
@@ -247,17 +249,18 @@
             <div class="container-fluid row no-gutters container-news flex-column flex-lg-row">
                 <div class="col-lg-3 ">
                     <div class="d-flex flex-column justify-content-center align-items-center text-area-news i5-margin">
-                        <div class="title mb-3 ">
+                        <div class="title mb-3 row d-flex flex-row justify-content-center align-items-center">
                             <h1 class="d-inline-block">News</h1>
-                            <a href="" class="news-arrow2-a" style="margin-left: 20px"><i
-                                class="far fa-arrow-alt-circle-right text-center arrow news-arrow2"></i></a>
+                            <a href="{{ asset('/newsIndex') }}" class="news-arrow2-a" style="margin: 30px 0 0 20px">
+                                <i class="far fa-arrow-alt-circle-right text-center arrow news-arrow2"></i>
+                            </a>
                         </div>
 
-                        <div class="text-area d-flex flex-column align-items-center news-text" >
-                            <p class="text-center mb-4" style="padding: 0px">以千層為基底蜜桃泡芙與蜜桃餡，適合夏秋的，適合夏秋的，甜蜜花園午茶小點心。
-                            </p>
-                            <a href=""><i
-                                    class="far fa-arrow-alt-circle-right text-center  arrow news-arrow"></i></a>
+                        <div class="text-area d-flex flex-column align-items-center news-text">
+                            <p class="text-center mb-4" style="padding: 0px">以千層為基底蜜桃泡芙與蜜桃餡，適合夏秋的，適合夏秋的，甜蜜花園午茶小點心。</p>
+                            <a href="{{ asset('/newsIndex') }}">
+                                <i class="far fa-arrow-alt-circle-right text-center  arrow news-arrow"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -267,8 +270,6 @@
                         <img src="/img/frontpage/index/news.jpg" alt="">
                     </div>
                 </div>
-
-
             </div>
             <div class="position-absolute bgc-yellow news-bg-block"></div>
 
@@ -283,8 +284,9 @@
                     <div class="text-area d-flex flex-column align-items-center">
                         <p class="text-center mb-4">味道纖雅、香氣細緻、充滿文藝氣息
                         </p>
-                        <a href=""><i
-                                class="far fa-arrow-alt-circle-right text-center d-inline-block arrow mb-4"></i></a>
+                        <a href="{{ asset('/product') }}">
+                            <i class="far fa-arrow-alt-circle-right text-center d-inline-block arrow mb-4"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-4 product-img ">
@@ -311,30 +313,22 @@
         </section>
         <section class="position-relative section-store">
             <div class="container-fluid bgc-gray container-store">
-                <div
-                    class="store-title text-lg-right text-center d-lg-block d-flex justify-content-center align-items-center flex-wrap">
+                <div class="store-title text-lg-right text-center d-lg-block d-flex justify-content-center align-items-center flex-wrap">
                     <div class="store-bg-yellow-2 bgc-yellow-2"></div>
-                    <div class="our-store">
-                        Our Store</div>
+                    <div class="our-store"> Our Store</div>
+                </div>
+                <div class="store-bg-white"> </div>
 
-                </div>
-                <div class="store-bg-white">
+                <div class="store-bg-yellow bgc-yellow-2"> </div>
 
-                </div>
-                <div class="store-bg-yellow bgc-yellow-2">
-                </div>
                 <div class="w-100 row no-gutters ">
+                    <div class="col-lg-3"> </div>
 
-                    <div class="col-lg-3">
-
-                    </div>
                     <div class="col-lg-9 position-relative store-img">
                         <div class="w-100 img-area">
                             <img src="/img/frontpage/index/ourstore.jpg" alt="">
                         </div>
                     </div>
-
-
                 </div>
                 <div
                     class="address position-relative flex-row-reverse flex-sm-row row no-gutters text-lg-left text-center">
