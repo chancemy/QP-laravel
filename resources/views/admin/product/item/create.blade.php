@@ -20,7 +20,7 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ asset('/home') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ asset('/admin') }}">後臺管理首頁</a></li>
                 <li class="breadcrumb-item"><a href="{{ asset('admin/product/item') }}">產品類別管理</a></li>
                 <li class="breadcrumb-item active" aria-current="page">新增產品</li>
             </ol>
@@ -73,7 +73,7 @@
 
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row date-input">
                         <div class="col-6">
                             <label for="start_date" class="col-form-label text-md-right">開始販售日期（固定菜單不必填）</label>
 
@@ -94,7 +94,7 @@
                         <label for="img" class=" col-form-label text-md-right">產品主要圖片</label>
 
                         <div>
-                            <input id="img" type="file" name="img" required>
+                            <input id="img" type="file" name="img" autofocus required>
                         </div>
                     </div>
                     <div class="form-group ">
@@ -106,24 +106,27 @@
                     </div>
                     <div class="form-group ">
                         <label class="col-form-label text-md-right" for="discript">描述</label>
-                        <textarea required class="w-100" name="discript" id="discript" cols="30" rows="5"></textarea>
+                        <textarea required class="w-100" name="discript" id="discript" cols="30" rows="5"
+                            autofocus></textarea>
                     </div>
                     <div class="form-group ">
                         <label for="content" class="col-form-label text-md-right">內容物</label>
 
                         <div>
-                            <textarea required id="content" name="content"></textarea>
+                            <textarea id="content" name="content"></textarea>
                         </div>
                     </div>
 
-                    <div class="form-group row mb-0">
+                    <div class="form-group row mb-0" hidden>
                         <div class="col-md-10 offset-md-2">
-                            <button type="submit" class="btn btn-primary add-btn">
+                            <button type="submit" class="btn btn-primary submit-btn">
                                 新增
                             </button>
                         </div>
                     </div>
                 </form>
+                <div class="w-100 d-flex justify-content-center">
+                    <button class="add-btn btn btn-primary">新增</button></div>
             </div>
         </div>
     </div>
@@ -138,23 +141,46 @@
       tabsize: 2,
       height: 300
     });
-
     const addBtn = document.querySelector('.add-btn');
-    const form = document.querySelector('.add-form');
+    const submitBtn = document.querySelector('.submit-btn');
     let typeSelect = document.querySelector('#type');
-
+    let dateInput = document.querySelector('.date-input');
+    hideDateSelect();
+    typeSelect.onchange = function(){
+        hideDateSelect();
+    }
+    function hideDateSelect(){
+        let optionSelected = typeSelect.querySelector('option:checked');
+        optionType = optionSelected.dataset.type;
+        if (optionType == '固定菜單') {
+            dateInput.hidden = true;
+        }else{
+            dateInput.hidden = false;
+        }
+    }
 
     addBtn.onclick = function(e){
         e.preventDefault();
-
         let startDate = document.querySelector('#start_date').value;
         let endDate = document.querySelector('#end_date').value;
-        if(startDate > endDate){
-            alert('開始販售日期不可比結束販售日期早！');
+        let optionSelected = typeSelect.querySelector('option:checked');
+        optionType = optionSelected.dataset.type;
+        if($('#content').summernote('isEmpty')) {
+            alert('產品內容不可為空！');
+            }
+        if (optionType != '固定菜單') {
+            if (startDate == '' || endDate =='') {
+                alert('期間限定商品需指定販售期間！');
+            }else if (startDate > endDate) {
+                alert('開始販售日期不可比結束販售日期早！');
+            }else{
+                submitBtn.click();
+            }
         }else{
-            form.submit();
+            submitBtn.click();
         }
     };
+
 
 </script>
 

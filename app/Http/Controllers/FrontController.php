@@ -30,17 +30,17 @@ class FrontController extends Controller
 
 
     // 最新消息
-    public function newsIndex()
+    public function newsIndex(Request $request)
     {
         $newsTypes = NewsType::with('news')->get();
-        $news = News::with('type')->get();
+        if($request->type_id && $request->type_id != 0){
+            $news = News::with('type')->where('type_id',$request->type_id)->get();
+            // dd(count($news));
+        }else{
+            $news = News::with('type')->get();
+        }
 
         return view('front.news.index', compact('newsTypes', 'news'));
-    }
-
-    public function typeNews(Request $request)
-    {
-        $news = News::with('type')->where('type_id',$request->id);
     }
 
     public function newsDetail($id)
@@ -58,8 +58,13 @@ class FrontController extends Controller
 
         $products = Product::where('start_date', '<=', $todayDate)->where('end_date', '>=', $todayDate)->get();
         $types = ProductType::TYPE;
-        $product_types = ProductType::get();
-
+        $all_product_types = ProductType::get();
+        $product_types = collect([]);
+        foreach ($all_product_types as $product_type) {
+            if ($product_type->products->count() != 0) {
+                $product_types->push($product_type);
+            }
+        };
         return view('front.product.index', compact('products', 'types', 'product_types'));
     }
 

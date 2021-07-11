@@ -38,8 +38,8 @@
                 <h2>產品編輯</h2>
             </div>
             <div class="card-body">
-                <form method="POST" action="{{ asset('/admin/product/item/update') }}/{{ $record->id }}" enctype="multipart/form-data"
-                    class="w-75 mx-auto add-form">
+                <form method="POST" action="{{ asset('/admin/product/item/update') }}/{{ $record->id }}"
+                    enctype="multipart/form-data" class="w-75 mx-auto add-form">
                     @csrf
                     <div class="form-group">
                         <label for="type_id" class=" text-md-right">分類</label>
@@ -47,7 +47,7 @@
                         <div>
                             <select class="form-control" id="type" name="type_id">
                                 @foreach ($types as $type)
-                                <option @if ($record->type_id == $type->id) selected
+                                <option data-type={{ $type->type }} @if ($record->type_id == $type->id) selected
 
                                     @endif value="{{ $type->id }}">{{ $type->type }}-{{ $type->type_name }}</option>
 
@@ -84,9 +84,9 @@
 
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row date-input">
                         <div class="col-6">
-                            <label for="start_date" class="col-form-label text-md-right">開始販售日期（固定菜單可不必填）</label>
+                            <label for="start_date" class="col-form-label text-md-right">開始販售日期</label>
 
                             <div>
                                 <input id="start_date" type="date" class="form-control" name="start_date" autofocus
@@ -95,7 +95,7 @@
 
                         </div>
                         <div class="col-6">
-                            <label for="end_date" class="col-form-label text-md-right">結束販售日期（固定菜單可不必填）</label>
+                            <label for="end_date" class="col-form-label text-md-right">結束販售日期</label>
 
                             <div>
                                 <input id="end_date" type="date" class="form-control" name="end_date" autofocus
@@ -124,34 +124,36 @@
                         @foreach ($old_photos as $photo)
                         <div class="col-3 d-flex flex-column align-items-center">
                             <img src="{{ $photo->photo }}" alt="" class="mb-2" style="width: 100%;height: 200px;">
-                            <div class="btn btn-outline-danger delete-btn"  data-id="{{ $photo->id }}">刪除圖片</div>
+                            <div class="btn btn-outline-danger delete-btn" data-id="{{ $photo->id }}">刪除圖片</div>
                         </div>
 
                         @endforeach
                     </div>
                     <div class="form-group ">
                         <label class="col-form-label text-md-right" for="discript">描述</label>
-                        <textarea required class="w-100" name="discript" id="discript" cols="30"
+                        <textarea required autofocus class="w-100" name="discript" id="discript" cols="30"
                             rows="5">{{ $record->discript }}</textarea>
                     </div>
                     <div class="form-group ">
                         <label for="content" class=" col-form-label text-md-right">內容物</label>
 
                         <div>
-                            <textarea required id="content" name="content">
+                            <textarea id="content" name="content">
                                 {{ $record->content }}
                             </textarea>
                         </div>
                     </div>
 
-                    <div class="form-group row mb-0">
+                    <div class="form-group row mb-0" hidden>
                         <div class="col-md-10 offset-md-2">
-                            <button type="submit" class="btn btn-primary add-btn">
-                                編輯完成
+                            <button type="submit" class="btn btn-primary submit-btn">
+                                新增
                             </button>
                         </div>
                     </div>
                 </form>
+                <div class="w-100 d-flex justify-content-center">
+                    <button class="add-btn btn btn-primary">送出編輯</button></div>
             </div>
         </div>
     </div>
@@ -200,19 +202,43 @@
         }
     }
     const addBtn = document.querySelector('.add-btn');
-    const form = document.querySelector('.add-form');
+    const submitBtn = document.querySelector('.submit-btn');
     let typeSelect = document.querySelector('#type');
+    let dateInput = document.querySelector('.date-input');
+    hideDateSelect();
+    typeSelect.onchange = function(){
+        hideDateSelect();
+    }
+    function hideDateSelect(){
+        let optionSelected = typeSelect.querySelector('option:checked');
+        optionType = optionSelected.dataset.type;
+        if (optionType == '固定菜單') {
+            dateInput.hidden = true;
+        }else{
+            dateInput.hidden = false;
+        }
+    }
 
 
     addBtn.onclick = function(e){
         e.preventDefault();
-
         let startDate = document.querySelector('#start_date').value;
         let endDate = document.querySelector('#end_date').value;
-        if(startDate > endDate){
-            alert('開始販售日期不可比結束販售日期早！');
+        let optionSelected = typeSelect.querySelector('option:checked');
+        optionType = optionSelected.dataset.type;
+        if($('#content').summernote('isEmpty')) {
+            return alert('產品內容不可為空！');
+            }
+        if (optionType != '固定菜單') {
+            if (startDate == '' || endDate =='') {
+                alert('期間限定商品需指定販售期間！');
+            }else if (startDate > endDate) {
+                alert('開始販售日期不可比結束販售日期早！');
+            }else{
+                submitBtn.click();
+            }
         }else{
-            form.submit();
+            submitBtn.click();
         }
     };
 </script>

@@ -46,7 +46,7 @@ class ProductTypeController extends Controller
     {
         $old_record = ProductType::find($id);
         if($old_record->products->count()!=0){
-            return redirect('/admin/product/type')->with('message', '仍有 '.$old_record->product->count().' 筆商品，無法刪除該產品種類。');
+            return redirect('/admin/product/type')->with('message', '仍有 '.$old_record->products->count().' 筆商品，無法刪除該產品種類。');
         }
         $old_record->delete();
 

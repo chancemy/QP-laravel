@@ -19,20 +19,21 @@
                 <div class="col-12 col-md-2">
                     <div class="row no-gutters news-type">
                         <div class="col-2 col-md-12 type-frame ">
-                            <div class="type checked border-checked">查看全部</div>
+                            <a href="{{ asset('/newsIndex?type_id=') }}{{ 0 }}#tag-swiper" class="type  border-checked">查看全部</a>
                         </div>
                         @foreach ($newsTypes as $newsType)
                         <div class="col-2 col-md-12 type-frame ">
-                            <div class="type  border-checked">{{ $newsType->type_name }}</div>
+                            <a href="{{ asset('/newsIndex?type_id=') }}{{ $newsType->id }}#tag-swiper" class="type  border-checked">{{ $newsType->type_name }}</a>
                         </div>
                         @endforeach
                     </div>
                 </div>
-                <div class="col-12 col-md-9 swiper-frame">
+                <div class="col-12 col-md-9 swiper-frame" id="tag-swiper">
                     <!-- Slider main container -->
                     @php
                         $sliderQty = ceil(count($news)/6) ;
                         $newsLength = count($news);
+                        // dd($newsLength);
                         $newsKey = 0;
                         $newsTypeKey = 0;
                         $countTypeNewsLength = 0;
@@ -42,7 +43,7 @@
                         <div class="swiper-wrapper">
                             @for ($sliderNo = 0; $sliderNo < $sliderQty; $sliderNo++)
                                 <!-- Slides -->
-                                <div class="swiper-slide pc-slide hide">
+                                <div class="swiper-slide pc-slide ">
                                     <div class="row no-gutters">
                                     @for ($key = $newsKey; $key < ($key+6) ; $key++)
                                         @if ($key> (5 +(($sliderNo)*6)))
@@ -57,7 +58,7 @@
                                                     <div class="description">
                                                         <div class="row no-gutters">
                                                             <div class="col-12">
-                                                                <div class="type">{{ $new->type->type_name??'' }}</div>
+                                                                <div class="type">{{ $news[$key]->type->type_name??'' }}</div>
                                                             </div>
                                                             <div class="col-12">
                                                                 <div class="title">{{ $key??'' }}</div>
@@ -160,29 +161,7 @@
                                     </div>
                                 </div>
                             @endfor
-                            @foreach ($newsTypes as $key => $newsType)
-                                @php
-                                    $typeSlideQty = ceil(count($newsType->news)/6);
-                                    $typeNewsQty = count($newsType->news);
-                                @endphp
-                                {{-- {{ $typeQty }} --}}
-                                @for ($sliderNo = 0; $sliderNo < $typeSlideQty; $sliderNo++)
-                                    @for ($i = $newsTypeKey; $i < ($key+6); $i++)
-                                        @if ($newsTypeKey>5+($sliderNo*6))
-                                            {{ '超過六個拉'.$key }}<br>
-                                                @php
-                                                    $newsTypeKey = 6+($sliderNo*6)
-                                                @endphp
-                                                {{-- @break --}}
-                                                {{ $news[$newsTypeKey]->type->type_name."第".$i."筆" }}<br>
 
-                                        @endif
-                                        @if ($newsType->id == $news[$newsTypeKey]->type_id)
-                                        {{ $news[$i]->type->type_name."第".$i."筆" }}<br>
-                                        @endif
-                                    @endfor
-                                @endfor
-                            @endforeach
 
                         </div>
                     </div>

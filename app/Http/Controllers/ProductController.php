@@ -92,12 +92,13 @@ class ProductController extends Controller
             $path = FileController::productImgUpload($file);
             $old_record->img = $path;
         }
+
         $old_record->type_id = $request->type_id;
         $old_record->name = $request->name;
         $old_record->price = $request->price;
         $old_record->unit = $request->unit;
-        $old_record->start_date = $request->start_date;
-        $old_record->end_date = $request->end_date;
+        $old_record->start_date = $request->start_date??'1999-01-01';
+        $old_record->end_date = $request->end_date??'9999-12-31';
         $old_record->discript = $request->discript;
         $old_record->content = $request->content;
 
