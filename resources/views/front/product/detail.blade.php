@@ -1,6 +1,6 @@
 @extends('template.template')
 
-@section('page-title','產品細節')
+@section('page-title',$record->name)
 
 @section('css')
 

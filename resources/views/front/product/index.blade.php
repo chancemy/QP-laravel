@@ -1,6 +1,6 @@
 @extends('template.template')
 
-@section('page-title','產品列表')
+@section('page-title','線上商城')
 
 @section('css')
 <link rel="stylesheet" href="/css/frontpage/product/product.css">

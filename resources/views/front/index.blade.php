@@ -22,7 +22,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/template.css">
     <link rel="stylesheet" href="/css/frontpage/index.css">
-    <title>Document</title>
+    <title>Quelques Pâtisseries</title>
 </head>
 
 <body class="loading-animate">
