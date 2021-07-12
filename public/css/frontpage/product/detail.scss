@@ -18,7 +18,7 @@ img {
         transform: translate(-50%, -50%);
         z-index: 50;
         @media (max-width: 992px) {
-            top: 630px;
+            top: 700px;
             right: 0;
             left: unset;
             transform: unset;
@@ -67,6 +67,11 @@ img {
         @media (max-width: 992px) {
             top: 830px;
             width: 40%;
+        }
+    }
+    .photo-area{
+        @media(max-width: 992px){
+            margin-bottom: 80px;
         }
     }
     .product-img {
