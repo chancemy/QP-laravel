@@ -32,6 +32,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label for="is_display" class="col-md-2 col-form-label text-md-right">顯示</label>
+
+                        <div class="col-md-1">
+                            <input id="is_display" type="checkbox" class="form-control" name="is_display" value="1">
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="date" class="col-md-2 col-form-label text-md-right">日期</label>
 
                         <div class="col-md-10">

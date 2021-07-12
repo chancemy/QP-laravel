@@ -39,13 +39,11 @@
                                     $date = $newDate[2];
                                 @endphp
                                 <tr>
-                                    <td class="d-flex justify-content-center align-items-center">
+                                    <td>
                                         @if ( $new->is_display == 1 )
-                                            <div style="width:100%" >
-                                                <i class="far fa-check-square" style="font-size: 2rem"></i>
-                                            </div>
+                                            <i class="far fa-check-square" style="font-size: 2rem"></i>
                                         @else
-                                        <i class="far fa-times-circle" style="font-size: 2rem"></i>
+                                            <i class="far fa-times-circle" style="font-size: 2rem"></i>
                                         @endif
                                     </td>
                                     <td>{{ $month.'-'.$date }}</td>
