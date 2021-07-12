@@ -46,13 +46,18 @@ pageBtns.forEach(pageBtn => {
         this.style.color = '#036893';
         this.style.borderColor = '#036893';
         var slide = Number(this.innerText);
+        var parent = pageBtn.parentNode ;
+        console.log(pageBtn.parentNode.querySelectorAll('.page-btn'));
+
         if(pageBtn.parentElement.className == 'page-frame'){
             console.log('點到pc按鈕');
-            controlPageBtnsDisplay(slide,slideQty);
+            slideId = 'slide';
+            controlPageBtnsDisplay(slide,slideQty,slideId,parent);
         }
         if(pageBtn.parentElement.className == 'mobile-page-frame'){
             console.log('點到手機板按鈕');
-            controlPageBtnsDisplay(slide,mobileSlideQty);
+            mobileSlideId = 'moblieSlide' ;
+            controlPageBtnsDisplay(slide,mobileSlideQty,mobileSlideId,parent);
         }
 
 
@@ -62,22 +67,22 @@ pageBtns.forEach(pageBtn => {
     });
 });
 
-function controlPageBtnsDisplay(slide,maxSlideQty){
+function controlPageBtnsDisplay(slide,maxSlideQty,id,parent){
     if(slide>1&&slide<maxSlideQty){
-        var hideSlides =document.querySelectorAll('.page-btn');
+        var hideSlides =parent.querySelectorAll('.page-btn');
         hideSlides.forEach(function(hideSlide){
             hideSlide.classList.add('hide');
             hideSlide.classList.remove('show');
-
-            var next = slide+1 ;
-            var pre = slide-1 ;
-            var showNextSlide =document.querySelector('#moblieSlide'+next);
-            var showThisSlide = document.querySelector('#moblieSlide'+slide);
-            var showPreSlide =document.querySelector('#moblieSlide'+pre);
-            showNextSlide.classList.add('show');
-            showPreSlide.classList.add('show');
-            showThisSlide.classList.add('show');
         });
+        var next = slide+1 ;
+        var pre = slide-1 ;
+        var showNextSlide =document.querySelector('#'+id+next);
+        var showThisSlide = document.querySelector('#'+id+slide);
+        var showPreSlide =document.querySelector('#'+id+pre);
+        showNextSlide.classList.add('show');
+        showPreSlide.classList.add('show');
+        showThisSlide.classList.add('show');
+        console.log(slide);
     }
 }
 

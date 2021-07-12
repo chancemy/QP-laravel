@@ -38,7 +38,12 @@ class NewsTypeController extends Controller
 
     public function delete($id){
         $oldNewsType = NewsType::find($id);
-        $oldNewsType->delete();
-        return redirect('/admin/news/type')->with('message','刪除成功') ;
+        if(count($oldNewsType->news) != 0){
+            return redirect('/admin/news/type')->with('message','無法刪除此種類還有消息資料') ;
+        }else{
+            $oldNewsType->delete();
+            return redirect('/admin/news/type')->with('message','刪除成功') ;
+        }
+
     }
 }

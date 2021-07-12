@@ -23,11 +23,12 @@ body {
         .top-white-block {
             height: 100px;
             width: 80%;
-            background-color: white;
+            background-color: #FFFBEF;
             z-index: 3;
             position: absolute;
             top: 180px;
             left: 0;
+
             @media (max-width: 992px) {
                 height: 40px;
                 top: 160px;
@@ -45,10 +46,16 @@ body {
             }
             h1 {
                 margin-bottom: 10vh;
-                @media (max-width: 992px) {
-                    margin: 0%;
+                @media(max-width:1500px ){
+                    font-size: 150px;
+                    margin-bottom: 5vh;
                 }
-                @media (max-width: 768px) {
+                @media(max-width:1200px ){
+                    font-size: 100px;
+                    margin-bottom: 2vh;
+                }
+                @media (max-width: 992px) {
+                    margin-bottom: 20px;
                     font-size: 80px;
                 }
             }
@@ -58,6 +65,8 @@ body {
                 left: 5%;
                 font-size: 17px;
                 line-height: 35px;
+                letter-spacing: 2px;
+                color: #42210b;
 
                 @media (max-width: 992px) {
                     width: 300px;
@@ -110,7 +119,7 @@ body {
                         }
 
                         ul {
-                            padding-left: 2rem;
+                            padding-left: 1rem;
 
                             @media (max-width: 992px) {
                                 padding: 0%;
@@ -122,6 +131,8 @@ body {
                                 display: none;
                             }
                             & > li {
+                                display: flex;
+                                align-items: center;
                                 @media (max-width: 992px) {
                                     margin: 4px 8px;
                                     line-height: 18px;
@@ -129,7 +140,7 @@ body {
                             }
                             & > li::before {
                                 content: "";
-                                display: inline-block;
+                                display: block;
                                 margin-right: 1.3125rem;
                                 width: 1rem;
                                 height: 4px;
@@ -150,16 +161,15 @@ body {
                                 @media (max-width: 992px) {
                                     display: none;
                                 }
-
                             }
-                            & > li.checked{
+                            & > li.checked {
                                 @media (max-width: 992px) {
                                     border-bottom: 2px solid #42210b;
                                 }
                             }
                             @media (max-width: 992px) {
                                 display: flex;
-                                max-width: 300px;
+                                max-width: calc(100vw - 5%);
                                 flex-wrap: wrap;
                                 width: max-content;
                                 z-index: 50;
@@ -179,6 +189,8 @@ body {
             .product-list-area {
                 height: 80vh;
                 overflow-y: auto;
+                letter-spacing: 2px;
+
                 &::-webkit-scrollbar {
                     width: 10px;
                 }
@@ -199,14 +211,17 @@ body {
                     background: #555;
                 }
                 .product-container {
+                    font-size: 16px;
                     width: calc(100% / 3);
+                    @media(max-width:992px){
+                        font-size: 14px;
+                    }
                     @media (max-width: 768px) {
                         width: 50%;
+                    }
+                    @media (max-width: 500px) {
+                        width: 100%;
                         font-size: 12px;
-                        @media (max-width: 500px) {
-                            width: 100%;
-                            font-size: 12px;
-                        }
                     }
                     .img-container {
                         width: 100%;

@@ -17,6 +17,19 @@
                     <div>News</div>
                 </div>
                 <div class="col-12 col-md-2">
+                    {{-- <ul class="row no-gutters news-type">
+                        <li class="col-2 col-md-12 type-frame">
+                            <a href="{{ asset('/newsIndex?type_id=') }}{{ 0 }}#tag-swiper"
+                            {{ $typeId }}
+                            class="@if ($typeId ==  0)checked border-checked @endif type  ">查看全部</a>
+                        </li>
+                        @foreach ($newsTypes as $newsType)
+                        <li class="col-2 col-md-12 type-frame ">
+                            <a href="{{ asset('/newsIndex?type_id=') }}{{ $newsType->id }}#tag-swiper"
+                            class="type @if ($typeId ==  $newsType->id )checked border-checked @endif">{{ $newsType->type_name }}</a>
+                        </li>
+                        @endforeach
+                    </ul> --}}
                     <div class="row no-gutters news-type">
                         <div class="col-2 col-md-12 type-frame ">
                             <a href="{{ asset('/newsIndex?type_id=') }}{{ 0 }}#tag-swiper"
@@ -24,10 +37,12 @@
                             class="@if ($typeId ==  0)checked border-checked @endif type  ">查看全部</a>
                         </div>
                         @foreach ($newsTypes as $newsType)
-                        <div class="col-2 col-md-12 type-frame ">
-                            <a href="{{ asset('/newsIndex?type_id=') }}{{ $newsType->id }}#tag-swiper"
-                            class="type @if ($typeId ==  $newsType->id )checked border-checked @endif">{{ $newsType->type_name }}</a>
-                        </div>
+                        @if (count($newsType->news) != 0)
+                            <div class="col-2 col-md-12 type-frame ">
+                                <a href="{{ asset('/newsIndex?type_id=') }}{{ $newsType->id }}#tag-swiper"
+                                class="type @if ($typeId ==  $newsType->id )checked border-checked @endif">{{ $newsType->type_name }}</a>
+                            </div>
+                        @endif
                         @endforeach
                     </div>
                 </div>

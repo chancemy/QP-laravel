@@ -19,7 +19,7 @@
             <div class="product-logo">
                 <img src="/img/frontpage/product/detail/logo.png" alt="">
             </div>
-            <div class="col-lg-6 pr-lg-4 d-flex flex-column m-lg-0 mb-4">
+            <div class="col-lg-6 pr-lg-4 d-flex flex-column photo-area">
                 <div
                     class="w-100 mb-3 product-title d-flex align-items-lg-end justify-content-lg-start align-items-center justify-content-center">
                     {{ $record->name }}</div>
@@ -53,9 +53,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 pl-lg-4 d-flex flex-column m-lg-0 mt-4 position-relative">
+            <div class="col-lg-6 pl-lg-4 d-flex flex-column position-relative">
 
-                <div class="product-type pb-2">{{ $record->type->type }}</div>
+                <div class="product-type mb-2">{{ $record->type->type }}</div>
                 <div>
                     <div class="title-area d-flex justify-content-center align-items-center">
                         NT$ {{ $record->price }} / {{ $record->unit }}
@@ -72,8 +72,8 @@
                         {!! $record->content !!}
                     </div>
                     <div class="bar"></div>
-                    <div class="bgc-yellow-2 p-4 d-flex justify-content-around">
-                        <div class="d-flex"><label for="number-select"></label>
+                    <div class="bgc-yellow-2 p-4 d-flex justify-content-around align-items-center">
+                        <div class="d-flex align-items-center"><label for="number-select"></label>
                             <p class="mr-2">數量</p>
                             </label>
                             <div class="select-div">
@@ -88,13 +88,13 @@
 
                         </div>
 
-                        <div data-id="{{ $record->id }}" class=" cart-btn py-1 px-4">
-                            加入購物車 <i class="fas fa-chevron-right"></i>
+                        <div data-id="{{ $record->id }}" class="position-relative cart-btn py-1 px-4">
+                            加入購物車 <i class="fas fa-chevron-right" style="position: absolute;right:5%;top:50%;transform:translate(-50%,-50%);"></i>
 
 
                         </div>
                     </div>
-                    <div class="time text-right">販售期間 :
+                    <div class="time text-right mt-2">販售期間 :
                         @if ($record->type->type == '固定菜單')
                         無限期
                         @else

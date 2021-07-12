@@ -24,13 +24,15 @@
                             <thead>
                                 <tr>
                                     <th>分類</th>
-                                    <th>操作</th>
+                                    <th>筆數</th>
+                                    <th style="width: 150px">操作</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach ($newsTypes as $newsType)
                                 <tr>
                                     <td>{{ $newsType->type_name }}</td>
+                                    <td>{{ count($newsType->news) }}</td>
                                     <td class="d-flex justify-content-center align-content-center">
                                         <a href="{{ asset('/admin/news/type/edit') }}/{{ $newsType->id }}"  class="btn btn-sm btn-outline-info ml-2">編輯</a>
                                         <form action="{{ asset('/admin/news/type/delete') }}/{{ $newsType->id }}" method="POST">

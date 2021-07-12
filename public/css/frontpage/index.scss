@@ -151,6 +151,34 @@ body {
                 }
             }
         }
+        .animate-img{
+            transition: .4s ease-in-out;
+            transform: scale(0.8);
+            position: absolute;
+            bottom: 0%;
+            &.active{
+                transform: scale(1);
+                position: static;
+                top: unset;
+                left: unset;
+                right: unset;
+                bottom: unset;
+            }
+        }
+        .animate-div{
+            background-color:#d3c1e9;
+            transition: .4s ease-in-out;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            bottom: 0%;
+            z-index: 5;
+            &.active{
+                height: 0;
+                opacity: 0;
+            }
+        }
+
 
         section {
 
