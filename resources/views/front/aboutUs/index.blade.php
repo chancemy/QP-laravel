@@ -39,39 +39,73 @@
             </div> --}}
         </div>
 
-            <div class="block-b " style=" background-color: #e6e3e0;">
-                <div class="img">
-                    {{-- <div class="triangle"></div> --}}
-                </div>
-                <div class="content">
-                    <div class="title">
-                        Lai 和 Jiou Jiou 在法國知名的斐杭迪廚藝學校相遇，<br>因志同道合回台後聯手編織甜點夢。
-                    </div>
-                    {{-- <div class="mask">
-                    <div class="triangle"></div>
-                </div> --}}
-                </div>
-                <div class="triangle"></div>
-            </div>
 
-        <div class="block-c "style=" background-color: #e6e3e0;">
-            {{-- <div class="triangle"></div> --}}
+        <div class="block-b" style=" background-color: #e6e3e0;">
+            <div class="img"></div>
+            <div class="content">
+                <div class="title">
+                    Lai 和 Jiou Jiou 在法國知名的斐杭迪廚藝學校相遇，因志同道合回台後聯手編織甜點夢。
+                </div>
+            </div>
+            <div class="bg">
+                <div class="title mx-auto">
+                    Lai 和 Jiou Jiou 在法國知名的斐杭迪廚藝學校相遇，因志同道合回台後聯手編織甜點夢。
+                </div>
+                <h1 class="feature col-12">
+                    Feature
+                </h1>
+                <div class="img-bs"></div>
+                <div class="text-s-out">
+                    <div class="text-s">
+                        非必要絕不多加裝飾的簡練感，如絲綢般滑順閃耀的鏡面淋醬，比起華麗水果裝飾，散發出有如巴黎貴婦般迷人魅力。
+                    </div>
+                </div>
+            </div>
+            <div class="down ">
+                <div class="img-bb  p-0"></div>
+                <h1 class="feature2  p-0">Feature </h1>
+                <div class="text-b">
+                    非必要絕不多加裝飾的簡練感，如絲綢般滑順閃耀的鏡面淋醬，比起華麗水果裝飾，散發出有如巴黎貴婦般迷人魅力。
+                </div>
+            </div>
+        </div>
+        <div class="bg2">
+        </div>
+
+        {{-- <h1 class="title2 col-12">
+                Feature
+                <div class="text4">
+                    非必要絕不多加裝飾的簡練感，如絲綢般滑順閃耀的鏡面淋醬，比起華麗水果裝飾，散發出有如巴黎貴婦般迷人魅力。
+                </div>
+            </h1> --}}
+    </div>
+    {{-- <div class="img-bg">
+            <div class="img3"></div>
+            <div class="col-12">
+                <div class="text2">非必要絕不多加裝飾的簡練感，如絲綢般滑順閃耀的鏡面淋醬，比起華麗水果裝飾，散發出有如巴黎貴婦般迷人魅力。</div>
+            </div>
+        </div> --}}
+    </div>
+
+    </div>
+    {{-- <div class="block-c " style=" background-color: #e6e3e0;">
+            <div class="triangle"></div>
             <div class="row no-gutters">
-                <div class="col-12 col-md-6 title-frame order-md-2">
-                    <div class="row no-gutters " >
-                        <div class="col-md-12">
+                <div class="col-12 col-lg-6 title-frame order-md-2">
+                    <div class="row no-gutters ">
+                        <div class="col-lg-12">
                             <h1 class="title">
                                 Feature
                             </h1>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-lg-12">
                             <div class="text">
                                 非必要絕不多加裝飾的簡練感，如絲綢般滑順閃耀的鏡面淋醬，比起華麗水果裝飾，散發出有如巴黎貴婦般迷人魅力。
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 img-frame order-md-1"style=" background-color: #e6e3e0;">
+                <div class="col-12 col-lg-6 img-frame order-md-1"style=" background-color: #e6e3e0;">
                     <div class="img"></div>
                 </div>
                 <div class="col-12 content">
@@ -80,17 +114,17 @@
                             非必要絕不多加裝飾的簡練感，如絲綢般滑順閃耀的鏡面淋醬，比起華麗水果裝飾，散發出有如巴黎貴婦般迷人魅力。
                         </div>
                     </div>
-                    {{-- <div class="mask">
+                    <div class="mask">
                         <div class="triangle"></div>
-                    </div> --}}
+                    </div>
                 </div>
-                {{-- <div class="mask">
+                <div class="mask">
                     <div class="triangle"></div>
-                </div> --}}
+                </div>
             </div>
-        </div>
-        <div class="block-d">
-            <div class="row no-gutters">
+        </div> --}}
+    <div class="block-d">
+        {{-- <div class="row no-gutters">
                 <div class="img"></div>
                 <div class="text-frame">
                     <div class="text">
@@ -100,8 +134,8 @@
                 <div class="mask">
                     <div class="triangle"></div>
                 </div>
-            </div>
-        </div>
+            </div> --}}
+    </div>
     </div>
 </main>
 @endsection
