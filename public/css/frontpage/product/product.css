@@ -29,7 +29,7 @@ body main .top-gray-block {
 body main .top-white-block {
   height: 100px;
   width: 80%;
-  background-color: white;
+  background-color: #FFFBEF;
   z-index: 3;
   position: absolute;
   top: 180px;
@@ -63,14 +63,23 @@ body main .product-area h1 {
   margin-bottom: 10vh;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1500px) {
   body main .product-area h1 {
-    margin: 0%;
+    font-size: 150px;
+    margin-bottom: 5vh;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   body main .product-area h1 {
+    font-size: 100px;
+    margin-bottom: 2vh;
+  }
+}
+
+@media (max-width: 992px) {
+  body main .product-area h1 {
+    margin-bottom: 20px;
     font-size: 80px;
   }
 }
@@ -81,6 +90,8 @@ body main .product-area .product-type {
   left: 5%;
   font-size: 17px;
   line-height: 35px;
+  letter-spacing: 2px;
+  color: #42210b;
 }
 
 @media (max-width: 992px) {
@@ -247,6 +258,7 @@ body main .product-area .product-type ul .type-btn .item-btn > li.checked::befor
 body main .product-area .product-list-area {
   height: 80vh;
   overflow-y: auto;
+  letter-spacing: 2px;
   /* Track */
   /* Handle */
   /* Handle on hover */
@@ -270,17 +282,23 @@ body main .product-area .product-list-area::-webkit-scrollbar-thumb:hover {
 }
 
 body main .product-area .product-list-area .product-container {
+  font-size: 16px;
   width: calc(100% / 3);
+}
+
+@media (max-width: 992px) {
+  body main .product-area .product-list-area .product-container {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 768px) {
   body main .product-area .product-list-area .product-container {
     width: 50%;
-    font-size: 12px;
   }
 }
 
-@media (max-width: 768px) and (max-width: 500px) {
+@media (max-width: 500px) {
   body main .product-area .product-list-area .product-container {
     width: 100%;
     font-size: 12px;

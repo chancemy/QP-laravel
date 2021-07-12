@@ -73,6 +73,7 @@ img {
   left: 0;
   width: 33%;
   height: 10vh;
+  max-height: 120px;
 }
 
 @media (max-width: 992px) {
