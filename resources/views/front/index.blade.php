@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="/css/template.css">
     <link rel="stylesheet" href="/css/frontpage/index.css">
     <title>Quelques Pâtisseries</title>
@@ -86,7 +87,7 @@
     <nav class="d-flex bgc-gray-2 front-nav">
         <div class="container-fluid d-flex align-items-center justify-content-end nav-container"
             style="height: 100%;padding: 0 30px;">
-            <a href="">
+            <a href="{{ asset('/') }}">
                 <div class="logo d-flex align-items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 178.99">
 
@@ -137,10 +138,10 @@
             </div>
             <div class="nav-group d-md-flex align-items-center">
                 <ul class="d-flex align-items-center">
-                    <li><a href="{{ asset('/aboutus') }}">關於我們</a></li>
-                    <li><a href="{{ asset('/newsIndex') }}">最新消息</a></li>
-                    <li><a href="{{ asset('/product') }}">線上商城</a></li>
-                    <li><a href="{{ asset('/contactus') }}">聯絡我們</a></li>
+                    <li><a href="{{ asset('/aboutus') }}" ><span  class="hvr-underline-from-center">關於我們</span></a></li>
+                    <li><a href="{{ asset('/newsIndex') }}"><span  class="hvr-underline-from-center">最新消息</span></a></li>
+                    <li><a href="{{ asset('/product') }}"><span  class="hvr-underline-from-center">線上商城</span></a></li>
+                    <li><a href="{{ asset('/contactus') }}"><span  class="hvr-underline-from-center">聯絡我們</span></a></li>
                 </ul>
                 <div class="d-md-flex  align-items-center justify-content-between icon-group">
                     <a href="{{ asset('/cart/step1') }}">

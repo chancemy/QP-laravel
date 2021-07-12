@@ -58,6 +58,7 @@
                                         @endif
                                         <div class="col-6 col-md-4 news-frame">
                                             @if ($key<$newsLength)
+                                            <a href="{{ asset('/newsdetail') }}/{{ $news[$key]->id }}">
                                                 <div class="line-frame">
                                                     <div class="description">
                                                         <div class="row no-gutters">
@@ -117,7 +118,9 @@
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </a>
                                             @else
+
                                             <div class="line-frame">
                                                 <div class="description">
                                                     <div class="row no-gutters">
@@ -164,6 +167,7 @@
                                     @endfor
                                     </div>
                                 </div>
+
                             @endfor
                             @foreach ($news as $new)
                             <!-- Slides -->
@@ -173,56 +177,58 @@
                             <div class="swiper-slide mobile-slide">
                                 <div class="row no-gutters center">
                                     <div class="col-12 col-md-4 news-frame">
-                                        <div class="line-frame">
-                                            <div class="description">
-                                                <div class="row no-gutters">
-                                                    <div class="col-12">
-                                                        <div class="type">{{ $new->type->type_name }}</div>
+                                        <a href="{{ asset('/newsdetail') }}/{{ $new->id }}">
+                                            <div  class="line-frame">
+                                                <div class="description">
+                                                    <div class="row no-gutters">
+                                                        <div class="col-12">
+                                                            <div class="type">{{ $new->type->type_name }}</div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div class="title">{{ $new->title }}</div>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <div data-summerNote="{{ $new->description??'' }}"
+                                                                class="content summer-note">
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="col-12">
-                                                        <div class="title">{{ $new->title }}</div>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <div data-summerNote="{{ $new->description??'' }}"
-                                                            class="content summer-note">
+                                                </div>
+                                                <div class="photo" style="background-image: url({{ $new->img }})"></div>
+                                                <div class="top"></div>
+                                                <div class="left"></div>
+                                                <div class="right"></div>
+                                                <div class="down"></div>
+                                                <div class="">
+                                                    @php
+                                                    $date = explode('-',$new->date);
+                                                    $mm = $date[1];
+                                                    $dd = $date[2];
+                                                    $Month_Englesh = array(
+                                                    '01' => "JAN",
+                                                    '02' => "FEB",
+                                                    '03' => "MAR",
+                                                    '04' => "APR",
+                                                    '05' => "MAY",
+                                                    '06' => "JUN",
+                                                    '07' => "JUL",
+                                                    '08' => "AUG",
+                                                    '09' => "SEP",
+                                                    '10' => "OCT",
+                                                    '11' => "NOV",
+                                                    '12' => "DEC");
+                                                    @endphp
+                                                    <div class="row no-gutters month">
+                                                        <div class="col-4 month-text">
+                                                            <span>{{ $Month_Englesh[$mm]??'' }}</span>
+                                                        </div>
+                                                        <div class="col-3 date-text">
+                                                            <span>{{ $dd??'' }}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="photo" style="background-image: url({{ $new->img }})"></div>
-                                            <div class="top"></div>
-                                            <div class="left"></div>
-                                            <div class="right"></div>
-                                            <div class="down"></div>
-                                            <div class="">
-                                                @php
-                                                $date = explode('-',$new->date);
-                                                $mm = $date[1];
-                                                $dd = $date[2];
-                                                $Month_Englesh = array(
-                                                '01' => "JAN",
-                                                '02' => "FEB",
-                                                '03' => "MAR",
-                                                '04' => "APR",
-                                                '05' => "MAY",
-                                                '06' => "JUN",
-                                                '07' => "JUL",
-                                                '08' => "AUG",
-                                                '09' => "SEP",
-                                                '10' => "OCT",
-                                                '11' => "NOV",
-                                                '12' => "DEC");
-                                                @endphp
-                                                <div class="row no-gutters month">
-                                                    <div class="col-4 month-text">
-                                                        <span>{{ $Month_Englesh[$mm]??'' }}</span>
-                                                    </div>
-                                                    <div class="col-3 date-text">
-                                                        <span>{{ $dd??'' }}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

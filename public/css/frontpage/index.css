@@ -485,6 +485,7 @@ body main .section-store .container-store .store-bg-yellow-2 {
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 5;
   display: none;
 }
 
@@ -519,10 +520,12 @@ body main .section-store .container-store .store-title {
 }
 
 body main .section-store .container-store .store-title .our-store {
+  position: relative;
   font-family: "Noto Serif JP", serif;
   font-family: "Noto Serif TC", serif;
   font-weight: 700;
   font-size: 150px;
+  z-index: 10;
 }
 
 @media (max-width: 1300px) {
