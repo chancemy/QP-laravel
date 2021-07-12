@@ -32,11 +32,17 @@ img {
 
 @media (max-width: 992px) {
   .top-gray-block {
-    top: 260px;
+    top: 290px;
   }
 }
 
 @media (max-width: 768px) {
+  .top-gray-block {
+    top: 260px;
+  }
+}
+
+@media (max-width: 576px) {
   .top-gray-block {
     top: 230px;
   }
