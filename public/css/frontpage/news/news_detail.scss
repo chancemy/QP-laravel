@@ -22,9 +22,12 @@ img {
     left: 0;
     background-color: #808080;
     @media (max-width: 992px) {
-        top: 260px;
+        top: 290px;
     }
     @media (max-width: 768px) {
+        top: 260px;
+    }
+    @media (max-width: 576px) {
         top: 230px;
     }
 }

@@ -20,8 +20,12 @@ class NewsController extends Controller
     }
 
     public function store(Request $request){
-        // $newDate = explode('-',$request->date);
-        // dd($newDate);
+        // dd( $request->all());
+        $isDisplay = $request->is_display;
+        if(!$isDisplay){
+            $isDisplay = 0;
+        }
+        // dd($isDisplay);
         $file = $request->file('img');
         $path = FileController::newsImgUpload($file);
         News::create([
@@ -31,8 +35,7 @@ class NewsController extends Controller
             'date' => $request->date,
             'description' => $request->description,
             'remarks' => $request->remarks,
-            'is_display' => $request->is_display,
-            'is_display' => '1'
+            'is_display' => $isDisplay,
         ]);
         return redirect('/admin/news/item')->with('message','新增成功') ;
     }
@@ -44,11 +47,19 @@ class NewsController extends Controller
     }
 
     public function update(Request $request,$id){
+        // dd($request->all());
+        $isDisplay = $request->is_display;
+        if(!$isDisplay){
+            $isDisplay = 0;
+        }
         $oldNews  = News::find($id);
         $file = $request->file('img');
         if($file){
             File::delete(\public_path().$oldNews->img);
             $path = FileController::newsImgUpload($file);
+        }else{
+            $path = $oldNews->img;
+            // dd($path);
         }
         $oldNews->type_id = $request->type_id;
         $oldNews->title = $request->title;
@@ -56,7 +67,7 @@ class NewsController extends Controller
         $oldNews->date = $request->date;
         $oldNews->description = $request->description;
         $oldNews->remarks = $request->remarks;
-        $oldNews->is_display = "1";
+        $oldNews->is_display = $isDisplay;
         $oldNews->save();
         return redirect('/admin/news/item')->with('message','編輯成功') ;
     }
