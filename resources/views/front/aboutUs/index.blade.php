@@ -16,7 +16,7 @@
             style="background-color:#e6e3e0;">
             <div class="img p-0"></div>
 
-            <div class="text-frame">
+            <div class="text-frame d-flex row">
                 <div class="aaa " style="background-color: #f4f3ef;">
                     <h1 class="about col-12">About</h1>
                 </div>
@@ -68,9 +68,29 @@
                     非必要絕不多加裝飾的簡練感，如絲綢般滑順閃耀的鏡面淋醬，比起華麗水果裝飾，散發出有如巴黎貴婦般迷人魅力。
                 </div>
             </div>
+
+            {{-- <div class="img"></div>
+            <div class="text">
+                將台灣的茶融入甜點中，結合中西、展現創意。除了鐵觀音巧克力塔、葡萄柚東方美人等等，還有許多各種冒險性質意味濃厚的嘗試。
+            </div> --}}
         </div>
-        <div class="bg2">
+
+        <div class="b-4">
+            <div class="img"></div>
+            <div class="text7">
+                將台灣的茶融入甜點中，結合中西、展現創意。除了鐵觀音巧克力塔、葡萄柚東方美人等等，還有許多各種冒險性質意味濃厚的嘗試。
+            </div>
         </div>
+        {{-- <div class="bg2">
+              <div class="row no-gutters">
+                <div class="img"></div>
+            </div>
+        </div>
+        <div class="text-frame">
+            <div class="text">
+                將台灣的茶融入甜點中，結合中西、展現創意。除了鐵觀音巧克力塔、葡萄柚東方美人等等，還有許多各種冒險性質意味濃厚的嘗試。
+            </div>
+        </div> --}}
 
         {{-- <h1 class="title2 col-12">
                 Feature
