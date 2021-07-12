@@ -225,7 +225,7 @@ body main .product-area .product-type ul .type-btn .item-btn > li.checked::befor
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    max-width: 300px;
+    max-width: calc(100vw - 5%);
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
     width: -webkit-max-content;
