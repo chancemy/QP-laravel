@@ -159,6 +159,8 @@ body {
                             }
                             @media (max-width: 992px) {
                                 display: flex;
+                                max-width: 300px;
+                                flex-wrap: wrap;
                                 width: max-content;
                                 z-index: 50;
                                 justify-content: space-around;

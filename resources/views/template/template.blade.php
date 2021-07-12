@@ -33,6 +33,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
+
     <title> @yield('page-title')</title>
 
     <link rel="stylesheet" href="/css/template.css">
@@ -95,10 +96,10 @@
             </div>
             <div class="nav-group d-md-flex align-items-center">
                 <ul class="d-flex align-items-center">
-                    <li><a href="{{ asset('/aboutus') }}">關於我們</a></li>
-                    <li><a href="{{ asset('/newsIndex') }}">最新消息</a></li>
-                    <li><a href="{{ asset('/product') }}">線上商城</a></li>
-                    <li><a href="{{ asset('/contactus') }}">聯絡我們</a></li>
+                    <li><a href="{{ asset('/aboutus') }}" ><span  class="hvr-underline-from-center">關於我們</span></a></li>
+                    <li><a href="{{ asset('/newsIndex') }}"><span  class="hvr-underline-from-center">最新消息</span></a></li>
+                    <li><a href="{{ asset('/product') }}"><span  class="hvr-underline-from-center">線上商城</span></a></li>
+                    <li><a href="{{ asset('/contactus') }}"><span  class="hvr-underline-from-center">聯絡我們</span></a></li>
                 </ul>
                 <div class="d-md-flex  align-items-center justify-content-between icon-group">
                     <a href="{{ asset('/cart/step1') }}">
