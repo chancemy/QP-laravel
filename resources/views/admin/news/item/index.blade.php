@@ -23,12 +23,12 @@
                         <table id="example" class="display" style="width:100%">
                             <thead>
                                 <tr>
-                                    <th>至頂</th>
+                                    <th>顯示</th>
                                     <th>日期</th>
                                     <th>圖片</th>
                                     <th>標題</th>
                                     <th>備註</th>
-                                    <th>操作</th>
+                                    <th style="width: 100px">操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,16 +39,24 @@
                                     $date = $newDate[2];
                                 @endphp
                                 <tr>
-                                    <td>{{ $new->is_display }}</td>
+                                    <td class="d-flex justify-content-center align-items-center">
+                                        @if ( $new->is_display == 1 )
+                                            <div style="width:100%" >
+                                                <i class="far fa-check-square" style="font-size: 2rem"></i>
+                                            </div>
+                                        @else
+                                        <i class="far fa-times-circle" style="font-size: 2rem"></i>
+                                        @endif
+                                    </td>
                                     <td>{{ $month.'-'.$date }}</td>
                                     <td>
                                         <img width="100px" src="{{ asset($new->img) }}" alt="">
                                     </td>
                                     <td>{{ $new->title }}</td>
                                     <td>{{ $new->remarks }}</td>
-                                    <td class="d-flex justify-content-around ">
+                                    <td>
                                         <a href="{{ asset('/admin/news/item/edit') }}/{{ $new->id }}"  class="btn btn-sm btn-outline-info ml-2">編輯</a>
-                                        <form action="{{ asset('/admin/news/item/delete') }}/{{ $new->id }}" method="POST">
+                                        <form action="{{ asset('/admin/news/item/delete') }}/{{ $new->id }}" method="POST" style="display: inline-block">
                                             @method('delete')
                                             @csrf
                                             <button type="submit" class="btn btn-sm btn-outline-danger ml-2 delete-btn">刪除</button>

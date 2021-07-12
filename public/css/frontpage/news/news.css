@@ -4,6 +4,7 @@ body {
 
 body main {
   position: relative;
+  letter-spacing: 2px;
 }
 
 body main .back-group {
@@ -62,6 +63,7 @@ body main .block-a .news {
   margin-bottom: 5.72vw;
   font-size: 10.416vw;
   line-height: 10.416vw;
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -86,6 +88,7 @@ body main .block-a .news-type {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  padding: 20px 0 0 5vw;
 }
 
 @media (max-width: 768px) {
@@ -103,18 +106,17 @@ body main .block-a .news-type {
 }
 
 body main .block-a .news-type .type-frame .type {
-  width: 105px;
-  font-size: 17px;
+  font-size: 1vw;
+  line-height: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 32px auto;
   color: #42210B;
 }
 
@@ -224,8 +226,8 @@ body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .li
   width: 63%;
   height: 61%;
   overflow: hidden;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
@@ -236,8 +238,8 @@ body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .li
   top: 20%;
   left: 50%;
   height: 0;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .line-frame .description .type {
@@ -321,8 +323,8 @@ body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .li
   padding-bottom: 0%;
   background-position: center;
   background-size: cover;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .line-frame .photo.photo-active {
@@ -330,8 +332,8 @@ body main .block-a .swiper-frame .swiper-container .swiper-slide .news-frame .li
   top: 50%;
   left: 50%;
   padding-bottom: 70%;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
   -webkit-transition-delay: 0.3s;
           transition-delay: 0.3s;
 }
