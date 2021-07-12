@@ -14,7 +14,7 @@
     <section class="news-detail w-100">
         <div class="container-fluid p-0 detail-container row mx-auto no-gutters">
             <div class="col-12 news-title-area">
-                <div class="news-type">{{ $new->type->type_id }}</div>
+                <div class="news-type">{{ $new->type->type_name }}</div>
                 <div class="news-title">{{ $new->title }}</div>
             </div>
             <div class="col-xl-8 col-lg-6 news-img w-100">

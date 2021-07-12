@@ -5,11 +5,6 @@ const swiper = new Swiper('.swiper-container', {
     // slidesPerView: 1,
     direction: 'horizontal',
     loop: false,
-    // on:{
-    //     click: function(){
-    //       alert('你点了Swiper');
-    //     },
-    //   },
 });
 
 //分頁按鈕產生
@@ -51,47 +46,40 @@ pageBtns.forEach(pageBtn => {
         this.style.color = '#036893';
         this.style.borderColor = '#036893';
         var slide = Number(this.innerText);
-        if(slide>1&&slide<slideQty){
-            var hideSlides =document.querySelectorAll('.page-btn');
-
-            hideSlides.forEach(function(hideSlide){
-                hideSlide.classList.add('hide');
-                hideSlide.classList.remove('show');
-
-                var next = slide+1 ;
-                var pre = slide-1 ;
-                var showNextSlide =document.querySelector('#slide'+next);
-                console.log(showNextSlide);
-                var showThisSlide = document.querySelector('#slide'+slide);
-                var showPreSlide =document.querySelector('#slide'+pre);
-                showNextSlide.classList.add('show');
-                showPreSlide.classList.add('show');
-                showThisSlide.classList.add('show');
-            });
+        if(pageBtn.parentElement.className == 'page-frame'){
+            console.log('點到pc按鈕');
+            controlPageBtnsDisplay(slide,slideQty);
         }
-        if(slide>1&&slide<mobileSlideQty){
-            var hideSlides =document.querySelectorAll('.page-btn');
-
-            hideSlides.forEach(function(hideSlide){
-                hideSlide.classList.add('hide');
-                hideSlide.classList.remove('show');
-
-                var next = slide+1 ;
-                var pre = slide-1 ;
-                var showNextSlide =document.querySelector('#moblieSlide'+next);
-                console.log(showNextSlide);
-                var showThisSlide = document.querySelector('#moblieSlide'+slide);
-                var showPreSlide =document.querySelector('#moblieSlide'+pre);
-                showNextSlide.classList.add('show');
-                showPreSlide.classList.add('show');
-                showThisSlide.classList.add('show');
-            });
+        if(pageBtn.parentElement.className == 'mobile-page-frame'){
+            console.log('點到手機板按鈕');
+            controlPageBtnsDisplay(slide,mobileSlideQty);
         }
+
+
         var index = Number(this.innerText) - 1;
         swiper.slideTo(index);
-        console.log(swiper.activeIndex);
+        // console.log(swiper.activeIndex);
     });
 });
+
+function controlPageBtnsDisplay(slide,maxSlideQty){
+    if(slide>1&&slide<maxSlideQty){
+        var hideSlides =document.querySelectorAll('.page-btn');
+        hideSlides.forEach(function(hideSlide){
+            hideSlide.classList.add('hide');
+            hideSlide.classList.remove('show');
+
+            var next = slide+1 ;
+            var pre = slide-1 ;
+            var showNextSlide =document.querySelector('#moblieSlide'+next);
+            var showThisSlide = document.querySelector('#moblieSlide'+slide);
+            var showPreSlide =document.querySelector('#moblieSlide'+pre);
+            showNextSlide.classList.add('show');
+            showPreSlide.classList.add('show');
+            showThisSlide.classList.add('show');
+        });
+    }
+}
 
 
 ///分類公告
@@ -118,17 +106,23 @@ typeCheckBoxs.forEach(function (typeCheckBox) {
 var hoverBlocks = document.querySelectorAll('.line-frame');
 hoverBlocks.forEach(block => {
     block.addEventListener('mouseover', function () {
-        // console.log(this.getElementsByClassName('photo'));
-        var photo = this.querySelector('.photo');
-        var description = this.querySelector('.description');
-        photo.classList.add('photo-active');
-        description.classList.add('description-active');
+        if(window.innerWidth > 768){
+            // console.log(this.getElementsByClassName('photo'));
+            var photo = this.querySelector('.photo');
+            var description = this.querySelector('.description');
+            photo.classList.add('photo-active');
+            description.classList.add('description-active');
+        }
+
 
     })
     block.addEventListener('mouseout', function () {
-        var photo = this.querySelector('.photo');
-        var description = this.querySelector('.description');
-        photo.classList.remove('photo-active');
-        description.classList.remove('description-active');
+        if(window.innerWidth>768){
+            var photo = this.querySelector('.photo');
+            var description = this.querySelector('.description');
+            photo.classList.remove('photo-active');
+            description.classList.remove('description-active');
+        }
+
     })
 });
