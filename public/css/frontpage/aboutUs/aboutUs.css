@@ -1,4 +1,5 @@
 main {
+  height: 100%;
   background-color: #f4f3ef;
 }
 
@@ -261,18 +262,17 @@ main .block-a .text-frame .content .text {
 
 main .block-b {
   width: 100%;
-  padding-bottom: 320px;
   position: relative;
   z-index: 2;
 }
 
 main .block-b .img {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   background-image: url("/img/frontpage/aboutUs/img-b.jpg");
   background-position: left;
   background-size: cover;
-  z-index: 333;
+  z-index: 3333;
 }
 
 @media (max-width: 992px) {
@@ -284,36 +284,26 @@ main .block-b .img {
 
 main .block-b .content {
   position: absolute;
-  top: 50vh;
+  top: 40vh;
   right: 0;
-  min-width: 540px;
-  padding-right: 1.9vw;
+  width: 50vw;
+  max-width: 540px;
+  padding-right: 2vw;
   color: white;
-  z-index: 333;
+  z-index: 3333;
+  margin: auto;
   text-align: right;
 }
 
 @media (max-width: 1400px) {
   main .block-b .content {
-    top: 80vh;
+    top: 60vh;
   }
 }
 
 @media (max-width: 992px) {
   main .block-b .content {
-    width: 100%;
-    text-align: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding-top: 6.95vw;
-    position: relative;
-    color: black;
-    top: 0vh;
-    padding-bottom: 5vh;
+    display: none;
   }
 }
 
@@ -321,18 +311,21 @@ main .block-b .content .title {
   width: 100%;
   line-height: 50px;
   letter-spacing: 2px;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 @media (max-width: 992px) {
   main .block-b .content .title {
+    display: none;
     font-size: 18px;
+    line-height: 24px;
   }
 }
 
 @media (max-width: 768px) {
   main .block-b .content .title {
     font-size: 14px;
+    padding: 5vw;
   }
 }
 
@@ -359,22 +352,256 @@ main .block-b .content .mask .triangle {
   background-color: #f4f3ef;
 }
 
-main .block-b .triangle {
-  width: 100vw;
-  height: 320px;
-  position: absolute;
-  right: 0;
-  bottom: -10vh;
-  -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
-          clip-path: polygon(100% 0, 0 100%, 100% 100%);
-  background-color: #f4f3ef;
-  z-index: 1;
+main .block-b .bg {
+  background-image: url("/img/frontpage/aboutUs/bg-about2.jpg");
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  margin-top: -2px;
+  z-index: 6999;
 }
 
-@media (max-width: 992px) {
-  main .block-b .triangle {
-    bottom: 10vh;
+@media (max-width: 996px) {
+  main .block-b .bg {
+    padding: 0;
+    height: 500px;
   }
+}
+
+main .block-b .bg .title {
+  padding: 50px;
+  width: 70%;
+  text-align: center;
+  line-height: 50px;
+  letter-spacing: 2px;
+  font-size: 22px;
+  display: none;
+}
+
+@media (max-width: 996px) {
+  main .block-b .bg .title {
+    display: block;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  main .block-b .bg .title {
+    font-size: 14px;
+    padding: 5vw;
+  }
+}
+
+@media (max-width: 460px) {
+  main .block-b .bg .title {
+    font-size: 12px;
+  }
+}
+
+main .block-b .bg .feature {
+  text-align: center;
+  width: 100vw;
+  font-size: 120px;
+  line-height: normal;
+  display: none;
+}
+
+@media (max-width: 996px) {
+  main .block-b .bg .feature {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  main .block-b .bg .feature {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 580px) {
+  main .block-b .bg .feature {
+    font-size: 80px;
+  }
+}
+
+@media (max-width: 460px) {
+  main .block-b .bg .feature {
+    font-size: 60px;
+  }
+}
+
+main .block-b .bg .img-bs {
+  display: none;
+  width: 100%;
+  height: 50vh;
+  margin-top: 20px;
+  background-image: url("/img/frontpage/aboutUs/img-c.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 996px) {
+  main .block-b .bg .img-bs {
+    display: block;
+  }
+}
+
+main .block-b .bg .text-s-out {
+  display: none;
+  background-color: #f4f3ef;
+}
+
+@media (max-width: 996px) {
+  main .block-b .bg .text-s-out {
+    display: block;
+  }
+}
+
+main .block-b .bg .text-s-out .text-s {
+  width: 80vw;
+  margin: auto;
+  display: none;
+  font-size: 18px;
+  text-align: center;
+  line-height: 24px;
+  letter-spacing: 2px;
+  padding: 5vw;
+}
+
+@media (max-width: 996px) {
+  main .block-b .bg .text-s-out .text-s {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  main .block-b .bg .text-s-out .text-s {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 460px) {
+  main .block-b .bg .text-s-out .text-s {
+    font-size: 12px;
+  }
+}
+
+main .block-b .down {
+  background-color: #f4f3ef;
+  position: relative;
+}
+
+main .block-b .down .img-bb {
+  display: block;
+  width: 50%;
+  height: 50vh;
+  background-image: url("/img/frontpage/aboutUs/img-c.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+@media (max-width: 996px) {
+  main .block-b .down .img-bb {
+    display: none;
+  }
+}
+
+main .block-b .down .feature2 {
+  margin: 50px 0 0 10px;
+  display: block;
+  position: absolute;
+  top: 5vh;
+  left: 55%;
+  font-size: 120px;
+  line-height: normal;
+}
+
+@media (max-width: 1100px) {
+  main .block-b .down .feature2 {
+    font-size: 100px;
+  }
+}
+
+@media (max-width: 996px) {
+  main .block-b .down .feature2 {
+    display: none;
+  }
+}
+
+main .block-b .down .text-b {
+  display: block;
+  font-size: 22px;
+  padding: 0 5vw 0 0;
+  letter-spacing: 2px;
+  text-align: left;
+  position: absolute;
+  top: 30vh;
+  left: 55%;
+  margin: auto;
+}
+
+@media (max-width: 1100px) {
+  main .block-b .down .text-b {
+    top: 25vh;
+  }
+}
+
+@media (max-width: 996px) {
+  main .block-b .down .text-b {
+    display: none;
+  }
+}
+
+main .bg2 {
+  background-image: url("/img/frontpage/aboutUs/bg-about2.jpg");
+  height: 300px;
+  background-position: center;
+  background-size: cover;
+  margin-top: -2px;
+  z-index: 6999;
+}
+
+main .img-bg {
+  background-color: #83582d;
+  width: 50vw;
+  height: 50%;
+  position: absolute;
+  bottom: -60vh;
+  z-index: 999;
+}
+
+@media (max-width: 1400px) {
+  main .img-bg {
+    bottom: -50vh;
+    width: 100vw;
+    height: 50vh;
+  }
+}
+
+main .img-bg .text2 {
+  width: 50vw;
+  display: none;
+  font-size: 26px;
+  text-align: center;
+  position: absolute;
+  bottom: -10vh;
+  margin: auto;
+}
+
+@media (max-width: 1400px) {
+  main .img-bg .text2 {
+    display: block;
+  }
+}
+
+main .img-bg .img3 {
+  width: 100%;
+  height: 100%;
+  background-image: url("/img/frontpage/aboutUs/img-c.jpg");
+  background-position: center;
+  background-size: cover;
+  z-index: 3333;
 }
 
 main .block-c {
@@ -442,14 +669,14 @@ main .block-c .img-frame .img {
   background-image: url("/img/frontpage/aboutUs/img-c.jpg");
   background-position: center;
   background-size: cover;
-  margin-top: 9.9vw;
+  z-index: 3333;
 }
 
 @media (max-width: 992px) {
   main .block-c .img-frame .img {
     margin-top: 0;
     width: 100%;
-    height: 73.26vw;
+    height: 73.26vh;
   }
 }
 
