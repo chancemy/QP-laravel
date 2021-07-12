@@ -218,7 +218,9 @@ main {
     .block-b {
         width: 100%;
         // height: 587px;
+        padding-bottom:320px;
         position: relative;
+        z-index: 2;
         .img {
             width: 100%;
             height: 100vh;
@@ -299,39 +301,43 @@ main {
             height: 320px;
             position: absolute;
             right: 0;
-            bottom:-30vh;
+            bottom:-10vh;
             clip-path: polygon(100% 0, 0 100%, 100% 100%);
             background-color: #f4f3ef;
-            z-index: 2;
+            z-index: 1;
             @media (max-width: 992px) {
-                bottom:-15vh;
+                bottom:10vh;
+
             }
         }
     }
     .block-c {
         width: 100%;
         position: relative;
-        padding-top:320px;
+        // padding-top:320px;
 
-        .triangle {
-            width: 100vw;
-            height: 320px;
-            position: absolute;
-            right: 0;
-            top: -10vh;
-            clip-path: polygon(100% 0, 0 100%, 100% 100%);
-            background-color: #f4f3ef;
-            z-index: 1;
-            @media (max-width: 992px) {
-                top: -10vh;
-            }
-        }
+        // .triangle {
+        //     width: 100vw;
+        //     height: 320px;
+        //     position: absolute;
+        //     right: 0;
+        //     top: -10vh;
+        //     clip-path: polygon(100% 0, 0 100%, 100% 100%);
+        //     background-color: #f4f3ef;
+        //     z-index: 1;
+        //     display: none;
+        //     @media (max-width: 992px) {
+        //         top: -10vh;
+        //         display: block;
+        //     }
+        // }
         .title-frame {
             width: 100%;
             // padding-top: 13.38vw;
             display: flex;
             justify-content: center;
-            @media (max-width: 768px) {
+            z-index: 3;
+            @media (max-width: 992px) {
                 padding-top: 0;
                 height: 170px;
             }
@@ -340,7 +346,7 @@ main {
                 font-size: 10.416vw;
                 line-height: 10.416vw;
                 text-align: center;
-                @media (max-width: 768px) {
+                @media (max-width: 992px) {
                     font-size: 100px;
                 }
             }
@@ -350,7 +356,7 @@ main {
                 font-size: 26px;
                 text-align: center;
                 margin: auto;
-                @media (max-width: 768px) {
+                @media (max-width: 992px) {
                     display: none;
                 }
             }
@@ -358,6 +364,7 @@ main {
         .img-frame {
             display: flex;
             justify-content: center;
+            z-index: 0;
             .img {
                 width: 42.13vw;
                 height: 43.07vw;
@@ -365,7 +372,7 @@ main {
                 background-position: center;
                 background-size: cover;
                 margin-top: 9.9vw;
-                @media (max-width: 768px) {
+                @media (max-width: 992px) {
                     margin-top: 0;
                     width: 100%;
                     height: 73.26vw;
@@ -374,7 +381,7 @@ main {
         }
         .content {
             display: none;
-            @media (max-width: 769px) {
+            @media (max-width: 992px) {
                 display: block;
                 width: 100%;
                 height: 168px;
@@ -387,52 +394,52 @@ main {
                     font-size: 14px;
                     text-align: end;
                 }
-                .mask {
-                    @media (max-width: 768px) {
-                        width: 100%;
-                        height: 100%;
-                        z-index: -1;
-                        background-color: #f4f3ef;
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                    }
-                    .triangle {
-                        @media (max-width: 768px) {
-                            width: 246px;
-                            height: 100%;
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                            clip-path: polygon(100% 0, 0 100%, 100% 100%);
-                            background-color: #e6e3e0;
-                        }
-                    }
-                }
+                // .mask {
+                //     @media (max-width: 768px) {
+                //         width: 100%;
+                //         height: 100%;
+                //         z-index: -1;
+                //         background-color: #f4f3ef;
+                //         position: absolute;
+                //         top: 0;
+                //         left: 0;
+                //     }
+                //     .triangle {
+                //         @media (max-width: 768px) {
+                //             width: 246px;
+                //             height: 100%;
+                //             position: absolute;
+                //             top: 0;
+                //             right: 0;
+                //             clip-path: polygon(100% 0, 0 100%, 100% 100%);
+                //             background-color: #e6e3e0;
+                //         }
+                //     }
+                // }
             }
 
         }
-        .mask {
-            @media (max-width: 768px) {
-                display: none;
-            }
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            position: absolute;
-            top: 0;
-            left: 0;
-            background-color: #e6e3e0;
-            .triangle {
-                position: absolute;
-                top: 6.38%;
-                right: 0;
-                width: 100%;
-                height: 94%;
-                clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
-                background-color: white;
-            }
-        }
+        // .mask {
+        //     @media (max-width: 768px) {
+        //         display: none;
+        //     }
+        //     width: 100%;
+        //     height: 100%;
+        //     z-index: -1;
+        //     position: absolute;
+        //     top: 0;
+        //     left: 0;
+        //     background-color: #e6e3e0;
+        //     .triangle {
+        //         position: absolute;
+        //         top: 6.38%;
+        //         right: 0;
+        //         width: 100%;
+        //         height: 94%;
+        //         clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
+        //         background-color: white;
+        //     }
+        // }
 
     }
     .block-d {

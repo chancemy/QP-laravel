@@ -51,14 +51,14 @@
                     <div class="triangle"></div>
                 </div> --}}
                 </div>
-                {{-- <div class="triangle"></div> --}}
+                <div class="triangle"></div>
             </div>
 
         <div class="block-c "style=" background-color: #e6e3e0;">
-            <div class="triangle"></div>
+            {{-- <div class="triangle"></div> --}}
             <div class="row no-gutters">
                 <div class="col-12 col-md-6 title-frame order-md-2">
-                    <div class="row no-gutters">
+                    <div class="row no-gutters " >
                         <div class="col-md-12">
                             <h1 class="title">
                                 Feature
@@ -71,7 +71,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 img-frame order-md-1">
+                <div class="col-12 col-md-6 img-frame order-md-1"style=" background-color: #e6e3e0;">
                     <div class="img"></div>
                 </div>
                 <div class="col-12 content">
@@ -80,13 +80,13 @@
                             非必要絕不多加裝飾的簡練感，如絲綢般滑順閃耀的鏡面淋醬，比起華麗水果裝飾，散發出有如巴黎貴婦般迷人魅力。
                         </div>
                     </div>
-                    <div class="mask">
+                    {{-- <div class="mask">
                         <div class="triangle"></div>
-                    </div>
+                    </div> --}}
                 </div>
-                <div class="mask">
+                {{-- <div class="mask">
                     <div class="triangle"></div>
-                </div>
+                </div> --}}
             </div>
         </div>
         <div class="block-d">

@@ -261,7 +261,9 @@ main .block-a .text-frame .content .text {
 
 main .block-b {
   width: 100%;
+  padding-bottom: 320px;
   position: relative;
+  z-index: 2;
 }
 
 main .block-b .img {
@@ -362,31 +364,7 @@ main .block-b .triangle {
   height: 320px;
   position: absolute;
   right: 0;
-  bottom: -30vh;
-  -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
-          clip-path: polygon(100% 0, 0 100%, 100% 100%);
-  background-color: #f4f3ef;
-  z-index: 2;
-}
-
-@media (max-width: 992px) {
-  main .block-b .triangle {
-    bottom: -15vh;
-  }
-}
-
-main .block-c {
-  width: 100%;
-  position: relative;
-  padding-top: 320px;
-}
-
-main .block-c .triangle {
-  width: 100vw;
-  height: 320px;
-  position: absolute;
-  right: 0;
-  top: -10vh;
+  bottom: -10vh;
   -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
           clip-path: polygon(100% 0, 0 100%, 100% 100%);
   background-color: #f4f3ef;
@@ -394,9 +372,14 @@ main .block-c .triangle {
 }
 
 @media (max-width: 992px) {
-  main .block-c .triangle {
-    top: -10vh;
+  main .block-b .triangle {
+    bottom: 10vh;
   }
+}
+
+main .block-c {
+  width: 100%;
+  position: relative;
 }
 
 main .block-c .title-frame {
@@ -407,9 +390,10 @@ main .block-c .title-frame {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 3;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   main .block-c .title-frame {
     padding-top: 0;
     height: 170px;
@@ -422,7 +406,7 @@ main .block-c .title-frame .title {
   text-align: center;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   main .block-c .title-frame .title {
     font-size: 100px;
   }
@@ -436,7 +420,7 @@ main .block-c .title-frame .text {
   margin: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   main .block-c .title-frame .text {
     display: none;
   }
@@ -449,6 +433,7 @@ main .block-c .img-frame {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  z-index: 0;
 }
 
 main .block-c .img-frame .img {
@@ -460,7 +445,7 @@ main .block-c .img-frame .img {
   margin-top: 9.9vw;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   main .block-c .img-frame .img {
     margin-top: 0;
     width: 100%;
@@ -472,7 +457,7 @@ main .block-c .content {
   display: none;
 }
 
-@media (max-width: 769px) {
+@media (max-width: 992px) {
   main .block-c .content {
     display: block;
     width: 100%;
@@ -491,58 +476,6 @@ main .block-c .content {
     font-size: 14px;
     text-align: end;
   }
-}
-
-@media (max-width: 769px) and (max-width: 768px) {
-  main .block-c .content .mask {
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: #f4f3ef;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media (max-width: 769px) and (max-width: 768px) {
-  main .block-c .content .mask .triangle {
-    width: 246px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
-            clip-path: polygon(100% 0, 0 100%, 100% 100%);
-    background-color: #e6e3e0;
-  }
-}
-
-main .block-c .mask {
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #e6e3e0;
-}
-
-@media (max-width: 768px) {
-  main .block-c .mask {
-    display: none;
-  }
-}
-
-main .block-c .mask .triangle {
-  position: absolute;
-  top: 6.38%;
-  right: 0;
-  width: 100%;
-  height: 94%;
-  -webkit-clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
-          clip-path: polygon(0 60%, 100% 0, 100% 100%, 0 100%);
-  background-color: white;
 }
 
 main .block-d {
