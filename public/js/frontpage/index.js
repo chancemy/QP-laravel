@@ -42,4 +42,41 @@ window.addEventListener('scroll', function (e) {
 
 
 
-})
+});
+
+var imgs = document.querySelectorAll('.animate-img');
+function debounce(func, wait = 20, immediate = true) {
+    var timeout;
+    return function () {
+        var context = this, args = arguments;
+        var later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        var callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+}
+scrollElement();
+window.addEventListener('scroll', debounce(scrollElement));
+function scrollElement(e) {
+
+    imgs.forEach(img => {
+        let imgHeight = img.height;
+        let imgTop = img.getBoundingClientRect().top;
+        console.log(imgTop);
+
+        if (imgTop - 0.8*imgHeight <= 0) {
+
+            let parent = img.parentElement;
+            let div = parent.querySelector('.animate-div');
+            img.classList.add('active');
+            div.classList.add('active');
+        }
+
+    });
+
+
+}

@@ -209,6 +209,41 @@ body main .news-text .news-arrow {
   }
 }
 
+body main .animate-img {
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  position: absolute;
+  bottom: 0%;
+}
+
+body main .animate-img.active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  position: static;
+  top: unset;
+  left: unset;
+  right: unset;
+  bottom: unset;
+}
+
+body main .animate-div {
+  background-color: #d3c1e9;
+  -webkit-transition: .4s ease-in-out;
+  transition: .4s ease-in-out;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0%;
+  z-index: 5;
+}
+
+body main .animate-div.active {
+  height: 0;
+  opacity: 0;
+}
+
 body main section {
   overflow-x: hidden;
   overflow-y: hidden;

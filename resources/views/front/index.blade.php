@@ -34,7 +34,7 @@
                 <defs>
                     <style>
                         .a {
-                            fill: #201512;
+                            fill: #201220;
                         }
 
                         .b {
@@ -227,7 +227,8 @@
             <div class="container-fluid row no-gutters container-about flex-column-reverse flex-lg-row">
                 <div class="col-lg-7 about-img">
                     <div class="w-100 bgc-yellow " style="height: 100%;">
-                        <img src="{{ asset('/img/frontpage/index/section1.jpg') }}" alt="" data-aos="fade-up" data-aos-duration="4000">
+                        <div class="animate-div"></div>
+                        <img class="animate-img" src="{{ asset('/img/frontpage/index/section1.jpg') }}" alt="" >
                     </div>
                 </div>
                 <div class="content col-lg-5 d-flex flex-column justify-content-center align-items-center i5-margin">
@@ -267,8 +268,9 @@
                 </div>
 
                 <div class="col-lg-9 news-img">
-                    <div class="w-100"style="height: 100%;">
-                        <img  data-aos="fade-left" src="/img/frontpage/index/news.jpg" alt="">
+                    <div class="w-100" style="height: 100%;">
+                        <div class="animate-div"></div>
+                        <img class="animate-img" src="{{ asset('/img/frontpage/index/news.jpg') }}" alt="">
                     </div>
                 </div>
             </div>
@@ -291,18 +293,21 @@
                     </div>
                 </div>
                 <div class="col-lg-4 product-img ">
-                    <div class="w-100 bgc-gray" style="height: 60vh;">
-                        <img data-aos="flip-left" src="/img/frontpage/index/product01.jpg" alt="">
+                    <div class="w-100" style="height: 60vh;">
+
+                        <img data-aos="flip-left" src="{{ asset('/img/frontpage/index/product01.jpg') }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-4 product-img">
-                    <div class="w-100 bgc-gray" style="height: 60vh;">
-                        <img data-aos="flip-right" src="/img/frontpage/index/product03.jpg" alt="">
+                    <div class="w-100" style="height: 60vh;">
+
+                        <img data-aos="flip-right" src="{{ asset('/img/frontpage/index/product03.jpg') }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-4 product-img">
-                    <div class="w-100 bgc-gray" style="height: 60vh;">
-                        <img data-aos="flip-left" src="/img/frontpage/index/product02.jpg" alt="">
+                    <div class="w-100" style="height: 60vh;">
+
+                        <img data-aos="flip-left" src="{{ asset('/img/frontpage/index/product02.jpg') }}" alt="">
                     </div>
                 </div>
 
@@ -327,7 +332,8 @@
 
                     <div class="col-lg-9 position-relative store-img">
                         <div class="w-100 img-area">
-                            <img src="/img/frontpage/index/ourstore.jpg" alt="">
+                            <div class="animate-div"></div>
+                            <img  class="animate-img" src="{{ asset('/img/frontpage/index/ourstore.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
