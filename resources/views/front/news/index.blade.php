@@ -9,11 +9,8 @@
 
 
 @section('main')
-<body>
-    {{-- class="loading-animate"
-    <div class="loading">
-
-    </div> --}}
+<body class="loading-news">
+    <div class="loading"></div>
     <main>
         <div class="container-fluid p-0">
             <div class="block-a">
@@ -22,30 +19,17 @@
                         <div>News</div>
                     </div>
                     <div class="col-12 col-md-2">
-                        {{-- <ul class="row no-gutters news-type">
-                            <li class="col-2 col-md-12 type-frame">
-                                <a href="{{ asset('/newsIndex?type_id=') }}{{ 0 }}#tag-swiper"
-                                {{ $typeId }}
-                                class="@if ($typeId ==  0)checked border-checked @endif type  ">查看全部</a>
-                            </li>
-                            @foreach ($newsTypes as $newsType)
-                            <li class="col-2 col-md-12 type-frame ">
-                                <a href="{{ asset('/newsIndex?type_id=') }}{{ $newsType->id }}#tag-swiper"
-                                class="type @if ($typeId ==  $newsType->id )checked border-checked @endif">{{ $newsType->type_name }}</a>
-                            </li>
-                            @endforeach
-                        </ul> --}}
                         <div class="row no-gutters news-type">
                             <div class="col-4 col-sm-2 col-md-12 type-frame ">
-                                <a href="{{ asset('/newsIndex?type_id=') }}{{ 0 }}#tag-swiper"
+                                <a  href="{{ asset('/newsIndex?type_id=') }}{{ 0 }}"
                                 {{ $typeId }}
-                                class="@if ($typeId ==  0)checked border-checked @endif type  ">查看全部</a>
+                                class="current @if ($typeId ==  0)checked border-checked @endif type  ">查看全部</a>
                             </div>
                             @foreach ($newsTypes as $newsType)
                             @if (count($newsType->news) != 0)
                                 <div class="col-4 col-sm-2 col-md-12 type-frame ">
-                                    <a href="{{ asset('/newsIndex?type_id=') }}{{ $newsType->id }}#tag-swiper"
-                                    class="type @if ($typeId ==  $newsType->id )checked border-checked @endif">{{ $newsType->type_name }}</a>
+                                    <a  href="{{ asset('/newsIndex?type_id=') }}{{ $newsType->id }}"
+                                    class="current type @if ($typeId ==  $newsType->id )checked border-checked @endif">{{ $newsType->type_name }}</a>
                                 </div>
                             @endif
                             @endforeach
@@ -78,7 +62,7 @@
                                             @endif
                                             <div class="col-6 col-md-4 news-frame">
                                                 @if ($key<$newsLength)
-                                                <a href="{{ asset('/newsdetail') }}/{{ $news[$key]->id }}">
+                                                <a class="current" href="{{ asset('/newsdetail') }}/{{ $news[$key]->id }}">
                                                     <div class="line-frame">
                                                         <div class="description">
                                                             <div class="row no-gutters">
@@ -197,7 +181,7 @@
                                 <div class="swiper-slide mobile-slide">
                                     <div class="row no-gutters center">
                                         <div class="col-12 col-md-4 news-frame">
-                                            <a href="{{ asset('/newsdetail') }}/{{ $new->id }}">
+                                            <a class="current" href="{{ asset('/newsdetail') }}/{{ $new->id }}">
                                                 <div  class="line-frame">
                                                     <div class="description">
                                                         <div class="row no-gutters">

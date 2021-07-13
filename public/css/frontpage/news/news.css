@@ -2,14 +2,33 @@ body {
   background-color: #E6E3E0;
 }
 
-body.loading-animate {
-  height: 100vh;
-  overflow-y: hidden;
-}
-
-body .loading {
+body.loading-news {
   width: 100%;
   height: 100%;
+  overflow-y: hidden;
+  position: relative;
+}
+
+body.loading-news .loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  background-color: #E6E3E0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 500;
+}
+
+body.loading-news .loading.outAnimate {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  opacity: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 body main {

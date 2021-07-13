@@ -1,4 +1,50 @@
 
+ window.addEventListener("load", function(event) {
+    console.log("All resources finished loading!");
+    loadAnimation();
+  });
+var view = document.querySelector('body');
+var loading = document.querySelector('.loading');
+var aLinks = document.querySelectorAll('.current');
+aLinks.forEach(function(aLink){
+
+    console.log(aLink);
+
+    aLink.addEventListener('click',function(ele){
+        console.log('點到連結');
+        ele.preventDefault();
+        leaveAnimation();
+        setTimeout(() => {
+            runLink(this)
+        }, 520);
+    });
+});
+
+function runLink(aLink){
+    let href =  aLink.getAttribute('href');
+    window.location.href = href;
+}
+
+function leaveAnimation(){
+    loading.classList.remove('outAnimate');
+    console.log(loading);
+}
+
+function loadAnimation(){
+
+    setTimeout(function () {
+        console.log('跑動畫');
+        loading.classList.add('outAnimate');
+    }, 700);
+    console.log(view);
+    setTimeout(function(){
+        let loadingNews = document.querySelector('.loading-news');
+        loadingNews.style.overflowY = 'initial' ;
+    },300)
+}
+
+
+
 const swiper = new Swiper('.swiper-container', {
     // Optional parameters
 
