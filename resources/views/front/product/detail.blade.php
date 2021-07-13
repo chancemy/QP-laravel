@@ -68,8 +68,9 @@
 
                         內容物
                     </div>
-                    <div class="bgc-yellow-2 p-lg-5 p-4 content">
-                        {!! $record->content !!}
+                    <div class="bgc-yellow-2 p-lg-5 p-4 content " >
+                        <div style="position: relative;z-index:60;">{!! $record->content !!}</div>
+
                     </div>
                     <div class="bar"></div>
                     <div class="bgc-yellow-2 p-4 d-flex justify-content-around align-items-center">

@@ -210,8 +210,8 @@ body main .news-text .news-arrow {
 }
 
 body main .animate-img {
-  -webkit-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
   position: absolute;
@@ -230,8 +230,8 @@ body main .animate-img.active {
 
 body main .animate-div {
   background-color: #d3c1e9;
-  -webkit-transition: .4s ease-in-out;
-  transition: .4s ease-in-out;
+  -webkit-transition: .2s ease-in-out;
+  transition: .2s ease-in-out;
   height: 100%;
   width: 100%;
   position: absolute;
