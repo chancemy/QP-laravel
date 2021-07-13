@@ -65,7 +65,7 @@
                             {{ $record->discript }}</p>
                     </div>
                     <div class="title-area d-flex justify-content-center align-items-center">
-                        內容物
+                        備註
                     </div>
                     <div class="bgc-yellow-2 p-lg-5 p-4 content " >
                         <div style="position: relative;z-index:60;">{!! $record->content !!}</div>
