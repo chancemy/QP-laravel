@@ -63,10 +63,11 @@
             </div>
             <div class="down ">
                 <div class="img-bb  p-0"></div>
-                <h1 class="feature2  p-0">Feature </h1>
-                <div class="text-b">
-                    非必要絕不多加裝飾的簡練感，如絲綢般滑順閃耀的鏡面淋醬，比起華麗水果裝飾，散發出有如巴黎貴婦般迷人魅力。
-                </div>
+                <h1 class="feature2  p-0">Feature
+                    <div class="text-b">
+                        非必要絕不多加裝飾的簡練感，如絲綢般滑順閃耀的鏡面淋醬，比起華麗水果裝飾，散發出有如巴黎貴婦般迷人魅力。
+                    </div>
+                </h1>
             </div>
 
             {{-- <div class="img"></div>

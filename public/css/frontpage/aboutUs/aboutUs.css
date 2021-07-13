@@ -35,12 +35,13 @@ main .block-a {
 @media (max-width: 768px) {
   main .block-a {
     display: block;
+    padding-bottom: 10vh;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 460px) {
   main .block-a {
-    padding-bottom: 10vh;
+    padding-bottom: 3vh;
   }
 }
 
@@ -101,7 +102,7 @@ main .block-a .text-frame .about {
   main .block-a .text-frame .about {
     padding-top: 12vw;
     padding-left: 8.68vw;
-    font-size: 100px;
+    font-size: 80px;
     padding-top: 0;
     padding-right: 0;
     line-height: normal;
@@ -130,6 +131,12 @@ main .block-a .text-frame .content {
   }
 }
 
+@media (max-width: 768px) {
+  main .block-a .text-frame .content {
+    margin-bottom: 10vh;
+  }
+}
+
 main .block-a .text-frame .content .us {
   font-size: 10.416vw;
   line-height: 10.416vw;
@@ -147,7 +154,7 @@ main .block-a .text-frame .content .us {
 @media (max-width: 768px) {
   main .block-a .text-frame .content .us {
     padding-left: 8.68vw;
-    font-size: 100px;
+    font-size: 80px;
     line-height: normal;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -197,7 +204,7 @@ main .block-a .text-frame .content .text2 {
   main .block-a .text-frame .content .text2 {
     margin-left: 150px;
     font-size: 14px;
-    top: 35%;
+    top: 30%;
   }
 }
 
@@ -502,6 +509,7 @@ main .block-b .down .img-bb {
   display: block;
   width: 50%;
   height: 50vh;
+  min-height: 560px;
   background-image: url("/img/frontpage/aboutUs/img-c.jpg");
   background-position: center;
   background-size: cover;
@@ -510,6 +518,7 @@ main .block-b .down .img-bb {
 @media (max-width: 996px) {
   main .block-b .down .img-bb {
     display: none;
+    min-height: 50vh;
   }
 }
 
@@ -517,7 +526,7 @@ main .block-b .down .feature2 {
   margin: 50px 0 0 10px;
   display: block;
   position: absolute;
-  top: 5vh;
+  top: 5%;
   left: 55%;
   font-size: 120px;
   line-height: normal;
@@ -535,26 +544,26 @@ main .block-b .down .feature2 {
   }
 }
 
-main .block-b .down .text-b {
+main .block-b .down .feature2 .text-b {
   display: block;
   font-size: 22px;
+  font-weight: 400;
   padding: 0 5vw 0 0;
   letter-spacing: 2px;
   text-align: left;
-  position: absolute;
-  top: 30vh;
-  left: 55%;
+  margin-top: 10vh;
+  line-height: 36px;
   margin: auto;
 }
 
 @media (max-width: 1100px) {
-  main .block-b .down .text-b {
+  main .block-b .down .feature2 .text-b {
     top: 25vh;
   }
 }
 
 @media (max-width: 996px) {
-  main .block-b .down .text-b {
+  main .block-b .down .feature2 .text-b {
     display: none;
   }
 }
