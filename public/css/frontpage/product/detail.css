@@ -55,14 +55,38 @@ img {
 
 .product-detail .product-title {
   height: 16%;
-  font-size: 72px;
+  font-size: 60px;
   color: #4d4d4d;
+}
+
+@media (max-width: 1400px) {
+  .product-detail .product-title {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .product-detail .product-title {
+    font-size: 45px;
+  }
 }
 
 @media (max-width: 992px) {
   .product-detail .product-title {
-    font-size: 50px;
+    font-size: 40px;
     margin-top: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-detail .product-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 340px) {
+  .product-detail .product-title {
+    font-size: 28px;
   }
 }
 
