@@ -45,7 +45,7 @@ window.addEventListener('scroll', function (e) {
 });
 
 var imgs = document.querySelectorAll('.animate-img');
-function debounce(func, wait = 20, immediate = true) {
+function debounce(func, wait = 10, immediate = true) {
     var timeout;
     return function () {
         var context = this, args = arguments;
@@ -68,7 +68,7 @@ function scrollElement(e) {
         let imgTop = img.getBoundingClientRect().top;
         console.log(imgTop);
 
-        if (imgTop - 0.8*imgHeight <= 0) {
+        if (imgTop - imgHeight <= 0) {
 
             let parent = img.parentElement;
             let div = parent.querySelector('.animate-div');

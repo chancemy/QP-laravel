@@ -105,9 +105,9 @@
                     <a href="{{ asset('/cart/step1') }}">
                         <i class="fas fa-shopping-cart"></i>
                     </a>
-                    <a href="https://www.facebook.com/QuelquesP/">
+                    <a href="https://www.facebook.com/QuelquesP/"  target="_blank" >
                         <i class="fab fa-facebook-square"></i></a>
-                    <a href="https://www.instagram.com/quelques_p/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/quelques_p/"  target="_blank" ><i class="fab fa-instagram"  ></i></a>
                 </div>
             </div>
         </div>
