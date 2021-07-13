@@ -166,8 +166,9 @@
         let optionSelected = typeSelect.querySelector('option:checked');
         optionType = optionSelected.dataset.type;
         if($('#content').summernote('isEmpty')) {
-            alert('產品內容不可為空！');
-            }
+           return alert('產品內容不可為空！');
+
+        }
         if (optionType != '固定菜單') {
             if (startDate == '' || endDate =='') {
                 alert('期間限定商品需指定販售期間！');
