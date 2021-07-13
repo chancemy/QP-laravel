@@ -21,7 +21,7 @@
             </div>
             <div class="col-lg-6 pr-lg-4 d-flex flex-column photo-area">
                 <div
-                    class="w-100 mb-3 product-title d-flex align-items-lg-end justify-content-lg-start align-items-center justify-content-center">
+                    class="w-100 mb-3 product-title d-flex align-items-lg-end justify-content-lg-start align-items-center text-center justify-content-center">
                     {{ $record->name }}</div>
                 <div class="w-100 row no-gutters product-img flex-column-reverse flex-lg-row">
                     <div class="col-lg-2 w-100 d-flex flex-lg-column-reverse flex-row img-small pr-lg-4 pt-3">
@@ -72,7 +72,7 @@
 
                     </div>
                     <div class="bar"></div>
-                    <div class="bgc-yellow-2 p-4 d-flex justify-content-around align-items-center">
+                    <div class="bgc-yellow-2 p-4 d-flex justify-content-around align-items-center flex-wrap">
                         <div class="d-flex align-items-center"><label for="number-select"></label>
                             <p class="mr-2">數量</p>
                             </label>
