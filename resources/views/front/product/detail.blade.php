@@ -65,8 +65,7 @@
                             {{ $record->discript }}</p>
                     </div>
                     <div class="title-area d-flex justify-content-center align-items-center">
-
-                        內容物
+                        備註
                     </div>
                     <div class="bgc-yellow-2 p-lg-5 p-4 content " >
                         <div style="position: relative;z-index:60;">{!! $record->content !!}</div>
@@ -89,8 +88,8 @@
 
                         </div>
 
-                        <div data-id="{{ $record->id }}" class="position-relative cart-btn py-1 px-4">
-                            加入購物車 <i class="fas fa-chevron-right" style="position: absolute;right:5%;top:50%;transform:translate(-50%,-50%);"></i>
+                        <div data-id="{{ $record->id }}" class="d-flex align-items-center justify-content-center cart-btn py-1 px-4">
+                            加入購物車 <i class="fas fa-chevron-right ml-2"></i>
 
 
                         </div>
