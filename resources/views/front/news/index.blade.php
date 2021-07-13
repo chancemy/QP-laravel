@@ -1,6 +1,6 @@
 @extends('template.template')
 
-@section('page-title','產品細節')
+@section('page-title','最新消息')
 
 @section('css')
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
@@ -31,14 +31,14 @@
                         @endforeach
                     </ul> --}}
                     <div class="row no-gutters news-type">
-                        <div class="col-6 col-sm-2 col-md-12 type-frame ">
+                        <div class="col-4 col-sm-2 col-md-12 type-frame ">
                             <a href="{{ asset('/newsIndex?type_id=') }}{{ 0 }}#tag-swiper"
                             {{ $typeId }}
                             class="@if ($typeId ==  0)checked border-checked @endif type  ">查看全部</a>
                         </div>
                         @foreach ($newsTypes as $newsType)
                         @if (count($newsType->news) != 0)
-                            <div class="col-6 col-sm-2 col-md-12 type-frame ">
+                            <div class="col-4 col-sm-2 col-md-12 type-frame ">
                                 <a href="{{ asset('/newsIndex?type_id=') }}{{ $newsType->id }}#tag-swiper"
                                 class="type @if ($typeId ==  $newsType->id )checked border-checked @endif">{{ $newsType->type_name }}</a>
                             </div>

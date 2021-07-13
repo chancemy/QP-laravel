@@ -1,3 +1,7 @@
+main {
+  letter-spacing: 2px;
+}
+
 img {
   display: block;
   -o-object-position: center;
@@ -30,21 +34,27 @@ img {
   background-color: #808080;
 }
 
+@media (max-width: 1366px) {
+  .top-gray-block {
+    top: 270px;
+  }
+}
+
 @media (max-width: 992px) {
   .top-gray-block {
-    top: 290px;
+    top: 250px;
   }
 }
 
 @media (max-width: 768px) {
   .top-gray-block {
-    top: 260px;
+    top: 220px;
   }
 }
 
 @media (max-width: 576px) {
   .top-gray-block {
-    top: 230px;
+    top: 215px;
   }
 }
 
@@ -78,13 +88,19 @@ img {
 }
 
 .news-detail .news-title {
-  font-size: 60px;
+  font-size: 3.125vw;
   margin-bottom: 80px;
+}
+
+@media (max-width: 992px) {
+  .news-detail .news-title {
+    font-size: 30px;
+  }
 }
 
 @media (max-width: 576px) {
   .news-detail .news-title {
-    font-size: 36px;
+    font-size: 26px;
   }
 }
 
@@ -100,7 +116,7 @@ img {
 
 .news-detail .news-text {
   font-size: 26px;
-  line-height: 50px;
+  line-height: 36px;
   text-align: justify;
   text-justify: inter-ideograph;
 }
@@ -116,5 +132,28 @@ img {
   .news-detail .news-text .time {
     font-size: 20px;
   }
+}
+
+.news-detail .news-text .description {
+  max-height: 450px;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin-top: 10px;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+
+.news-detail .news-text .description::-webkit-scrollbar {
+  width: 10px;
+}
+
+.news-detail .news-text .description::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.news-detail .news-text .description::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 /*# sourceMappingURL=news_detail.css.map */

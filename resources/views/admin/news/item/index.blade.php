@@ -24,7 +24,8 @@
                             <thead>
                                 <tr>
                                     <th>顯示</th>
-                                    <th>日期</th>
+                                    <th style="width: 50px;">分類</th>
+                                    <th style="width: 50px;">日期</th>
                                     <th>圖片</th>
                                     <th>標題</th>
                                     <th>備註</th>
@@ -46,6 +47,7 @@
                                             <i class="far fa-times-circle" style="font-size: 2rem"></i>
                                         @endif
                                     </td>
+                                    <td>{{ $new->type->type_name }}</td>
                                     <td>{{ $month.'-'.$date }}</td>
                                     <td>
                                         <img width="100px" src="{{ asset($new->img) }}" alt="">
