@@ -135,7 +135,7 @@
                             rows="5">{{ $record->discript }}</textarea>
                     </div>
                     <div class="form-group ">
-                        <label for="content" class=" col-form-label text-md-right">內容物</label>
+                        <label for="content" class=" col-form-label text-md-right">備註</label>
 
                         <div>
                             <textarea id="content" name="content">
@@ -164,7 +164,7 @@
 {{-- summernote --}}
 <script>
     $('#content').summernote({
-      placeholder: '所見及所得',
+      placeholder: '產品內容物、備註。',
       tabsize: 2,
       height: 300
     });

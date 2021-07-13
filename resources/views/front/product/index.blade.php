@@ -53,12 +53,12 @@
                                     <img src="{{ $product->img }}" alt="">
                                     @if ($product->type->type == '期間限定')
                                     <div class="position-absolute"
-                                        style="font-size:12px;font-weight:600;color:white;background-color:red;top:5px;left:10px;padding:2px 5px;border-radius:6px;">
+                                        style="font-size:12px;font-weight:600;color:white;background-color:red;top:5px;left:5px;padding:2px 5px;border-radius:6px;">
                                         期間限定</div>
                                     @endif
                                 </div>
-                                <div class="mt-2"><span class="mr-2">{{ $product->name }}</span>/<span class="ml-2">NT
-                                        ${{ $product->price }}</span><i class="ml-3 fas fa-chevron-right"></i>
+                                <div class="mt-2 d-flex flex-wrap"><span class="mr-2">{{ $product->name }}</span><span class="mr-2">/</span><span>NT
+                                        ${{ $product->price }}<i class="ml-3 fas fa-chevron-right"></i></span>
 
                                 </div>
                             </a>

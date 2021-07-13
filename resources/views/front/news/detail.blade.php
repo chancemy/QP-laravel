@@ -1,6 +1,6 @@
 @extends('template.template')
 
-@section('page-title','產品細節')
+@section('page-title','最新消息細節')
 
 @section('css')
 <link rel="stylesheet" href="/css/frontpage/news/news_detail.css">
@@ -24,9 +24,9 @@
 
             </div>
             <div class="col-xl-4 col-lg-6 news-text pl-lg-5 px-lg-0 px-3 d-flex flex-column justify-content-around">
-                <div class="time">時間：<Span>{{ $new->date }}</Span></div>
-                <div class="discript">{!! $new->description !!}</div>
-               <div class="price text-right">{{ $new->remarks }}</div>
+                <div class="time">發布時間：<Span>{{ $new->date }}</Span></div>
+                <div class="description">{!! $new->description !!}</div>
+               <div class="price text-left">{{ $new->remarks }}</div>
 
             </div>
 
