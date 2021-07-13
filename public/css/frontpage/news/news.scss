@@ -61,6 +61,7 @@ body{
                 padding: 20px 0 0 5vw;
                 @media (max-width:768px) {
                     height: unset;
+                    padding: 0;
                 }
                 .type-frame{
                     @media (max-width:768px) {

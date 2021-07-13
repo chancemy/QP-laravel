@@ -94,6 +94,7 @@ body main .block-a .news-type {
 @media (max-width: 768px) {
   body main .block-a .news-type {
     height: unset;
+    padding: 0;
   }
 }
 
