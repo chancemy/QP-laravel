@@ -110,7 +110,7 @@
                             autofocus></textarea>
                     </div>
                     <div class="form-group ">
-                        <label for="content" class="col-form-label text-md-right">內容物</label>
+                        <label for="content" class="col-form-label text-md-right">備註</label>
 
                         <div>
                             <textarea id="content" name="content"></textarea>
