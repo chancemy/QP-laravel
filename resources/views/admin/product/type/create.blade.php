@@ -8,7 +8,7 @@
     <div class="container">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ asset('/home') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ asset('/admin') }}">後臺管理首頁</a></li>
                 <li class="breadcrumb-item"><a href="{{ asset('admin/product/type') }}">產品類別管理</a></li>
                 <li class="breadcrumb-item active" aria-current="page">新增產品類別</li>
             </ol>
