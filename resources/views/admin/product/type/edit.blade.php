@@ -39,8 +39,11 @@
                         <label for="type_name" class="col-md-2 col-form-label text-md-right">名稱</label>
 
                         <div class="col-md-10">
-                            <input id="type_name" type="text" class="form-control" name="type_name" required autofocus value="{{ $record->type_name }}">
+                            <input id="type_name" type="text" class="form-control" name="type_name" required autofocus value="{{ $record->type_name }}"> @error('type_name')
+                            <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
+
                     </div>
 
                     <div class="form-group row mb-0">

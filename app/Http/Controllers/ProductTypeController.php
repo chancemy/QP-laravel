@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\ProductType;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class ProductTypeController extends Controller
 {
@@ -13,40 +14,53 @@ class ProductTypeController extends Controller
         $this->index = 'admin.product.type.index';
         $this->edit = 'admin.product.type.edit';
         $this->create = 'admin.product.type.create';
-
     }
-    public function index(){
+    public function index()
+    {
         $product_types = ProductType::get();
-        return view($this->index,compact('product_types'));
+        return view($this->index, compact('product_types'));
     }
-    public function create(){
+    public function create()
+    {
         $types = ProductType::TYPE;
-        return view($this->create,compact('types'));
-
+        return view($this->create, compact('types'));
     }
-    public function store(Request $request){
-        ProductType::create($request->all());
-        return redirect('/admin/product/type')->with('message', '新增成功');
+    public function store(Request $request)
+    {
+        $v = $request->validate([
+            'type_name' => 'max:5',
 
+        ]);
+        if ($v) {
+            ProductType::create($request->all());
+            return redirect('/admin/product/type')->with('message', '新增成功');
+        }
     }
-    public function edit($id){
+    public function edit($id)
+    {
         $record = ProductType::find($id);
         $types = ProductType::TYPE;
-        return view($this->edit,compact('record','types'));
+        return view($this->edit, compact('record', 'types'));
     }
-    public function update(Request $request,$id){
-        $old_record = ProductType::find($id);
-        $old_record->type = $request->type;
-        $old_record->type_name = $request->type_name;
-        $old_record->save();
-        return redirect('/admin/product/type')->with('message', '編輯成功');
+    public function update(Request $request, $id)
+    {
+        $v = $request->validate([
+            'type_name' => 'max:5',
 
+        ]);
+        if ($v) {
+            $old_record = ProductType::find($id);
+            $old_record->type = $request->type;
+            $old_record->type_name = $request->type_name;
+            $old_record->save();
+            return redirect('/admin/product/type')->with('message', '編輯成功');
+        }
     }
     public function delete($id)
     {
         $old_record = ProductType::find($id);
-        if($old_record->products->count()!=0){
-            return redirect('/admin/product/type')->with('message', '仍有 '.$old_record->products->count().' 筆商品，無法刪除該產品種類。');
+        if ($old_record->products->count() != 0) {
+            return redirect('/admin/product/type')->with('message', '仍有 ' . $old_record->products->count() . ' 筆商品，無法刪除該產品種類。');
         }
         $old_record->delete();
 

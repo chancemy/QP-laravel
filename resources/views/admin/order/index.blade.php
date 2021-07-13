@@ -35,7 +35,6 @@
                                 <th>信箱</th>
                                 <th>電話</th>
                                 <th>訂單狀態</th>
-                                <th>下單時間</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -62,7 +61,6 @@
                                 <th>{{ $item->email }}</th>
                                 <th>{{ $item->phone }}</th>
                                 <th>{{ $order_status }}</th>
-                                <th>{{ $item->created_at }}</th>
                                 <th> <a href="{{ asset('/admin/order/edit') }}/{{ $item->id }}"><button type="button"
                                             class="btn btn-outline-info d-inline">編輯查看</button></a>
                                     <form class="delete-form d-inline"
@@ -84,7 +82,6 @@
                                 <th>信箱</th>
                                 <th>電話</th>
                                 <th>付款狀態</th>
-                                <th>下單時間</th>
                                 <th></th>
                             </tr>
                         </tfoot>
