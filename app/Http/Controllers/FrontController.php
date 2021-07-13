@@ -35,11 +35,15 @@ class FrontController extends Controller
         $newsTypes = NewsType::with('news')->get();
         $typeId = $request->type_id;
         if($typeId && $typeId != 0){
-            $news = News::with('type')->where([['type_id',$typeId],['is_display',1]])->get()->sortBy('date');
-            // dd($news);
+            $news = News::with('type')->where([['type_id',$typeId],['is_display',1]])->get()->sortByDesc('date');
+            foreach ($news as $key => $new) {
+                // dd($news[5]->date);
+            }
         }else{
             $typeId = 0;
-            $news = News::with('type')->where('is_display',1)->get()->sortBy('date');
+            $news = News::with('type')->where('is_display',1)->get()->sortByDesc('date');
+            // dd($news);
+
 
         }
 
