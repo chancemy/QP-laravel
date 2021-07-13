@@ -164,7 +164,7 @@
 {{-- summernote --}}
 <script>
     $('#content').summernote({
-      placeholder: '所見及所得',
+      placeholder: '產品內容物、備註。',
       tabsize: 2,
       height: 300
     });
