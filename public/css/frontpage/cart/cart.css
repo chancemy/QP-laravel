@@ -22,7 +22,10 @@ img {
 }
 
 .cart-table .cart-img {
-    padding: 20px;
+
+    width: 120px;
+    height: 70px;
+
 }
 
 .thead-img {
@@ -82,7 +85,8 @@ img {
         font-size: 14px;
     }
     .cart-table .cart-img {
-        padding: 10px;
+       width: 40px;
+       height: 50px;
     }
 
     .cart-form{
