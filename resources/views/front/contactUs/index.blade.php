@@ -39,7 +39,7 @@
                     聯絡我們
                 </div>
                 <!-- 回饋 -->
-                <form action="{{ asset('contactus/store') }}" method="POST" id="form-contact" onsubmit="return sweetAlert(this)"
+                <form action="{{ asset('contactus/store') }}" method="POST" id="form-contact" onsubmit=""
                     class="introduce-container d-flex bg-white justify-content-end">
                     @csrf
                     <div class="bgc-yellow-2 p-lg-5 p-4 content col-12">
@@ -92,7 +92,7 @@
                         </div>
 
                         <!-- 送出按鈕 -->
-                        <button type="submit" class="btn btn-primary btn-lg btn-block mb-3" id="submit-btn"
+                        <button type="button" class="btn btn-primary btn-lg btn-block mb-3" id="submit-btn"
                             style=" background-color: #85a596;">
                             送出
                         </button>
@@ -116,17 +116,57 @@
 
 <script>
     // sweetAlert();
-    var form = document.querySelector('.form-contact');
-    function sweetAlert(ele){
-        let yes = confirm('確定刪除？');
-        if(yes){
-            return true;
-        }else{
-            return false ;
-            alert('已取消')
-
+    var form = document.querySelector('#form-contact');
+    var btn = document.querySelector('#submit-btn');
+    btn.addEventListener('click',function(ele){
+        console.log('123');
+        swal({
+        title: "確認是否送出 ?",
+        text: "",
+        icon: "warning",
+        buttons: true,
+        dangerMode: false,
+        })
+        .then((willDelete) => {
+        if (willDelete) {
+            console.log(willDelete);
+            swal("我們會盡快與您聯繫", {
+            icon: "success",
+            });
+            setTimeout(function(){
+                form.submit();
+            },1000)
+        } else {
+            swal("取消送出!");
         }
-    }
+        });
+    });
+    // function sweetAlert(){
+    //     let yes = confirm('確定刪除？');
+    //     if(yes){
+    //         return true;
+    //     }else{
+    //         return false ;
+    //         alert('已取消')
+
+    //     }
+    //     swal({
+    //     title: "Are you sure?",
+    //     text: "Once deleted, you will not be able to recover this imaginary file!",
+    //     icon: "warning",
+    //     buttons: true,
+    //     dangerMode: true,
+    //     })
+    //     .then((willDelete) => {
+    //     if (willDelete) {
+    //         swal("Poof! Your imaginary file has been deleted!", {
+    //         icon: "success",
+    //         });
+    //     } else {
+    //         swal("Your imaginary file is safe!");
+    //     }
+    //     });
+    // }
 </script>
 
 @endsection
