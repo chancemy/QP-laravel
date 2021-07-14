@@ -39,7 +39,7 @@
                     聯絡我們
                 </div>
                 <!-- 回饋 -->
-                <form action="{{ asset('contactus/store') }}" method="POST" id="form-contact"
+                <form action="{{ asset('contactus/store') }}" method="POST" id="form-contact" onsubmit="return sweetAlert(this)"
                     class="introduce-container d-flex bg-white justify-content-end">
                     @csrf
                     <div class="bgc-yellow-2 p-lg-5 p-4 content col-12">
@@ -115,14 +115,18 @@
 @section('js')
 
 <script>
-    document.querySelector('#submit-btn').addEventListener('click',function(){
-        alert('確定送出表單嗎?')
-    });
+    // sweetAlert();
+    var form = document.querySelector('.form-contact');
+    function sweetAlert(ele){
+        let yes = confirm('確定刪除？');
+        if(yes){
+            return true;
+        }else{
+            return false ;
+            alert('已取消')
 
-    var form = document.getElementById("form-contact");
-    form.addEventListener('submit', function (event) {
-        alert('聯絡我們成功，請等候我們的聯繫。')
-    });
+        }
+    }
 </script>
 
 @endsection
