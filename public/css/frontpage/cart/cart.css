@@ -55,11 +55,13 @@ img {
 .back-btn {
     border: #54594d 1px solid;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 .next-btn {
     background-color: #54594d;
     color: white;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 @media(max-width:768px){
     .cart-table thead {
