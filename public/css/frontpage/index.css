@@ -154,6 +154,13 @@ body main .arrow {
   font-size: 40px;
 }
 
+body main .arrow:hover {
+  -webkit-transform: translateX(20%);
+          transform: translateX(20%);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
 @media (max-width: 500px) {
   body main .arrow {
     font-size: 30px;
@@ -354,6 +361,7 @@ body main .section-news .news-cherry img {
     bottom: 70vh;
     right: 10px;
     width: 30%;
+    z-index: 10;
   }
 }
 

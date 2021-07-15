@@ -8,8 +8,7 @@
             <div class="col-12">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">後臺管理首頁</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Library</li>
+                        <li class="breadcrumb-item active">後臺管理首頁</a></li>
                     </ol>
                 </nav>
             </div>

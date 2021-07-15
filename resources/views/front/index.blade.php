@@ -232,15 +232,15 @@
                     </div>
                 </div>
                 <div class="content col-lg-5 d-flex flex-column justify-content-center align-items-center i5-margin">
-                    <div class="title mb-3">
-                        <h1 class="d-inline-block">About</h1>
+                    <div class="title mb-3" data-aos="fade-left" data-aos-duration="1500">
+                        <h1 class="d-inline-block " >About</h1>
                         <a href="{{ asset('/aboutus') }}">
-                            <i class="far fa-arrow-alt-circle-right d-inline-block arrow ml-4"></i>
+                            <i  class="far fa-arrow-alt-circle-right d-inline-block arrow ml-4"></i>
                         </a>
                     </div>
 
-                    <div class="text-area">
-                        <p class="text-center">Quelque法文的意思是某些，像是quelque chose指某物，quelquun指某人，Quelques就是複數，指某些某些。</p>
+                    <div class="text-area "   data-aos="fade-left" data-aos-duration="1500">
+                        <p class="text-center ">Quelque法文的意思是某些，像是quelque chose指某物，quelquun指某人，Quelques就是複數，指某些某些。</p>
                     </div>
                 </div>
             </div>
@@ -251,14 +251,14 @@
             <div class="container-fluid row no-gutters container-news flex-column flex-lg-row">
                 <div class="col-lg-3 ">
                     <div class="d-flex flex-column justify-content-center align-items-center text-area-news i5-margin">
-                        <div class="title mb-3 row d-flex flex-row justify-content-center align-items-center">
-                            <h1 class="d-inline-block">News</h1>
+                        <div class="title mb-3 row d-flex flex-row justify-content-center align-items-center" data-aos-duration="1500" data-aos="zoom-in-up">
+                            <h1 class="d-inline-block" >News</h1>
                             <a href="{{ asset('/newsIndex') }}" class="news-arrow2-a" style="margin: 30px 0 0 20px">
                                 <i class="far fa-arrow-alt-circle-right text-center arrow news-arrow2"></i>
                             </a>
                         </div>
 
-                        <div class="text-area d-flex flex-column align-items-center news-text">
+                        <div class="text-area d-flex flex-column align-items-center news-text" data-aos="zoom-in-up" data-aos-duration="1500">
                             <p class="text-center mb-4" style="padding: 0px">以千層為基底蜜桃泡芙與蜜桃餡，適合夏秋的，適合夏秋的，甜蜜花園午茶小點心。</p>
                             <a href="{{ asset('/newsIndex') }}">
                                 <i class="far fa-arrow-alt-circle-right text-center  arrow news-arrow"></i>
@@ -278,8 +278,8 @@
 
         </section>
         <section class="position-relative section-product bgc-yellow-2">
-            <div class="container-fluid row no-gutters container-product ">
-                <div class=" d-flex flex-column justify-content-center align-items-center col-12 mb-lg-4 product-title">
+            <div class="container-fluid row no-gutters container-product "   >
+                <div class=" d-flex flex-column justify-content-center align-items-center col-12 mb-lg-4 product-title "  data-aos="zoom-in" data-aos-duration="1700">
                     <div class="title mb-3">
                         <h1 class="d-inline-block">Product</h1>
                     </div>
@@ -321,7 +321,7 @@
             <div class="container-fluid bgc-gray container-store">
                 <div class="store-title text-lg-right text-center d-lg-block d-flex justify-content-center align-items-center flex-wrap">
                     <div class="store-bg-yellow-2 bgc-yellow-2"></div>
-                    <div class="our-store"> Our Store</div>
+                    <div class="our-store"  data-aos="fade-up"> Our Store</div>
                 </div>
                 <div class="store-bg-white"> </div>
 
@@ -338,9 +338,9 @@
                     </div>
                 </div>
                 <div
-                    class="address position-relative flex-row-reverse flex-sm-row row no-gutters text-lg-left text-center">
+                    class="address position-relative flex-row-reverse flex-sm-row row no-gutters text-lg-left text-center"  data-aos="fade-up" >
                     <div class="col-lg-6">
-                        <p>106 臺北市安和路一段102巷23號
+                        <p> 106 臺北市安和路一段102巷23號
                         </p>
                         <p>13 : 00 ～ 19 : 00 / 週一、二固定公休
                         </p>
