@@ -295,19 +295,19 @@
                 <div class="col-lg-4 product-img ">
                     <div class="w-100" style="height: 60vh;">
 
-                        <img data-aos="flip-left" src="{{ asset('/img/frontpage/index/product01.jpg') }}" alt="">
+                        <img data-aos="flip-left" data-aos-duration="1500" src="{{ asset('/img/frontpage/index/product01.jpg') }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-4 product-img">
                     <div class="w-100" style="height: 60vh;">
 
-                        <img data-aos="flip-right" src="{{ asset('/img/frontpage/index/product03.jpg') }}" alt="">
+                        <img data-aos="flip-right" data-aos-duration="1500" src="{{ asset('/img/frontpage/index/product03.jpg') }}" alt="">
                     </div>
                 </div>
                 <div class="col-lg-4 product-img">
                     <div class="w-100" style="height: 60vh;">
 
-                        <img data-aos="flip-left" src="{{ asset('/img/frontpage/index/product02.jpg') }}" alt="">
+                        <img data-aos="flip-left" data-aos-duration="1500" src="{{ asset('/img/frontpage/index/product02.jpg') }}" alt="">
                     </div>
                 </div>
 

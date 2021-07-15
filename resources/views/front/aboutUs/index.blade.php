@@ -14,13 +14,13 @@
     <div class="container-fluid p-0 ">
         <div class="block-a d-flex flex-wrap align-content-center justify-content-between section-about"
             style="background-color:#e6e3e0;">
-            <div class="img p-0"></div>
+            <div class="img p-0" data-aos="fade-left" data-aos-duration="2200"></div>
 
             <div class="text-frame d-flex row">
                 <div class="aaa " style="background-color: #f4f3ef;">
-                    <h1 class="about col-12">About</h1>
+                    <h1 class="about col-12" data-aos="fade-down" data-aos-duration="2000">About</h1>
                 </div>
-                <div class="content ">
+                <div class="content " data-aos="fade-up" data-aos-duration="2000">
                     <div class="row no-gutters">
                         <h1 class="us position-relative">Us
                             <p class="text2 position-absolute">
@@ -41,27 +41,29 @@
 
 
         <div class="block-b" style=" background-color: #e6e3e0;">
-            <div class="img"></div>
+            <div class="img" data-aos="fade-left" data-aos-duration="1500"></div>
             <div class="content">
-                <div class="title">
+                <div class="title" data-aos="flip-left" data-aos-duration="2000">
                     Lai 和 Jiou Jiou 在法國知名的斐杭迪廚藝學校相遇，因志同道合回台後聯手編織甜點夢。
                 </div>
             </div>
             <div class="bg">
-                <div class="title mx-auto">
+                <div class="title mx-auto" data-aos="flip-left" data-aos-duration="2000">
                     Lai 和 Jiou Jiou 在法國知名的斐杭迪廚藝學校相遇，因志同道合回台後聯手編織甜點夢。
                 </div>
-                <h1 class="feature col-12">
-                    Feature
-                </h1>
-                <div class="img-bs"></div>
+                <div data-aos="zoom-in-down">
+                    <h1 class="feature col-12" >
+                        Feature
+                    </h1>
+                </div>
+                <div class="img-bs" data-aos="zoom-in-up" data-aos-duration="1500"></div>
                 <div class="text-s-out">
-                    <div class="text-s">
+                    <div class="text-s" data-aos="zoom-out-up" data-aos-duration="1500">
                         非必要絕不多加裝飾的簡練感，如絲綢般滑順閃耀的鏡面淋醬，比起華麗水果裝飾，散發出有如巴黎貴婦般迷人魅力。
                     </div>
                 </div>
             </div>
-            <div class="down ">
+            <div class="down" data-aos="zoom-out-up" data-aos-duration="1500">
                 <div class="img-bb  p-0"></div>
                 <h1 class="feature2  p-0">Feature
                     <div class="text-b">
@@ -77,8 +79,8 @@
         </div>
 
         <div class="b-4">
-            <div class="img"></div>
-            <div class="text7">
+            <div class="img"  data-aos="flip-right" data-aos-duration="1000"></div>
+            <div class="text7" data-aos="zoom-in-right" data-aos-duration="1500">
                 將台灣的茶融入甜點中，結合中西、展現創意。除了鐵觀音巧克力塔、葡萄柚東方美人等等，還有許多各種冒險性質意味濃厚的嘗試。
             </div>
         </div>
@@ -163,5 +165,7 @@
 
 
 @section('js')
-
+<script>
+    AOS.init();
+</script>
 @endsection
