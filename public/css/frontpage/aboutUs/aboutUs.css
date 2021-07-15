@@ -610,6 +610,7 @@ main .b-4 .text7 {
   width: 50vw;
   font-size: 26px;
   margin: 10vh auto;
+  text-align: center;
 }
 
 @media (max-width: 996px) {
