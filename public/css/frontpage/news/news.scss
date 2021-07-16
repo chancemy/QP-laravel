@@ -329,6 +329,9 @@ body{
                                     width: 5.3px;
                                     height: 91.6%;
                                     background-color: #603813;
+                                    @media (max-width:768px) {
+                                        top: 2.0416vw;
+                                    }
                                 }
                                 .left{
                                     position: absolute;
@@ -337,6 +340,9 @@ body{
                                     width: 5.3px;
                                     height: 91.6%;
                                     background-color: #603813;
+                                    @media (max-width:768px) {
+                                        top: 2.0416vw;
+                                    }
                                 }
                                 .down{
                                     position: absolute;

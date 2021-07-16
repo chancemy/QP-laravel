@@ -43,8 +43,6 @@ class FrontController extends Controller
             $typeId = 0;
             $news = News::with('type')->where('is_display',1)->get()->sortByDesc('date');
             // dd($news);
-
-
         }
 
         return view('front.news.index', compact('newsTypes', 'news','typeId'));

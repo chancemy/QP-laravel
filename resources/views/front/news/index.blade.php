@@ -38,64 +38,59 @@
                     <div class="col-12 col-md-9 swiper-frame" id="tag-swiper">
                         <!-- Slider main container -->
                         @php
-                            $sliderQty = ceil(count($news)/6) ;
-                            $newsLength = count($news);
-                            // dd($newsLength);
-                            $newsKey = 0;
-                            $newsTypeKey = 0;
-                            $countTypeNewsLength = 0;
-                            $mobileSlide = 0;
+                            $newsLength = count($news); // 計算最新消息資料長度
+                            $sliderQty = ceil($newsLength/6) ; // 計算電腦版 slide 數量
+                            $newsKey = 0; // 最新消息索引值
+                            $pcSlide = 0; // 電腦版 slide 計算
+                            $mobileSlide = 0; //手機板 slide 計算
                         @endphp
                         <div class="swiper-container">
                             <!-- Additional required wrapper -->
                             <div class="swiper-wrapper">
-                                @for ($sliderNo = 0; $sliderNo < $sliderQty; $sliderNo++)
+                                @foreach ($news as $new)
                                     <!-- Slides -->
+                                    @php
+                                        $mod =  $newsKey % 6;
+                                    @endphp
+                                    @if ($mod == 0)
                                     <div class="swiper-slide pc-slide ">
                                         <div class="row no-gutters">
-                                        @for ($key = $newsKey; $key < ($key+6) ; $key++)
-                                            @if ($key> (5 +(($sliderNo)*6)))
-                                                @php
-                                                    $newsKey = 6 + (($sliderNo)*6);
-                                                @endphp
-                                                @break
-                                            @endif
+                                    @endif
                                             <div class="col-6 col-md-4 news-frame">
-                                                @if ($key<$newsLength)
-                                                <a class="current" href="{{ asset('/newsdetail') }}/{{ $news[$key]->id }}">
+                                                <a class="current" href="{{ asset('/newsdetail') }}/{{ $new->id }}">
                                                     <div class="line-frame">
                                                         <div class="description">
                                                             <div class="row no-gutters">
                                                                 <div class="col-12">
-                                                                    <div class="type">{{ $news[$key]->type->type_name??'' }}</div>
+                                                                    <div class="type">{{ $new->type->type_name??'' }}</div>
                                                                 </div>
                                                                 <div class="col-12">
-                                                                    <div class="title">{{ $news[$key]->title??'' }}</div>
+                                                                    <div class="title">{{ $new->title??'' }}</div>
                                                                 </div>
                                                                 <div class="col-12">
-                                                                    <div data-summerNote="{{ $news[$key]->description??'' }}"
+                                                                    <div data-summerNote="{{ $new->description??'' }}"
                                                                         class="content summer-note">
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        @if ($key == (2+($sliderNo)*6))
+                                                        @if ($newsKey == (2+($pcSlide)*6))
                                                         <div class="right"></div>
                                                         @endif
-                                                        @if ($key == (3+($sliderNo)*6) || $key == (4+($sliderNo)*6))
+                                                        @if ($newsKey == (3+($pcSlide)*6) || $newsKey == (4+($pcSlide)*6))
                                                         <div class="down"></div>
                                                         @endif
-                                                        @if ($key == (5+($sliderNo)*6) )
+                                                        @if ($newsKey == (5+($pcSlide)*6) )
                                                         <div class="right"></div>
                                                         <div class="down"></div>
                                                         @endif
-                                                        <div class="photo" style="background-image: url('{{ $news[$key]->img??'' }}')">
+                                                        <div class="photo" style="background-image: url('{{ $new->img??'' }}')">
                                                         </div>
                                                         <div class="top"></div>
                                                         <div class="left"></div>
                                                         <div class="">
                                                             @php
-                                                            $date = explode('-',$news[$key]->date);
+                                                            $date = explode('-',$new->date);
                                                             $mm = $date[1];
                                                             $dd = $date[2];
                                                             $Month_Englesh = array(
@@ -123,56 +118,65 @@
                                                         </div>
                                                     </div>
                                                 </a>
-                                                @else
-
-                                                <div class="line-frame">
-                                                    <div class="description">
-                                                        <div class="row no-gutters">
-                                                            <div class="col-12">
-                                                                <div class="type"></div>
+                                            </div>
+                                            @if ($newsKey + 1 == $newsLength)
+                                                @for ($i = $newsKey + 1; $i <= 5 + ($pcSlide*6); $i++)
+                                                <div class="col-6 col-md-4 news-frame">
+                                                    <div class="line-frame">
+                                                        <div class="description">
+                                                            <div class="row no-gutters">
+                                                                <div class="col-12">
+                                                                    <div class="type"></div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div class="title"></div>
+                                                                </div>
+                                                                <div class="col-12">
+                                                                    <div data-summerNote=""
+                                                                        class="content summer-note">
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <div class="col-12">
-                                                                <div class="title"></div>
-                                                            </div>
-                                                            <div class="col-12">
-                                                                <div data-summerNote=""
-                                                                    class="content summer-note">
+                                                        </div>
+                                                        @if ($i == (2+($pcSlide)*6))
+                                                        <div class="right"></div>
+                                                        @endif
+                                                        @if ($i == (3+($pcSlide)*6) || $i == (4+($pcSlide)*6))
+                                                        <div class="down"></div>
+                                                        @endif
+                                                        @if ($i == (5+($pcSlide)*6) )
+                                                        <div class="right"></div>
+                                                        <div class="down"></div>
+                                                        @endif
+                                                        <div class="photo" style="background-image: url('')">
+                                                        </div>
+                                                        <div class="top"></div>
+                                                        <div class="left"></div>
+                                                        <div class="">
+                                                            <div class="row no-gutters month">
+                                                                <div class="col-4 month-text">
+                                                                    <span></span>
+                                                                </div>
+                                                                <div class="col-3 date-text">
+                                                                    <span></span>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    @if ($key == (2+($sliderNo)*6))
-                                                    <div class="right"></div>
-                                                    @endif
-                                                    @if ($key == (3+($sliderNo)*6) || $key == (4+($sliderNo)*6))
-                                                    <div class="down"></div>
-                                                    @endif
-                                                    @if ($key == (5+($sliderNo)*6) )
-                                                    <div class="right"></div>
-                                                    <div class="down"></div>
-                                                    @endif
-                                                    <div class="photo" style="background-image: url('')">
-                                                    </div>
-                                                    <div class="top"></div>
-                                                    <div class="left"></div>
-                                                    <div class="">
-                                                        <div class="row no-gutters month">
-                                                            <div class="col-4 month-text">
-                                                                <span></span>
-                                                            </div>
-                                                            <div class="col-3 date-text">
-                                                                <span></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </div>
-                                                @endif
-                                            </div>
-                                        @endfor
+                                                @endfor
+                                            @endif
+                                    @if ($newsKey == 5 + ($pcSlide * 6) || $newsKey + 1 == $newsLength)
                                         </div>
                                     </div>
-
-                                @endfor
+                                    @php
+                                        $pcSlide ++;
+                                    @endphp
+                                    @endif
+                                    @php
+                                        $newsKey ++ ;
+                                    @endphp
+                                @endforeach
                                 @foreach ($news as $new)
                                 <!-- Slides -->
                                 @php
@@ -246,8 +250,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="back-group">
                 </div>
             </div>
         </div>
